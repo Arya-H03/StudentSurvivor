@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 6c583e2609f736f45a1adbf1d1a09f1e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - merman: {fileID: 6502353929556043386, guid: 51f65e6edc0aa9148a4dc8cbda5f71f6, type: 3}
+  - runner: {fileID: 2563241989022114736, guid: ccf0170511676b940a068121c04838da, type: 3}
+  - zombie: {fileID: 8808659492042208705, guid: 3965a5d9d5b79f844b518a7fabf8f07b, type: 3}
+  - player: {fileID: 7403066318302489088, guid: b76eeb7e8f829954eaa129673820adca, type: 3}
+  - slime: {fileID: 1004523333514881583, guid: 08517826595d26149a816910cc637b6b, type: 3}
+  - deathBringer: {fileID: 2516898519729118433, guid: 478b590825497f14988d2239554cd520, type: 3}
+  - vampire: {fileID: 8044954082906273908, guid: b14e08562f61ddb4ca5bcd2907c22ffc, type: 3}
+  - timerText: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
