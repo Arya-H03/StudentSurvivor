@@ -12,7 +12,7 @@ public class RangerArrow : MonoBehaviour
     public bool isPoisonArrow = false;
 
     int a = 0;
-    float direction = 0;
+    float directionX = 0;
     GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -24,27 +24,29 @@ public class RangerArrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player != null)
-        {
-            float scaleX;
-            scaleX = player.transform.localScale.x;
-            if (a < 1)
-            {
-                a = 1;
-                direction = -scaleX;
-            }
+        //if (player != null)
+        //{
+        //    float scaleX;
+        //    scaleX = player.transform.localScale.x;
+        //    if (a < 1)
+        //    {
+        //        a = 1;
+        //        directionX = -scaleX;
+        //    }
 
-            transform.position += new Vector3(direction, 0, 0) * Time.deltaTime * 10f;
-            transform.localScale = new Vector3(direction, 1, 1);
-            
-        }
+        //    transform.position += new Vector3(directionX, 1, 0) * Time.deltaTime * 10f;
+        //    transform.localScale = new Vector3(directionX, 1, 1);
 
-        else
-        {
-            Destroy(gameObject);
-        }
+        //}
 
-        
+
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
+        //transform.rotation = Quaternion.Euler(0, 0, -45);
+
+        ArrowMovement(45f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -97,6 +99,35 @@ public class RangerArrow : MonoBehaviour
         damage = damage + buff;
     }
 
+    public void ArrowMovement(float SpawnAngel)
+    {
 
+        if (player != null)
+        {
+            float scaleX;
+            scaleX = player.transform.localScale.x;
+            if (a < 1)
+            {
+                a = 1;
+                directionX = -scaleX;
+            }
+            double radY = SpawnAngel * (180 / Math.PI);
+            float directionY = (float)Math.Tan(radY) * directionX;
+            Debug.Log(directionY);
+            Debug.Log(directionX);
+
+            transform.position += new Vector3(directionX, 1, 0) * Time.deltaTime * 10f;
+            transform.localScale = new Vector3(directionX, 1, 1);
+
+        }
+
+
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
+    }
 
 }

@@ -221,7 +221,7 @@ public class GameManager : MonoBehaviour
         {
             int dice = Random.Range(-8, 9);
 
-            Vector3 spawnPosition = Random.insideUnitSphere.normalized * 10;
+            Vector3 spawnPosition = Random.insideUnitCircle.normalized * 10;
 
             if (!isTrack)
             {
