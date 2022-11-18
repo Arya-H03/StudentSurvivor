@@ -20,7 +20,7 @@ public class GoldCoin : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.GetComponent<Player>();
-        Goblin goblin = collision.GetComponent<Goblin>();
+        Crow crow = collision.GetComponent<Crow>();
 
 
 
@@ -35,7 +35,7 @@ public class GoldCoin : MonoBehaviour
 
         }
 
-        if (goblin)
+        if (crow)
         {
 
             TitleManager.saveData.goldCoins++;

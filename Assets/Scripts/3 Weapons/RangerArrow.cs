@@ -116,7 +116,7 @@ public class RangerArrow : MonoBehaviour
             Debug.Log(directionY);
             Debug.Log(directionX);
 
-            transform.position += new Vector3(directionX, 1, 0) * Time.deltaTime * 10f;
+            transform.position += new Vector3(directionX, 0, 0) * Time.deltaTime * 10f;
             transform.localScale = new Vector3(directionX, 1, 1);
 
         }

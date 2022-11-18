@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour
                     Vector3 magnetPot = new Vector3(transform.position.x + 0.3f, transform.position.y + 0.3f, transform.position.z);
                     Instantiate(magnet, magnetPot, Quaternion.identity);
                 }
-
+                //16 20
                 if (randomIndex >= 16 && randomIndex <= 20)
                 {
                     Vector3 goldcoin = new Vector3(transform.position.x + 0.4f, transform.position.y + 0.4f, transform.position.z);
