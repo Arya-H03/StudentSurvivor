@@ -5,6 +5,9 @@ using TMPro;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+
 
 public class TitleManager : MonoBehaviour
 {
@@ -12,7 +15,12 @@ public class TitleManager : MonoBehaviour
     [SerializeField] GameObject upgradeMenu;
     [SerializeField] GameObject heroMenu;
     [SerializeField] Axe axe;
-    [SerializeField] TMP_Text playerGold;
+    [SerializeField] TMP_Text playerGoldUpgrade;
+    [SerializeField] TMP_Text playerGoldHero;
+    [SerializeField] Button axeButton; 
+    [SerializeField] Button crowButton; 
+   
+    
     string SavePath => Path.Combine(Application.persistentDataPath, "save.data");
 
     private void Awake()
@@ -97,27 +105,26 @@ public class TitleManager : MonoBehaviour
           
            
             TitleManager.saveData.goldCoins = TitleManager.saveData.goldCoins - 100;
-
-
+            axeButton.interactable = false;
+            
 
 
         }
-
     }
 
-    public void GoldPotion()
+    public void Crow()
     {
         
        
         if (TitleManager.saveData.goldCoins >= 200)
         {
             
-            TitleManager.saveData.isGoldPotionActive = true;
+            TitleManager.saveData.isCrowActive = true;
             
 
 
             TitleManager.saveData.goldCoins = TitleManager.saveData.goldCoins - 200;
-
+            crowButton.interactable = false;
 
         }
 
@@ -125,11 +132,13 @@ public class TitleManager : MonoBehaviour
 
     public void GiveGold()
     {
-        TitleManager.saveData.isGoldPotionActive = false;
+        TitleManager.saveData.isCrowActive = false;
         TitleManager.saveData.isAxeUpgradeActive = false;
+        crowButton.interactable = true;
+        axeButton.interactable = true;
         TitleManager.saveData.goldCoins = 500;
        
-
+        
 
 
     }
@@ -163,7 +172,8 @@ public class TitleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerGold.text = "Your coin: " + TitleManager.saveData.goldCoins.ToString();
+        playerGoldUpgrade.text = "Your coin: " + TitleManager.saveData.goldCoins.ToString();
+        playerGoldHero.text = "Your coin: " + TitleManager.saveData.goldCoins.ToString();
     }
 
 }

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject cultist;
     [SerializeField] GameObject runner;
     [SerializeField] GameObject skeleton;
+    [SerializeField] GameObject crow;
    
     [SerializeField] GameObject slime;
     [SerializeField] GameObject deathBringer;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
     protected bool isBossActive = false;
 
 
+
     int spawnCounter = 1;
     // Start is called before the first frame update
     void Start()
@@ -56,6 +58,11 @@ public class GameManager : MonoBehaviour
         if (PlayerCharacterManager.isWitch == true)
         {
             playerWitch.SetActive(true);
+        }
+
+        if(TitleManager.saveData.isCrowActive == true)
+        {
+            crow.SetActive(true); 
         }
     }
 

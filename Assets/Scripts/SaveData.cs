@@ -13,6 +13,6 @@ public class SaveData
 
     public bool isAxeUpgradeActive = false;
 
-    public bool isGoldPotionActive = false;
+    public bool isCrowActive = false;
     
 }

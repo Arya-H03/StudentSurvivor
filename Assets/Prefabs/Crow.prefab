@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 479518828825242750}
   - component: {fileID: 8744855682226260018}
   - component: {fileID: 2090842566227323774}
-  - component: {fileID: 6916613199962131034}
+  - component: {fileID: 197655170}
+  - component: {fileID: 1601244366853667}
   m_Layer: 0
   m_Name: Crow
   m_TagString: Untagged
@@ -112,7 +113,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5892615, y: 0.65625}
   m_EdgeRadius: 0
---- !u!95 &6916613199962131034
+--- !u!114 &197655170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5208354602062697138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02a42da1df2f0dc45afa7cfdc91ca230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerKnight: {fileID: 6230087241311343392, guid: d93ac349836e1e440aef1090b0a36304, type: 3}
+  playerRanger: {fileID: 423113478378450283, guid: 6523759004a70c24c84f48527a80de64, type: 3}
+  playerWitch: {fileID: 8217278269177374091, guid: d488cde988f85cc4b846858c43cf7778, type: 3}
+--- !u!95 &1601244366853667
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -122,7 +138,7 @@ Animator:
   m_GameObject: {fileID: 5208354602062697138}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5f655dd01b71f8245bf30fbaf45fc3f2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4cce8db93104863438a77113fde86084, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

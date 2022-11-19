@@ -103,14 +103,14 @@ public class Enemy : MonoBehaviour
                 }
 
 
-                if (TitleManager.saveData.isGoldPotionActive == true)
-                {
-                    if (randomIndex >= 31 && randomIndex <= 39)
-                    {
-                        Vector3 goldCoinPotion = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.5f, transform.position.z);
-                        Instantiate(goldPotion, goldCoinPotion, Quaternion.identity);
-                    }
-                }
+                //if (TitleManager.saveData.isGoldPotionActive == true)
+                //{
+                //    if (randomIndex >= 31 && randomIndex <= 39)
+                //    {
+                //        Vector3 goldCoinPotion = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.5f, transform.position.z);
+                //        Instantiate(goldPotion, goldCoinPotion, Quaternion.identity);
+                //    }
+                //}
 
                 if (randomIndex >= 40 && randomIndex <= 43)
                 {
@@ -132,11 +132,11 @@ public class Enemy : MonoBehaviour
 
     public IEnumerator InvincibleFrames()
     {
-        isInvincible = true;
+        //isInvincible = true;
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.2f);
         spriteRenderer.color = Color.white;
-        isInvincible = false;
+        //isInvincible = false;
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
