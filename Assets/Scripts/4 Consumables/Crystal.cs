@@ -8,16 +8,11 @@ using UnityEngine;
 public class Crystal : MonoBehaviour
 {
     GameObject player;
-    
+   
     
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-
-
-
-
-
 
     }
 
@@ -33,23 +28,12 @@ public class Crystal : MonoBehaviour
 
 
         if (player)
-        {
-            
-            player.AddExp();
-
-         
-               
-            player.AddScore();
-            
-
-
-
+        {            
+            player.AddExp();              
+            player.AddScore();           
             Destroy(gameObject);
-            
-
+           
         }
-
-
     }
 
     public void CrystalGoToPlayer(bool isMagentPotion)
@@ -85,5 +69,5 @@ public class Crystal : MonoBehaviour
 
     
 
-    
+
 }

@@ -618,7 +618,6 @@ MonoBehaviour:
   magnet: {fileID: 4637870768968560506, guid: 95f98f4c019659f4c82ab10c78573d75, type: 3}
   goldCoin: {fileID: 4787718304394093406, guid: 1e5188ef6d03f4d48b4b63fefe9dbd31, type: 3}
   audioManager: {fileID: 0}
-  goldPotion: {fileID: 7640795191758517638, guid: e09ff0de5c178104684ad12f10c917d8, type: 3}
   flame: {fileID: 2132708960, guid: e4b50db67fe92924ca1a89bd98e29084, type: 3}
   bloodSplash: {fileID: 1181050846110193582, guid: 5b241bed1a4d3294aa9f805ece7b4f06, type: 3}
   damageBoostPot: {fileID: 1100006581861328753, guid: efbbf4253104d1145bb69c1bf775f289, type: 3}
@@ -629,6 +628,7 @@ MonoBehaviour:
   enemyHP: 2
   isTrack: 1
   damageNumber: {fileID: 1749381066522086116}
+  damagePopUp: {fileID: 428124998287652800, guid: ff7e47dbca07c3e418f992cc13669c80, type: 3}
 --- !u!50 &1391211855
 Rigidbody2D:
   serializedVersion: 4

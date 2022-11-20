@@ -28,6 +28,8 @@ public class Giant : Enemy
    
     protected override void Update()
     {
+       
+      
         Debug.Log(isHit);
         if(isHit == true)
         {
@@ -106,5 +108,15 @@ public class Giant : Enemy
     public static double ConvertRadiansToDegrees(double radians)
     {
         return Mathf.Rad2Deg * radians;
+    }
+
+    protected override void KillEnemy()
+    {
+        base.KillEnemy();
+        if (enemyHP <= 0)
+        {
+
+            AfterDeath.giantKilled++;
+        }
     }
 }

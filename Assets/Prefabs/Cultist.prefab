@@ -85,11 +85,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 8a5050d9a6fef36468eba1d95c6af754, type: 3}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -9.124557
+      value: -7.9227676
       objectReference: {fileID: 0}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.6764143
+      value: -0.6429311
       objectReference: {fileID: 0}
     - target: {fileID: 9024639443312771643, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_Name
@@ -163,3 +163,4 @@ MonoBehaviour:
   enemyHP: 0
   isTrack: 1
   damageNumber: {fileID: 4559887472891883173}
+  damagePopUp: {fileID: 428124998287652800, guid: ff7e47dbca07c3e418f992cc13669c80, type: 3}

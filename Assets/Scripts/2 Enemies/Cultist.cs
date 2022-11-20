@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Security;
 using UnityEngine;
 
 public class Cultist : Enemy
@@ -24,6 +25,8 @@ public class Cultist : Enemy
 
     protected override void Update()
     {
+      
+        
 
         switch (cultistState)
         {
@@ -62,6 +65,16 @@ public class Cultist : Enemy
                 
             default:
                 break;
+        }
+    }
+
+    protected override void KillEnemy()
+    {
+        base.KillEnemy();
+        if (enemyHP <= 0)
+        {
+            
+            AfterDeath.cultistKilled++;
         }
     }
 }

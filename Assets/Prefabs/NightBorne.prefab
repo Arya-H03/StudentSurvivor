@@ -39,6 +39,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.090909
       objectReference: {fileID: 0}
+    - target: {fileID: 2120115428, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2392363651912507095, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -113,11 +117,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -14.784948
+      value: -6.4816585
       objectReference: {fileID: 0}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -9.046083
+      value: -1.1387454
       objectReference: {fileID: 0}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -135,7 +139,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: NightBorne
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1391211854, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
 --- !u!1 &3243149586898925075 stripped
 GameObject:
@@ -162,3 +167,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5548786246042429427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3243149586898925075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1dbc42ccbd2554485a94fb44b30836, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystal: {fileID: 1294660074309874459, guid: ec523b6ab59a33845a2b2359b914a892, type: 3}
+  smallhealthPot: {fileID: 4347093941837164431, guid: 73339c5d81d7be641ad2a297fb96e242, type: 3}
+  largehealthPot: {fileID: 7013399893991402214, guid: b1f4b50207ee07446a86ac5848366e17, type: 3}
+  magnet: {fileID: 4637870768968560506, guid: 95f98f4c019659f4c82ab10c78573d75, type: 3}
+  goldCoin: {fileID: 4787718304394093406, guid: 1e5188ef6d03f4d48b4b63fefe9dbd31, type: 3}
+  audioManager: {fileID: 0}
+  flame: {fileID: 2132708960, guid: e4b50db67fe92924ca1a89bd98e29084, type: 3}
+  bloodSplash: {fileID: 1181050846110193582, guid: 5b241bed1a4d3294aa9f805ece7b4f06, type: 3}
+  damageBoostPot: {fileID: 1100006581861328753, guid: efbbf4253104d1145bb69c1bf775f289, type: 3}
+  speed: 3
+  animator: {fileID: 0}
+  isDead: 0
+  enemyMaxHP: 3
+  enemyHP: 0
+  isTrack: 1
+  damageNumber: {fileID: 0}
+  damagePopUp: {fileID: 428124998287652800, guid: ff7e47dbca07c3e418f992cc13669c80, type: 3}

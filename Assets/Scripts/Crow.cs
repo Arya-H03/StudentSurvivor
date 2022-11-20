@@ -29,15 +29,16 @@ public class Crow : MonoBehaviour
 
         if (FindGoldCoins() == null)
         {
-            if (PlayerCharacterManager.isKnight == true)
+
+            if (PlayerCharacterManager.isKnight == true && playerKnight!=null)
             {
                 targetPosition = playerKnight.transform.position + new Vector3(0,1,0);
             }
-            if (PlayerCharacterManager.isRanger == true)
+            if (PlayerCharacterManager.isRanger == true && playerRanger != null)
             {
                 targetPosition = playerRanger.transform.position + new Vector3(0, 1, 0);
             }
-            if (PlayerCharacterManager.isWitch == true)
+            if (PlayerCharacterManager.isWitch == true && playerWitch != null)
             {
                 targetPosition = playerWitch.transform.position + new Vector3(0, 1, 0);
             }

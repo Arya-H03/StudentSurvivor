@@ -10,7 +10,7 @@ public class RangerArrow : MonoBehaviour
     int numberOfPoisonTicks = 3;
     float poisonDotDamage = 0.5f;
     public bool isPoisonArrow = false;
-
+    protected float movmentAngle;
     int a = 0;
     float directionX = 0;
     GameObject player;
@@ -46,7 +46,7 @@ public class RangerArrow : MonoBehaviour
         //}
         //transform.rotation = Quaternion.Euler(0, 0, -45);
 
-        ArrowMovement(45f);
+        ArrowMovement(movmentAngle);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -111,12 +111,12 @@ public class RangerArrow : MonoBehaviour
                 a = 1;
                 directionX = -scaleX;
             }
-            double radY = SpawnAngel * (180 / Math.PI);
-            float directionY = (float)Math.Tan(radY) * directionX;
+            double radY = SpawnAngel * (Math.PI/180);
+            float directionY = (float)Math.Tan(radY)/* * directionX*/;
             Debug.Log(directionY);
             Debug.Log(directionX);
 
-            transform.position += new Vector3(directionX, 0, 0) * Time.deltaTime * 10f;
+            transform.position += new Vector3(directionX, directionY, 0) * Time.deltaTime * 10f;
             transform.localScale = new Vector3(directionX, 1, 1);
 
         }
@@ -128,6 +128,11 @@ public class RangerArrow : MonoBehaviour
         }
 
 
+    }
+
+    public void SetSpawnAngle(float spawnAngle )
+    {
+        movmentAngle = spawnAngle;
     }
 
 }

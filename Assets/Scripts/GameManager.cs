@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject crow;
    
     [SerializeField] GameObject slime;
-    [SerializeField] GameObject deathBringer;
+    [SerializeField] GameObject giant;
     [SerializeField] GameObject nightborne;
     [SerializeField] GameObject slaveKnight;
     [SerializeField] AudioSource enemyDeathSound;
@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject playerKnight;
     [SerializeField] GameObject playerRanger;
     [SerializeField] GameObject playerWitch;
+
+    public  int goldGained;
+    public  int EXPGained;
 
     
     public TMP_Text timerText;
@@ -162,7 +165,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(3f);
             SpawnEnemies(runner, 12, false);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(deathBringer, 3 * spawnCounter++, false);
+            SpawnEnemies(giant, 3 * spawnCounter++, false);
             yield return new WaitForSeconds(3f);
             SpawnEnemies(cultist, 10, true);
             yield return new WaitForSeconds(3f);
@@ -170,7 +173,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(3f);
             SpawnEnemies(slime, 5 * spawnCounter++, false);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(deathBringer, 2 * spawnCounter, true);
+            SpawnEnemies(giant, 2 * spawnCounter, true);
             yield return new WaitForSeconds(3f);
             SpawnEnemies(darkWizard, 5 * spawnCounter++, true);
             yield return new WaitForSeconds(5f);
@@ -178,13 +181,13 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(5f);
             SpawnEnemies(cultist, 10, false);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(deathBringer, 3 * spawnCounter++, false);
+            SpawnEnemies(giant, 3 * spawnCounter++, false);
             yield return new WaitForSeconds(3f);
             SpawnEnemies(skeleton, 5 * spawnCounter, true);
             yield return new WaitForSeconds(5f);
             SpawnEnemies(nightborne, 10, false);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(deathBringer, 5 * spawnCounter++, true);
+            SpawnEnemies(giant, 5 * spawnCounter++, true);
             yield return new WaitForSeconds(3f);
             SpawnEnemies(cultist, 12, false);
             yield return new WaitForSeconds(5f);
@@ -195,7 +198,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(5f);
             SpawnEnemies(nightborne, 8 * spawnCounter++, true);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(deathBringer, 10, true);
+            SpawnEnemies(giant, 10, true);
             yield return new WaitForSeconds(3f);
 
             SpawnEnemies(slime, 20, false);
@@ -207,7 +210,7 @@ public class GameManager : MonoBehaviour
 
             yield return new WaitForSeconds(5f);
 
-            SpawnEnemies(deathBringer, 12, true);
+            SpawnEnemies(giant, 12, true);
             yield return new WaitForSeconds(4f);
 
             isBossActive = false;

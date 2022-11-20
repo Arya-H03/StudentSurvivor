@@ -29,9 +29,9 @@ public class GoldCoin : MonoBehaviour
         {
 
             TitleManager.saveData.goldCoins++;
-
+            AfterDeath.goldGained++;
             Destroy(gameObject);
-
+            
 
         }
 
@@ -39,9 +39,9 @@ public class GoldCoin : MonoBehaviour
         {
 
             TitleManager.saveData.goldCoins++;
-
+            AfterDeath.goldGained++;
             Destroy(gameObject);
-            
+
 
 
         }
@@ -76,4 +76,5 @@ public class GoldCoin : MonoBehaviour
         }
 
     }
+
 }

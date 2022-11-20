@@ -53,6 +53,8 @@ public class Player : MonoBehaviour
     internal int currentLevel;
     public PlayerCamera playerCamera;
     public static bool isDead = false;
+    public int goldGainedByPlayer;
+    public int EXPgained;
 
 
     public bool OnDamage()
@@ -177,6 +179,7 @@ public class Player : MonoBehaviour
     {
         
         currentExp++;
+        AfterDeath.EXPgained ++;
         if(currentExp == expToLevel)
         {           
             currentExp = 0;

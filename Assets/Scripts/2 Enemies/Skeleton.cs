@@ -24,7 +24,8 @@ public class Skeleton : Enemy
 
     protected override void Update()
     {
-
+        
+        
         switch (skeletonState)
         {
             case SkeletonState.Idle:
@@ -60,6 +61,16 @@ public class Skeleton : Enemy
 
             default:
                 break;
+        }
+    }
+
+    protected override void KillEnemy()
+    {
+        base.KillEnemy();
+        if (enemyHP <= 0)
+        {
+
+            AfterDeath.skeletonKilled++;
         }
     }
 }

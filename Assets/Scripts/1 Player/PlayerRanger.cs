@@ -14,6 +14,7 @@ public class PlayerRanger : Player
     [SerializeField] RainOfArrow rainOfArrows;
     [SerializeField] RangerBeam rangerBeams;
     [SerializeField] SpreadArrow spreadArrows;
+    [SerializeField] RangerArrow currentArrow; 
     
     int numberOfArrow = 1;
     bool isSpreadArrow = false;
@@ -27,9 +28,9 @@ public class PlayerRanger : Player
             StartCoroutine(SpecialAttack());
             StartCoroutine(RainOfArrows());
             StartCoroutine(SpreadArrows());
-
         
-       
+
+
 
     }
 
@@ -52,19 +53,21 @@ public class PlayerRanger : Player
         if (numberOfArrow % 2 == 1)
         {
             Instantiate(defaultArrow, transform.position + new Vector3(0, 0.4f, 0), Quaternion.Euler(0, 0, 0));
-
-            ;           
+            //currentArrow.SetSpawnAngle(0);
+        
             for (int i = 0; i < aHalf; i++)
             {
                 d = d + 0.1f;
                 Instantiate(defaultArrow, transform.position + new Vector3(0, d, 0), Quaternion.Euler(0, 0, 0));
-                
+                //currentArrow.SetSpawnAngle(d);
+
             }
 
             for (int i = 0; i < aHalf; i++)
             {
                 c = c - 0.1f;
                 Instantiate(defaultArrow, transform.position + new Vector3(0, c, 0), Quaternion.Euler(0, 0, 0));
+                //currentArrow.SetSpawnAngle(c);
 
 
             }
@@ -81,14 +84,14 @@ public class PlayerRanger : Player
                
                 Instantiate(defaultArrow, transform.position + new Vector3(0, d, 0), Quaternion.Euler(0, 0, 0));
                 d = d + 0.1f;
-
+                //currentArrow.SetSpawnAngle(d);
             }
 
             for (int i = 0; i < aHalf; i++)
             {
                 c = c - 0.1f;
-                Instantiate(defaultArrow, transform.position + new Vector3(0, c, 0), Quaternion.Euler(0, 0, 0));
-
+                Instantiate(defaultArrow, transform.position + new Vector3(0, d, 0), Quaternion.Euler(0, 0, 0));
+                //currentArrow.SetSpawnAngle(c);
 
             }
         }

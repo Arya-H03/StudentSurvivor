@@ -161,6 +161,7 @@ public class TitleManager : MonoBehaviour
         upgradeMenu.SetActive(false);
         heroMenu.SetActive(false);
     }
+    
 
 
     // Start is called before the first frame update

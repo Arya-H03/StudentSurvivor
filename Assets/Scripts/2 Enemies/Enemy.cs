@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     public Magnet magnet;
     public GoldCoin goldCoin;
     public AudioManager audioManager;
-    public GoldPotion goldPotion;
+    //public GoldPotion goldPotion;
     public Flame flame;
     public BloodSplash bloodSplash;
     public DamageBoostPot damageBoostPot;
@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
     protected bool isInvincible;
     [SerializeField] TMP_Text damageNumber;
     GameObject healthBar;
+    [SerializeField] GameObject damagePopUp;
     
 
 
@@ -59,8 +60,10 @@ public class Enemy : MonoBehaviour
         {
             StartCoroutine(InvincibleFrames());
             enemyHP -= damageValue;
-            StartCoroutine(DamagePopUp(damageValue));
-           
+            //StartCoroutine(DamagePopUp(damageValue));
+            SpawnDamageNumber(damageValue);
+
+
 
 
             if (enemyHP <= 0)
@@ -122,9 +125,10 @@ public class Enemy : MonoBehaviour
                 spriteRenderer.enabled = false;
                 boxCollider2D.enabled = false;
                 healthBar.SetActive(false);
-                StartCoroutine(Destroy());
+                KillEnemy();
 
-               
+
+
             }
         }
 
@@ -252,27 +256,38 @@ public class Enemy : MonoBehaviour
         spriteRenderer.color = Color.white;
     }
 
-    IEnumerator DamagePopUp(float damage)
-    {
-        while (true)
-        {
-            damageNumber.transform.position = transform.position + new Vector3(0, 1, 0);
-            damageNumber.text = damage.ToString();
-            damageNumber.transform.localScale = new Vector3(1, 1, 1);   
-            damageNumber.transform.position += (transform.position + new Vector3(0, 0.005f, 0)) * 1 * Time.deltaTime;
-            damageNumber.transform.localScale = new Vector3(1, 1, 1);
-            yield return new WaitForSeconds(1f);
-            damageNumber.transform.position = transform.position + new Vector3(0, 1, 0);
-            damageNumber.transform.localScale = new Vector3(1, 1, 1);
-            damageNumber.text = "";
-        }
-    }
+    //IEnumerator DamagePopUp(float damage)
+    //{
+    //    while (true)
+    //    {
+    //        damageNumber.transform.position = transform.position + new Vector3(0, 1, 0);
+    //        damageNumber.text = damage.ToString();
+    //        damageNumber.transform.localScale = new Vector3(1, 1, 1);   
+    //        damageNumber.transform.position += (transform.position + new Vector3(0, 0.005f, 0)) * 1 * Time.deltaTime;
+    //        damageNumber.transform.localScale = new Vector3(1, 1, 1);
+    //        yield return new WaitForSeconds(1f);
+    //        damageNumber.transform.position = transform.position + new Vector3(0, 1, 0);
+    //        damageNumber.transform.localScale = new Vector3(1, 1, 1);
+    //        damageNumber.text = "";
+    //    }
+    //}
 
     IEnumerator Destroy()
     {
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
-        
+
+    private void SpawnDamageNumber(float damage)
+    {
+        Vector3 spawnPosition = transform.position + new Vector3(0, 1, 0);
+        damagePopUp.GetComponent<DamagePopUp>().damage = damage.ToString();
+        Instantiate(damagePopUp, spawnPosition, Quaternion.identity);
+    }
+
+    protected virtual void KillEnemy()
+    {
+        Destroy(gameObject);
+    }
 
 }
