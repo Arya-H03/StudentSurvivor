@@ -14,7 +14,7 @@ public class SwordWall : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
 
-        
+
         StartCoroutine(SwordWallDestroyCoroutine());
     }
 
@@ -33,17 +33,17 @@ public class SwordWall : MonoBehaviour
 
         if (player != null)
         {
-            
+
             float scaleX;
             scaleX = player.transform.localScale.x;
             if (a < 1)
             {
                 a = 1;
                 direction = -scaleX;
-                
+
             }
 
-            if(direction == 1)
+            if (direction == 1)
             {
                 transform.rotation = Quaternion.Euler(0, 0, -90);
             }
@@ -54,7 +54,7 @@ public class SwordWall : MonoBehaviour
 
             transform.position += new Vector3(direction, 0, 0) * Time.deltaTime * speed;
             transform.localScale = new Vector3(direction, 1, 1);
-           
+
         }
 
         else
