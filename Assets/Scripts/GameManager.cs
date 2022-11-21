@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
         
 
 
-        if(minutes == 3 && isBossActive == false)
+        if(minutes == 2 && isBossActive == false)
         {
             SpawnBoss(slaveKnight, 1);
             
