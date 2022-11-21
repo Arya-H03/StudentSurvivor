@@ -14,7 +14,7 @@ public class FireDemon : MonoBehaviour
     SpriteRenderer spriteRenderer;
     public bool isTrack = true;
     bool isInvincible;
-    //[SerializeField] SlaveKnightSword slaveKnightSword;
+    [SerializeField] BossMelee bossMelee;
     //[SerializeField] GameObject swordWall;
     //[SerializeField] GameObject spear;
     //[SerializeField] float waitTime = 5;
@@ -82,7 +82,7 @@ public class FireDemon : MonoBehaviour
                 animator.SetBool("isWalking", false);
                 animator.SetTrigger("Attack");
                 fireDemonState = FireDemonState.Idle;
-                waitTimer = 1f;
+                waitTimer = 1.5f;
                 break;
             default:
                 break;
@@ -209,20 +209,20 @@ public class FireDemon : MonoBehaviour
         }
     }
 
-   
 
 
 
-    //public void SetSwordHitBoxActive()
-    //{
-    //    slaveKnightSword.isHitBoxActive = true;
 
-    //}
-    //public void SetSwordHitBoxDeActive()
-    //{
-    //    slaveKnightSword.isHitBoxActive = false;
+    public void SetSwordHitBoxActive()
+    {
+        bossMelee.isHitBoxActive = true;
 
-    //}
+    }
+    public void SetSwordHitBoxDeActive()
+    {
+        bossMelee.isHitBoxActive = false;
+
+    }
 
     //IEnumerator SwordWall()
     //{

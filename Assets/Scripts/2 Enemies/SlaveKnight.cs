@@ -23,7 +23,7 @@ public class SlaveKnight : MonoBehaviour
     SpriteRenderer spriteRenderer;
     public bool isTrack = true;
     bool isInvincible;
-    [SerializeField] SlaveKnightSword slaveKnightSword;
+    [SerializeField] BossMelee slaveKnightSword;
 
     [SerializeField] GameObject swordWall;
     [SerializeField] GameObject spear;

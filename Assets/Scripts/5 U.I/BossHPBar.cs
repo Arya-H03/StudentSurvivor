@@ -25,7 +25,7 @@ public class BossHPBar : MonoBehaviour
             foreground.transform.localScale = new Vector3(hpRatio, 1, 1);
         }
 
-        if (slaveKnight != null)
+        if (fireDemon != null)
         {
 
 
