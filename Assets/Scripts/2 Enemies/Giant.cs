@@ -29,8 +29,6 @@ public class Giant : Enemy
     protected override void Update()
     {
        
-      
-        Debug.Log(isHit);
         if(isHit == true)
         {
             giantState = GiantState.Idle;

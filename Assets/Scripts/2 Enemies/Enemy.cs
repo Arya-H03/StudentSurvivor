@@ -52,6 +52,7 @@ public class Enemy : MonoBehaviour
     {     
         sec = (int)Time.timeSinceLevelLoad;       
         GoToPlayer();
+        
     }
 
     public void Damage(float damageValue)

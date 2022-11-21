@@ -25,17 +25,25 @@ public class GiantDagger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (isDestinationSet == false)
+        if(player != null)
         {
-            destination = player.transform.position;
-            isDestinationSet = true;            
+            if (isDestinationSet == false)
+            {
+                destination = player.transform.position;
+                isDestinationSet = true;
+            }
+            Vector3 source = transform.position;
+            Vector3 direction = destination - source;
+            direction.Normalize();
+            transform.position += direction * Time.deltaTime * speed;
+
+            if (transform.position == destination)
+            {
+                Destroy(gameObject, 1);
+            }
         }
-        Vector3 source = transform.position;
-        Vector3 direction = destination - source;
-        direction.Normalize();
-        transform.position += direction * Time.deltaTime * speed;
-                
+        
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

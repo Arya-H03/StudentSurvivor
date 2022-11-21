@@ -78,12 +78,12 @@ public class Player : MonoBehaviour
         return false;
     }
 
-    public bool OnDamageBoss()
+    public bool OnDamageBoss(float damage)
     {       
         if (!isInvincible)
         {
             isInvincible = true;
-            playerHP = (float)(playerHP - playerMaxHP *0.5);
+            playerHP = (float)(playerHP - damage);
             if (playerHP <= 0)
             {
                 SceneManager.LoadScene("AfterDeath");
