@@ -16,13 +16,8 @@ public class FireDemon : MonoBehaviour
     bool isInvincible;
     [SerializeField] BossMelee bossMelee;
     [SerializeField] GameObject fireHand;
-    //[SerializeField] GameObject swordWall;
-    //[SerializeField] GameObject spear;
-    //[SerializeField] float waitTime = 5;
-    //int numberOfSword = 3;
-
-    //private int shoot1 = 1;
-    //private int shoot2 = 1;
+    private bool isHit = false;
+   
     enum FireDemonState
     {
         Idle = 0,
@@ -44,12 +39,16 @@ public class FireDemon : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(BossCameraCoroutine());
         StartCoroutine(FireHand());
-        //StartCoroutine(SwordWall());
-        //StartCoroutine(SpearSpawn());
+    
     }
 
     void Update()
     {
+        if(isHit == true)
+        {
+            fireDemonState = FireDemonState.Hit;
+            isHit = false;
+        }
         switch (fireDemonState)
         {
             case FireDemonState.Idle:
@@ -63,18 +62,6 @@ public class FireDemon : MonoBehaviour
                 float distance = Vector3.Distance(transform.position, player.transform.position);
                 GoToPlayer();
                 animator.SetBool("isWalking", true);
-                //if (shoot1 < 1)
-                //{
-                //    SpawnSwordWall();
-                //    shoot1 = 1;
-                //}
-
-                //if (shoot2 < 1)
-                //{
-                //    SpawnSpear();
-                //    shoot2 = 1;
-                //}
-
                 if (distance <= 4f)
                 {
                     fireDemonState = FireDemonState.Attacking;
@@ -86,6 +73,15 @@ public class FireDemon : MonoBehaviour
                 fireDemonState = FireDemonState.Idle;
                 waitTimer = 1.5f;
                 break;
+            case FireDemonState.Hit:
+                GoToPlayer();
+                animator.SetBool("isWalking", false);
+                animator.SetTrigger("Hit");
+                fireDemonState = FireDemonState.Idle;
+                waitTimer = 0.5f;
+                
+                break;
+
             default:
                 break;
 
@@ -160,9 +156,9 @@ public class FireDemon : MonoBehaviour
     IEnumerator InvincibleFrames()
     {
         isInvincible = true;
-        spriteRenderer.color = Color.red;
+        //spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(1f);
-        spriteRenderer.color = Color.white;
+        //spriteRenderer.color = Color.white;
         isInvincible = false;
 
     }
@@ -217,6 +213,13 @@ public class FireDemon : MonoBehaviour
             player.OnDamageBoss(5);
 
         }
+
+        BaseWeapon baseWeapon = collision.gameObject.GetComponent<BaseWeapon>();
+        if (baseWeapon)
+        {
+            isHit = true;
+        }
+
     }
 
 

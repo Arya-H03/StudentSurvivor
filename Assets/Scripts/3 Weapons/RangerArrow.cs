@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangerArrow : MonoBehaviour
+public class RangerArrow : BaseWeapon
 {
     [SerializeField] int arrowHp = 1;
     [SerializeField] float damage = 1;
@@ -53,6 +53,7 @@ public class RangerArrow : MonoBehaviour
     {
         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
         SlaveKnight slaveKnight = collision.gameObject.GetComponent<SlaveKnight>();
+        FireDemon fireDemon = collision.gameObject.GetComponent<FireDemon>();
         if (enemy != null)
         {
            
@@ -78,6 +79,16 @@ public class RangerArrow : MonoBehaviour
                 Destroy(gameObject);
             }
 
+        }
+
+        if(fireDemon != null)
+        {
+            fireDemon.DamageBoss(damage);
+            arrowHp--;
+            if (arrowHp <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
 
     }
