@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Cultist : Enemy
 {
+   
     enum CultistState
     {
         Idle = 0,
@@ -25,8 +26,12 @@ public class Cultist : Enemy
 
     protected override void Update()
     {
-      
-        
+
+        if (isHit == true)
+        {
+            cultistState = CultistState.Hit;
+            isHit = false;
+        }
 
         switch (cultistState)
         {
@@ -36,33 +41,32 @@ public class Cultist : Enemy
                 {
                     cultistState = CultistState.Chasing;
                 }
-                //if (isHit == true)
-                //{
-                //    cultistState = CultistState.Hit;
-                //}
+                
                 break;
             case CultistState.Chasing:
                 base.Update();
-                //float distance = Vector3.Distance(transform.position, player.transform.position);
+                float distance = Vector3.Distance(transform.position, player.transform.position);
                 animator.SetBool("isWalking", true);
-                //if (distance <= 1f)
-                //{
-                //    //cultistState = CultistState.Attacking;
-                //}
+                if (distance <= 1f)
+                {
+                    cultistState = CultistState.Attacking;
+                }
                 break;
-            //case CultistState.Attacking:
-            //    base.Update();
-            //    animator.SetBool("isWalking", false);
-            //    animator.SetTrigger("Attack");
-            //    cultistState = CultistState.Idle;
-            //    waitTimer = 0f;
-            //    break;
-            //case CultistState.Hit:
-            //    animator.SetTrigger("Hit");
-            //    //isHit = false;
-            //    cultistState=CultistState.Idle;
-            //    break;
-                
+            case CultistState.Attacking:
+                base.Update();
+                animator.SetBool("isWalking", false);
+                animator.SetTrigger("Attack");
+                cultistState = CultistState.Idle;
+                waitTimer = 1f;
+                break;
+            case CultistState.Hit:
+                base.Update();
+                animator.SetBool("isWalking", false);
+                animator.SetTrigger("Hit");
+                cultistState = CultistState.Idle;
+                waitTimer = 0.5f;
+                break;
+
             default:
                 break;
         }

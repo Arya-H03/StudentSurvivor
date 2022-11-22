@@ -85,11 +85,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6.702036
+      value: -1.741742
       objectReference: {fileID: 0}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2.296826
+      value: -0.66999626
       objectReference: {fileID: 0}
     - target: {fileID: 9024639443312771643, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_Name
@@ -152,7 +152,6 @@ MonoBehaviour:
   magnet: {fileID: 4637870768968560506, guid: 95f98f4c019659f4c82ab10c78573d75, type: 3}
   goldCoin: {fileID: 4787718304394093406, guid: 1e5188ef6d03f4d48b4b63fefe9dbd31, type: 3}
   audioManager: {fileID: 0}
-  goldPotion: {fileID: 7640795191758517638, guid: e09ff0de5c178104684ad12f10c917d8, type: 3}
   flame: {fileID: 2132708960, guid: e4b50db67fe92924ca1a89bd98e29084, type: 3}
   bloodSplash: {fileID: 1181050846110193582, guid: 5b241bed1a4d3294aa9f805ece7b4f06, type: 3}
   damageBoostPot: {fileID: 1100006581861328753, guid: efbbf4253104d1145bb69c1bf775f289, type: 3}

@@ -24,8 +24,12 @@ public class Skeleton : Enemy
 
     protected override void Update()
     {
-        
-        
+        if (isHit == true)
+        {
+            skeletonState = SkeletonState.Hit;
+            isHit = false;
+        }
+
         switch (skeletonState)
         {
             case SkeletonState.Idle:
@@ -38,26 +42,28 @@ public class Skeleton : Enemy
                 break;
             case SkeletonState.Chasing:
                 base.Update();
-                //float distance = Vector3.Distance(transform.position, player.transform.position);
+                float distance = Vector3.Distance(transform.position, player.transform.position);
                 animator.SetBool("isWalking", true);
-                //if (distance <= 2f)
-                //{
-                //    //skeletonState = SkeletonState.Attacking;
-                //}
+                if (distance <= 2f)
+                {
+                    skeletonState = SkeletonState.Attacking;
+                }
                 break;
-            //case SkeletonState.Attacking:
-            //    float distance1 = Vector3.Distance(transform.position, player.transform.position);
-            //    base.Update();
-            //    animator.SetBool("isWalking", false);
-            //    animator.SetTrigger("Attack");
-            //    if(distance1 > 2f)
-            //    {
-            //        skeletonState = SkeletonState.Idle;
-            //    }
-              
-            //    waitTimer = 0f;
-                //break;
-            
+            case SkeletonState.Attacking:              
+                base.Update();
+                animator.SetBool("isWalking", false);
+                animator.SetTrigger("Attack");
+                waitTimer = 1f;
+                break;
+            case SkeletonState.Hit:
+                base.Update();
+                animator.SetBool("isWalking", false);
+                animator.SetTrigger("Hit");
+                skeletonState = SkeletonState.Idle;
+                waitTimer = 0.5f;
+                break;
+                
+
 
             default:
                 break;

@@ -190,21 +190,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1645873fe9655d40801a6fa60e5d265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrelG1: {fileID: 5758597021568350707, guid: 8d04d6b82176ebc4b84e65f4b4c53c2f, type: 3}
-  barrelG2: {fileID: 2187717509918924643, guid: 80323d35cba5e5b43bb6f04808305955, type: 3}
-  barrelG3: {fileID: 6793256406113580435, guid: 04f0dd0682b632f4485421f0e2869354, type: 3}
   boneGroupG1: {fileID: 4819394276610362602, guid: 15e9b3d0590226c4c95abbb9017d2d32, type: 3}
   boneGroupG2: {fileID: 3260380216798593250, guid: dc20aaadb7df14f49b40cdb1d018d402, type: 3}
   boneGroupG3: {fileID: 9028687505043393372, guid: 44b5f884dc465454a89fcb7a405d58e8, type: 3}
-  greenCarpetG: {fileID: 8132647776278987273, guid: 30ce310c77c42724ca25fc5e2845546c, type: 3}
-  redCarpetG: {fileID: 2174308364923799818, guid: 18458b0fc514a5841b0308292c36ace3, type: 3}
-  yellowCarpetG: {fileID: 246588449059354251, guid: af389c5ffb38caf45b938fe332c37d49, type: 3}
-  greenPotGroup: {fileID: 7327312142747328081, guid: c56742ef94869174186204825f5f83d6, type: 3}
-  redPotGroup: {fileID: 287209946884943338, guid: 151e135266878ef468bfa522daff9e8a, type: 3}
+  boneGroupG4: {fileID: 9055436124613662760, guid: e2729a87c2d11d1488d4d14c559dfe4c, type: 3}
+  boneGroupG5: {fileID: 2295356094462964138, guid: 886327b9f80e70d4faa8735ebffed900, type: 3}
   rockGroup1: {fileID: 1549213347125399251, guid: 41fb37ecbc0cd534d85c8913b98623ef, type: 3}
   rockGroup2: {fileID: 5642388011046230273, guid: 1f3d6d8248b17fb48a0a833365cb8d16, type: 3}
   rockGroup3: {fileID: 2612163664270297629, guid: 0afdbbe6c2fae9548a0d10a03233b913, type: 3}
-  rockGroup4: {fileID: 7504294086708496435, guid: 5b0430e057de61143a871b7f95c1e89f, type: 3}
 --- !u!1 &3106458961461944108
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class Giant : Enemy
     //private Animator animator;
     [SerializeField] GameObject dagger;
 
-    public bool isHit = false;
+    //public bool isHit = false;
     enum GiantState
     {
         Idle = 0,

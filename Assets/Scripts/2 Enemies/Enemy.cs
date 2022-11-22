@@ -32,7 +32,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] TMP_Text damageNumber;
     GameObject healthBar;
     [SerializeField] GameObject damagePopUp;
-    
+    protected bool isHit = false;
+
 
 
     // Start is called before the first frame update
@@ -170,6 +171,12 @@ public class Enemy : MonoBehaviour
             {                
                 Damage(enemyHP);                                
             }           
+        }
+
+        BaseWeapon baseWeapon =collision.gameObject.GetComponent<BaseWeapon>();
+        if (baseWeapon)
+        {
+            isHit = true;
         }
     }
 
