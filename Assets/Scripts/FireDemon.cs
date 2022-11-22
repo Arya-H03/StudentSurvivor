@@ -15,6 +15,7 @@ public class FireDemon : MonoBehaviour
     public bool isTrack = true;
     bool isInvincible;
     [SerializeField] BossMelee bossMelee;
+    [SerializeField] GameObject fireHand;
     //[SerializeField] GameObject swordWall;
     //[SerializeField] GameObject spear;
     //[SerializeField] float waitTime = 5;
@@ -42,6 +43,7 @@ public class FireDemon : MonoBehaviour
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(BossCameraCoroutine());
+        StartCoroutine(FireHand());
         //StartCoroutine(SwordWall());
         //StartCoroutine(SpearSpawn());
     }
@@ -162,6 +164,14 @@ public class FireDemon : MonoBehaviour
         yield return new WaitForSeconds(1f);
         spriteRenderer.color = Color.white;
         isInvincible = false;
+
+    }
+
+    IEnumerator FireHand()
+    {
+        
+        yield return new WaitForSeconds(6f);
+        Instantiate(fireHand, transform.position, Quaternion.identity);
 
     }
 
