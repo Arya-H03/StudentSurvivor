@@ -124,8 +124,8 @@ public class RangerArrow : BaseWeapon
             }
             double radY = SpawnAngel * (Math.PI/180);
             float directionY = (float)Math.Tan(radY)/* * directionX*/;
-            Debug.Log(directionY);
-            Debug.Log(directionX);
+            //Debug.Log(directionY);
+            //Debug.Log(directionX);
 
             transform.position += new Vector3(directionX, directionY, 0) * Time.deltaTime * 10f;
             transform.localScale = new Vector3(directionX, 1, 1);

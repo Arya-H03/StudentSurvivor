@@ -203,6 +203,21 @@ public class FireDemon : MonoBehaviour
             Time.timeScale = 1;
         }
 
+        if (PlayerCharacterManager.isWitch == true)
+        {
+            Time.timeScale = 0;
+            Camera.main.GetComponent<PlayerCamera>().targetWitch = transform;
+            Camera.main.orthographicSize = 4;
+
+            yield return new WaitForSecondsRealtime(4f);
+
+            Camera.main.GetComponent<PlayerCamera>().targetWitch = player.transform;
+            Camera.main.orthographicSize = 5;
+            yield return new WaitForSecondsRealtime(2f);
+
+            Time.timeScale = 1;
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

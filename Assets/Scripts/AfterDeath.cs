@@ -26,7 +26,7 @@ public class AfterDeath : MonoBehaviour
     // Start is called before the first frame update
     public void onRetryButtonClick()
     {        
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("CastleLevel");
         RestRunInfo();
     }
 

@@ -78,7 +78,7 @@ public class TitleManager : MonoBehaviour
 
     public void onStartButtonClick()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("CastleLevel");
     }
     public void onUpgradeButtonClick()
     {

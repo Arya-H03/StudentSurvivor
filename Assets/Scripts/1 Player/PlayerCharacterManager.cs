@@ -29,13 +29,19 @@ public class PlayerCharacterManager : MonoBehaviour
 
     public void OnClickChooseRanger()
     {
-        isRanger = true;
-        isKnight = false;
-        isWitch = false;    
-        rangerButton.interactable = false;
-        knightButton.interactable = true;
-        witchButton.interactable = true;
+        if (TitleManager.saveData.goldCoins >= 200)
+        {
 
+            isRanger = true;
+            isKnight = false;
+            isWitch = false;
+            rangerButton.interactable = false;
+            knightButton.interactable = true;
+            witchButton.interactable = true;
+            TitleManager.saveData.goldCoins = TitleManager.saveData.goldCoins - 200;
+           
+        }
+      
     }
 
     public void OnClickChooseKnight()
@@ -51,13 +57,20 @@ public class PlayerCharacterManager : MonoBehaviour
 
     public void OnClickChooseWitch()
     {
-        isWitch = true;
-        isRanger = false;
-        isKnight = false;
-        witchButton.interactable = false;
-        knightButton.interactable = true;
-        rangerButton.interactable = true;
+        
 
+        if (TitleManager.saveData.goldCoins >= 200)
+        {
+
+            isWitch = true;
+            isRanger = false;
+            isKnight = false;
+            witchButton.interactable = false;
+            knightButton.interactable = true;
+            rangerButton.interactable = true;
+            TitleManager.saveData.goldCoins = TitleManager.saveData.goldCoins - 200;
+
+        }
     }
 
 }

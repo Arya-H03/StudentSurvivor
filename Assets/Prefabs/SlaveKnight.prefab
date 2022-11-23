@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHitBoxActive: 0
+  damage: 0
 --- !u!50 &1579681766
 Rigidbody2D:
   serializedVersion: 4
@@ -272,7 +273,7 @@ MonoBehaviour:
   goldCoin: {fileID: 4787718304394093406, guid: 1e5188ef6d03f4d48b4b63fefe9dbd31, type: 3}
   crystal: {fileID: 1294660074309874459, guid: ec523b6ab59a33845a2b2359b914a892, type: 3}
   speed: 1
-  bossMaxHP: 100
+  bossMaxHP: 3
   bossHP: 0
   isTrack: 1
   slaveKnightSword: {fileID: 1579681762}
@@ -417,6 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slaveKnight: {fileID: 1678785038399816079}
+  fireDemon: {fileID: 0}
   foreground: {fileID: 1678785039300917430}
 --- !u!1 &1678785039087582864
 GameObject:

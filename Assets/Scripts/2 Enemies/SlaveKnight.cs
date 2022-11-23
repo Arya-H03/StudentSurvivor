@@ -2,15 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Windows;
 using Debug = UnityEngine.Debug;
+using Random = UnityEngine.Random;
 
 public class SlaveKnight : MonoBehaviour
 {
     GameObject player;
     [SerializeField] GoldCoin goldCoin;
+    GameObject obelisk;
     public Crystal crystal;
     [SerializeField] float speed = 1f;
     Animator animator;
@@ -29,7 +30,7 @@ public class SlaveKnight : MonoBehaviour
     [SerializeField] GameObject spear;
     [SerializeField] float waitTime = 5;
     int numberOfSword = 3;
-
+    Vector3 obeliskSpawnPos;
     private int shoot1= 1;
     private int shoot2= 1;
     enum SlaveKnightState
@@ -50,9 +51,12 @@ public class SlaveKnight : MonoBehaviour
 
         animator = GetComponent<Animator>();    
         player = GameObject.FindGameObjectWithTag("Player");
+        obelisk = GameObject.FindGameObjectWithTag("Obelisk");
         StartCoroutine(BossCameraCoroutine());
         StartCoroutine(SwordWall());
         StartCoroutine(SpearSpawn());
+
+        
     }
 
     void Update()
@@ -125,6 +129,7 @@ public class SlaveKnight : MonoBehaviour
             numberOfSword = 5;
         }
 
+        
     }
 
     internal void DamageBoss(float damageValue)
@@ -138,12 +143,13 @@ public class SlaveKnight : MonoBehaviour
             bossHP -= damageValue;
             if (bossHP <= 0)
             {
-
-                for(int i=0; i<50; i++)
+                ActivateObelisk();
+                for (int i=0; i<50; i++)
                 {
                     //Vector3 spawnPosition = Random.insideUnitCircle.normalized * 2f;
                     //spawnPosition += transform.position;
                     Instantiate(goldCoin, transform.position, Quaternion.identity);
+                   
                 }
 
                 Destroy(gameObject);
@@ -223,6 +229,21 @@ public class SlaveKnight : MonoBehaviour
             yield return new WaitForSecondsRealtime(4f);
 
             Camera.main.GetComponent<PlayerCamera>().targetRanger = player.transform;
+            Camera.main.orthographicSize = 5;
+            yield return new WaitForSecondsRealtime(2f);
+
+            Time.timeScale = 1;
+        }
+
+        if (PlayerCharacterManager.isWitch == true)
+        {
+            Time.timeScale = 0;
+            Camera.main.GetComponent<PlayerCamera>().targetWitch = transform;
+            Camera.main.orthographicSize = 4;
+
+            yield return new WaitForSecondsRealtime(4f);
+
+            Camera.main.GetComponent<PlayerCamera>().targetWitch = player.transform;
             Camera.main.orthographicSize = 5;
             yield return new WaitForSecondsRealtime(2f);
 
@@ -365,4 +386,9 @@ public class SlaveKnight : MonoBehaviour
         return Mathf.Rad2Deg * radians;
     }
 
+    private void ActivateObelisk()
+    {
+        obelisk.GetComponent<EndLevelObelisk>().ActivateObelisk();
+        
+    }
 }

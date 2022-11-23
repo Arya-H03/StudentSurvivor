@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
-
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -323,5 +322,16 @@ public class GameManager : MonoBehaviour
 
 
         }
+    }
+
+    public void OnClickMainMenu()
+    {
+        SceneManager.LoadScene("Title");
+        Time.timeScale = 1;
+    }
+
+    public void OnClickNextLevel() { 
+        SceneManager.LoadScene("Level2");
+        Time.timeScale = 1;
     }
 }

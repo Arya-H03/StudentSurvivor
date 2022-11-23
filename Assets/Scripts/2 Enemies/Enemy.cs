@@ -73,9 +73,9 @@ public class Enemy : MonoBehaviour
                 Instantiate(bloodSplash, transform.position, Quaternion.identity);
                 GameManager.isEnemyDeadSound = true;
                 Instantiate(crystal, transform.position, Quaternion.identity);
-                int randomIndex = UnityEngine.Random.Range(0, 201);
+                int randomIndex = UnityEngine.Random.Range(0, 100);
 
-                if (randomIndex >= 0 && randomIndex <= 10 )
+                if (randomIndex >= 0 && randomIndex <= 5 )
                 {
 
                     Vector3 smallHpPot = new Vector3(transform.position.x + 0.1f, transform.position.y + 0.1f, transform.position.z);
@@ -83,20 +83,20 @@ public class Enemy : MonoBehaviour
                 }
 
                
-                if (randomIndex >= 11 && randomIndex <= 15)
+                if (randomIndex >= 6 && randomIndex <= 8)
                 {
                     Vector3 largeHpPot = new Vector3(transform.position.x + 0.2f, transform.position.y + 0.2f, transform.position.z);
                     Instantiate(largehealthPot, largeHpPot, Quaternion.identity);
                 }
 
                
-                if (randomIndex >= 16 && randomIndex <= 25)
+                if (randomIndex >= 9 && randomIndex <= 13)
                 {
                     Vector3 magnetPot = new Vector3(transform.position.x + 0.3f, transform.position.y + 0.3f, transform.position.z);
                     Instantiate(magnet, magnetPot, Quaternion.identity);
                 }
                 //16 20
-                if (randomIndex >= 16 && randomIndex <= 20)
+                if (randomIndex >= 14 && randomIndex <= 23)
                 {
                     Vector3 goldcoin = new Vector3(transform.position.x + 0.4f, transform.position.y + 0.4f, transform.position.z);
                     Instantiate(goldCoin, goldcoin, Quaternion.identity);
@@ -117,11 +117,11 @@ public class Enemy : MonoBehaviour
                 //    }
                 //}
 
-                if (randomIndex >= 40 && randomIndex <= 43)
-                {
-                    Vector3 damageBoostPotPo = new Vector3(transform.position.x + 0.6f, transform.position.y + 0.6f, transform.position.z);
-                    Instantiate(damageBoostPot, damageBoostPotPo, Quaternion.identity);
-                }
+                //if (randomIndex >= 40 && randomIndex <= 43)
+                //{
+                //    Vector3 damageBoostPotPo = new Vector3(transform.position.x + 0.6f, transform.position.y + 0.6f, transform.position.z);
+                //    Instantiate(damageBoostPot, damageBoostPotPo, Quaternion.identity);
+                //}
 
                 this.enabled = false;
                 spriteRenderer.enabled = false;
