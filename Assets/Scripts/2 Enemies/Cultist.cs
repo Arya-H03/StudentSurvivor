@@ -45,7 +45,11 @@ public class Cultist : Enemy
                 break;
             case CultistState.Chasing:
                 base.Update();
-                float distance = Vector3.Distance(transform.position, player.transform.position);
+                float distance = 0;
+                if (player)
+                {
+                    distance = Vector3.Distance(transform.position, player.transform.position);
+                }
                 animator.SetBool("isWalking", true);
                 if (distance <= 0.5f)
                 {

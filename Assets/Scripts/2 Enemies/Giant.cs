@@ -54,7 +54,11 @@ public class Giant : Enemy
                 break;
             case GiantState.Chasing:
                 base.Update();
-                float distance = Vector3.Distance(transform.position, player.transform.position);
+                float distance = 0;
+                if (player)
+                {
+                    distance = Vector3.Distance(transform.position, player.transform.position);
+                }
                 animator.SetBool("isWalking", true);
                 if(distance <= 4f)
                 {

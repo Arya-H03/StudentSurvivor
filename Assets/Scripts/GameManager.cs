@@ -8,17 +8,17 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject cultist;
-    [SerializeField] GameObject runner;
+    //[SerializeField] GameObject runner;
     [SerializeField] GameObject skeleton;
     [SerializeField] GameObject crow;
-   
+    [SerializeField] GameObject bandit;   
     [SerializeField] GameObject slime;
     [SerializeField] GameObject giant;
     [SerializeField] GameObject nightborne;
     [SerializeField] GameObject slaveKnight;
     [SerializeField] AudioSource enemyDeathSound;
     [SerializeField] AudioSource levelUpSound;
-    [SerializeField] GameObject darkWizard;
+    //[SerializeField] GameObject darkWizard;
     [SerializeField] GameObject playerKnight;
     [SerializeField] GameObject playerRanger;
     [SerializeField] GameObject playerWitch;
@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
         
 
 
-        if(minutes == 2 && isBossActive == false)
+        if(minutes == 4 && isBossActive == false)
         {
             SpawnBoss(slaveKnight, 1);
             
@@ -131,98 +131,84 @@ public class GameManager : MonoBehaviour
     private IEnumerator SpawnEnemyCoroutine()
     {
 
-        while (true)
+        while (minutes <= 4)
         {
             yield return new WaitForSeconds(2f);
-            SpawnEnemies(cultist, 3 * spawnCounter++, true);
-            yield return new WaitForSeconds(6);
-            SpawnEnemies(skeleton, 3 * spawnCounter++, true);
-            yield return new WaitForSeconds(6);
-            SpawnEnemies(cultist, 4, false);
-            yield return new WaitForSeconds(5);
-            SpawnEnemies(skeleton, 4, false);
-            yield return new WaitForSeconds(4f);
-            SpawnEnemies(cultist, 2 * spawnCounter++, true);
-            yield return new WaitForSeconds(4f);
-            SpawnEnemies(skeleton, 2 * spawnCounter++, true);
-            yield return new WaitForSeconds(2f);
-            SpawnEnemies(slime, 6, false);
-            yield return new WaitForSeconds(4f);
-            SpawnEnemies(cultist, 5 * spawnCounter++, true);
-            yield return new WaitForSeconds(4f);
-            SpawnEnemies(skeleton, 5 * spawnCounter++, true);
-            yield return new WaitForSeconds(4f);
-            SpawnEnemies(darkWizard, 10, true);
+            SpawnEnemies(cultist, 3 * spawnCounter, true);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(slime, 10, false);
-            yield return new WaitForSeconds(4f);
-            SpawnEnemies(cultist, 15, true);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(skeleton, 15, true);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(slime, 5 * spawnCounter++, true);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(darkWizard, 5 * spawnCounter++, true);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(runner, 10, true);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(skeleton, 14, false);
-            yield return new WaitForSeconds(3f);
-            SpawnEnemies(runner, 12, false);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(giant, 3 * spawnCounter++, false);
-            yield return new WaitForSeconds(3f);
-            SpawnEnemies(cultist, 10, true);
-            yield return new WaitForSeconds(3f);
-            SpawnEnemies(skeleton, 20, true);
-            yield return new WaitForSeconds(3f);
-            SpawnEnemies(slime, 5 * spawnCounter++, false);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(giant, 2 * spawnCounter, true);
-            yield return new WaitForSeconds(3f);
-            SpawnEnemies(darkWizard, 5 * spawnCounter++, true);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(slime, 12, true);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(cultist, 10, false);
-            yield return new WaitForSeconds(3f);
-            SpawnEnemies(giant, 3 * spawnCounter++, false);
-            yield return new WaitForSeconds(3f);
             SpawnEnemies(skeleton, 5 * spawnCounter, true);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(nightborne, 10, false);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(giant, 5 * spawnCounter++, true);
+            yield return new WaitForSeconds(2f);
+            SpawnEnemies(skeleton, 10, false);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(cultist, 12, false);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(darkWizard, 20, true);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(skeleton, 14, false);
-            SpawnEnemies(runner, 8, true);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(nightborne, 8 * spawnCounter++, true);
-            yield return new WaitForSeconds(5f);
-            SpawnEnemies(giant, 10, true);
+            SpawnEnemies(cultist, 5 * spawnCounter, true);
             yield return new WaitForSeconds(3f);
-
+            SpawnEnemies(skeleton, 7 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(slime, 10 * spawnCounter, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 12 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(giant, 3 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 15 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(slime, 15 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            //35
+            SpawnEnemies(giant, 5 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(bandit, 15, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 20 * spawnCounter, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(bandit, 15 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(slime, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(cultist, 20 , false);
+            yield return new WaitForSeconds(3f);
             SpawnEnemies(slime, 20, false);
             yield return new WaitForSeconds(5f);
-
-            SpawnEnemies(cultist, 30, true);
+            SpawnEnemies(giant, 12 * spawnCounter, true);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(skeleton, 5 * spawnCounter++, true);
-
+            SpawnEnemies(skeleton, 15 * spawnCounter, true);
             yield return new WaitForSeconds(5f);
-
-            SpawnEnemies(giant, 12, true);
+            //77
+            SpawnEnemies(nightborne, 10 * spawnCounter, true);
             yield return new WaitForSeconds(4f);
+            SpawnEnemies(skeleton, 20, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 20, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(slime, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(nightborne, 12 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(bandit, 18 * spawnCounter, true);
+            yield return new WaitForSeconds(6f);
+            SpawnEnemies(giant, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(2f);
+            SpawnEnemies(bandit, 20, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(nightborne, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 25 * spawnCounter, true);
+            //110
+            spawnCounter++;
+
+
+
+
 
             isBossActive = false;
         }
         
 
-        //120
+        
        
 
 
@@ -234,7 +220,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < numberOfEnemies; i++)
         {
-            int dice = Random.Range(-8, 9);
+            int dice = Random.Range(-9, 10);
 
             Vector3 spawnPosition = Random.insideUnitCircle.normalized * 10;
 

@@ -146,7 +146,7 @@ public class PlayerRanger : Player
         while (true)
                 {
                 
-                yield return new WaitForSeconds(6);
+                yield return new WaitForSeconds(4);
                 if (rangerBeams.isBeamActive == true)
                     {
                         animator.SetTrigger("SpecialAttack");
@@ -166,7 +166,7 @@ public class PlayerRanger : Player
         while (true)
         {
            
-            yield return new WaitForSeconds(9);
+            yield return new WaitForSeconds(7);
             if (rainOfArrows.isRainOfArrowActive == true)
             {
 

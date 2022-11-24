@@ -26,7 +26,7 @@ public class RangerSpearSpawner : BaseWeapon
         while (true)
         {
             yield return new WaitForSeconds(3f);
-            for (int i = 0; i < level; i++)
+            for (int i = 0; i < level ; i++)
             {              
                 float angle = Random.Range(0, 360);
                 Instantiate(spear, transform.position, Quaternion.Euler(0, 0, angle));

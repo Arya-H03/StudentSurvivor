@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 516402589}
   - component: {fileID: 516402588}
   m_Layer: 5
-  m_Name: Runner
+  m_Name: Bandit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -720,7 +720,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1189315630, guid: cd862921ac6ed2a46a7a796d629fe4be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60b77d5419ff35f43b0aa6f35a0f5fd3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1459,7 +1459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &942478645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2673,6 +2673,7 @@ MonoBehaviour:
   slime: {fileID: 2023364993}
   giant: {fileID: 907678755}
   nightBorne: {fileID: 14954212}
+  bandit: {fileID: 1190249060}
 --- !u!1 &1876547783
 GameObject:
   m_ObjectHideFlags: 0

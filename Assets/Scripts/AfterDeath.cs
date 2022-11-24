@@ -14,6 +14,7 @@ public class AfterDeath : MonoBehaviour
     [SerializeField] TMP_Text slime; 
     [SerializeField] TMP_Text giant; 
     [SerializeField] TMP_Text nightBorne; 
+    [SerializeField] TMP_Text bandit; 
 
     public static int goldGained;
     public static int EXPgained;
@@ -22,6 +23,7 @@ public class AfterDeath : MonoBehaviour
     public static int slimeKilled;
     public static int giantKilled;
     public static int nightBorneKilled;
+    public static int banditKilled;
    
     // Start is called before the first frame update
     public void onRetryButtonClick()
@@ -67,6 +69,7 @@ public class AfterDeath : MonoBehaviour
         slimeKilled = 0;
         giantKilled = 0;
         nightBorneKilled = 0;
+        banditKilled = 0;
     }
 
     private void SetRunInfo()
@@ -78,5 +81,6 @@ public class AfterDeath : MonoBehaviour
         slime.text = slimeKilled.ToString();
         giant.text = giantKilled.ToString();
         nightBorne.text = nightBorneKilled.ToString();
+        bandit.text = banditKilled.ToString();
     }
 }
