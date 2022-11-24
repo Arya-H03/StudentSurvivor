@@ -17,7 +17,7 @@ public class Giant : Enemy
     }
 
     GiantState giantState = GiantState.Idle;
-    float waitTimer = 3f;
+    float waitTimer = 1f;
    
     protected override void Start()
     {

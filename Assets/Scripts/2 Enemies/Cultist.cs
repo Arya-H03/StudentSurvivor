@@ -15,7 +15,7 @@ public class Cultist : Enemy
     }
 
     CultistState cultistState = CultistState.Idle;
-    float waitTimer = 0f;
+    float waitTimer = 1f;
 
     protected override void Start()
     {
@@ -47,7 +47,7 @@ public class Cultist : Enemy
                 base.Update();
                 float distance = Vector3.Distance(transform.position, player.transform.position);
                 animator.SetBool("isWalking", true);
-                if (distance <= 1f)
+                if (distance <= 0.5f)
                 {
                     cultistState = CultistState.Attacking;
                 }

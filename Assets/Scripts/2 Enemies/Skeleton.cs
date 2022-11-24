@@ -13,7 +13,7 @@ public class Skeleton : Enemy
     }
 
     SkeletonState skeletonState = SkeletonState.Idle;
-    float waitTimer = 0f;
+    float waitTimer = 1f;
 
     protected override void Start()
     {
@@ -44,7 +44,7 @@ public class Skeleton : Enemy
                 base.Update();
                 float distance = Vector3.Distance(transform.position, player.transform.position);
                 animator.SetBool("isWalking", true);
-                if (distance <= 2f)
+                if (distance <= 0.5f)
                 {
                     skeletonState = SkeletonState.Attacking;
                 }
@@ -53,6 +53,7 @@ public class Skeleton : Enemy
                 base.Update();
                 animator.SetBool("isWalking", false);
                 animator.SetTrigger("Attack");
+                skeletonState = SkeletonState.Idle;
                 waitTimer = 1f;
                 break;
             case SkeletonState.Hit:

@@ -52,13 +52,19 @@ public class GameManager : MonoBehaviour
         if(PlayerCharacterManager.isKnight == true)
         {
             playerKnight.SetActive(true);
+            playerRanger.SetActive(false);
+            playerWitch.SetActive(false);
         }
         if(PlayerCharacterManager.isRanger == true)
         {
-           playerRanger.SetActive(true);
+            playerKnight.SetActive(false);
+            playerRanger.SetActive(true);
+            playerWitch.SetActive(false);
         }
         if (PlayerCharacterManager.isWitch == true)
         {
+            playerKnight.SetActive(false);
+            playerRanger.SetActive(false);
             playerWitch.SetActive(true);
         }
 

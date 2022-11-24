@@ -14,7 +14,7 @@ public class EndLevelObelisk : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        StartCoroutine(SpawnCameraCoroutine());
+        //StartCoroutine(SpawnCameraCoroutine());
 
         boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
