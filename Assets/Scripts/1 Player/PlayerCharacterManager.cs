@@ -14,7 +14,6 @@ public class PlayerCharacterManager : MonoBehaviour
     [SerializeField]  Button witchButton;
     
 
-
     // Start is called before the first frame update
     void Start()
     {

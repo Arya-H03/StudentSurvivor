@@ -13,7 +13,7 @@ public class EndLevelObelisk : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+       
         //StartCoroutine(SpawnCameraCoroutine());
 
         boxCollider2D = gameObject.GetComponent<BoxCollider2D>();
@@ -88,6 +88,7 @@ public class EndLevelObelisk : MonoBehaviour
 
     public void ActivateObelisk()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         spriteRenderer.enabled = true;
         boxCollider2D.enabled = true;
         Vector3 spawnPos = Random.insideUnitCircle.normalized * 5;

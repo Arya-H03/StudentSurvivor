@@ -5,7 +5,7 @@ using UnityEngine;
 public class BaseWeapon : MonoBehaviour
 {
     public int level = 1;
-    public static float damage=1;
+    public float damage = 1;
 
     public void LevelUp(float addDamage)
     {

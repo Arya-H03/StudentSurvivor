@@ -6,7 +6,6 @@ using UnityEngine;
 public class RangerArrow : BaseWeapon
 {
     [SerializeField] int arrowHp = 1;
-    [SerializeField] float damage = 1;
     int numberOfPoisonTicks = 3;
     float poisonDotDamage = 0.5f;
     public bool isPoisonArrow = false;

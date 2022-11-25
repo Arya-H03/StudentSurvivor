@@ -5,93 +5,76 @@ using UnityEngine.UI;
 
 public class CloneAttack : BaseWeapon
 {
-    SpriteRenderer spriteRenderer;
-    BoxCollider2D boxCollider;
-    GameObject enemy;
     GameObject player;
+    [SerializeField] KnightSword cloneSword;
+    Animator animator;
 
-    
+    enum CloneState
+    {
+        Idle = 0,
+        Walking = 1,
+        Attacking = 2,
+ 
+    }
+
+    CloneState cloneState = CloneState.Idle;
+    float waitTimer = 1f;
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //enemy = GameObject.FindGameObjectWithTag("Enemy");
         player = GameObject.FindGameObjectWithTag("Player");
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        boxCollider = GetComponent<BoxCollider2D>();
         StartCoroutine(CloneSpawnCoroutine());
-
-
+        animator = GetComponent<Animator>();
     }
 
     IEnumerator CloneSpawnCoroutine()
-    {
-
-
-        while (true)
-        {
-
-            boxCollider.enabled = true;
-            spriteRenderer.enabled = true;
-            yield return new WaitForSeconds(2);
-
-            boxCollider.enabled = false;
-            spriteRenderer.enabled = false;
-            //yield return new WaitForSeconds(1f);
-
-        }
-
-
-
-
-
-
-
-
+    {       
+            yield return new WaitForSeconds(6);
+        Destroy(gameObject);
     }
 
     void Update()
     {
-        
-            enemy = GameObject.FindGameObjectWithTag("Enemy");
-        
-       
-        player = GameObject.FindGameObjectWithTag("Player");
 
 
-        if (enemy != null)
+        switch (cloneState)
         {
-            //Vector3 destination = player.transform.position;
-            //Vector3 source = enemy.transform.position;
+            case CloneState.Idle:
+                GoToEnemy();
+                waitTimer -= Time.deltaTime;
+                if (waitTimer <= 0)
+                {
+                    cloneState = CloneState.Walking;
+                }
 
-            ////var dx = source.x - destination.x;
-            ////var dy = source.y - destination.y;
-
-
-
-
-            //if (Mathf.Abs(dx) <= 10 && Mathf.Abs(dy) <= 10)
-            //{
-            //transform.position = enemy.transform.position;
-            //}
-            Vector3 destination = enemy.transform.position;
-            Vector3 source = transform.position;
-            Vector3 direction = destination - source;
-            int scaleX = 1;
-
-
-            direction.Normalize();
-            transform.position = direction * Time.deltaTime * 3;
-
-
-
-            if (direction.x < 0)
-            {
-                scaleX = -1;
-            }
-            transform.localScale = new Vector3(scaleX, 1, 1);
+                break;
+            case CloneState.Walking:
+                GoToEnemy();
+                animator.SetBool("isRunning", true);
+                float distance = 0;
+                if (FindEnemy())
+                {
+                    distance = Vector3.Distance(transform.position, FindEnemy().transform.position);
+                }
+                
+                if (distance <= 1f)
+                {
+                    cloneState = CloneState.Attacking;
+                }
+                break;
+            case CloneState.Attacking:
+                GoToEnemy();
+                animator.SetBool("isRunning", false);
+                animator.SetTrigger("Attack");
+                cloneState = CloneState.Idle;
+                waitTimer = 1f;
+                break;
+            default:
+                break;
         }
 
     }
@@ -111,5 +94,66 @@ public class CloneAttack : BaseWeapon
         }
     }
 
-    
+    private Enemy FindEnemy()
+    {
+        float distanceToClosestEnemy = Mathf.Infinity;
+        Enemy closestEnemy = null;
+        Enemy[] enemy = GameObject.FindObjectsOfType<Enemy>();
+
+        foreach (Enemy currentEnemy in enemy)
+        {
+            float distanceToGoldCoin = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
+            if (distanceToGoldCoin < distanceToClosestEnemy)
+            {
+                distanceToClosestEnemy = distanceToGoldCoin;
+                closestEnemy = currentEnemy;
+            }
+        }
+        return closestEnemy;
+
+    }
+
+    public void SetSwordHitBoxActive()
+    {
+        cloneSword.isHitBoxActive = true;
+    }
+    public void SetSwordHitBoxDeActive()
+    {
+        cloneSword.isHitBoxActive = false;
+    }
+
+    private void GoToEnemy()
+    {
+
+        Vector3 targetPosition = new Vector3(0, 0, 0);
+
+        FindEnemy();
+        if (FindEnemy() != null)
+        {
+            targetPosition = FindEnemy().transform.position;
+        }
+
+        if (FindEnemy() == null && player != null)
+        {
+            targetPosition = player.transform.position + new Vector3(1, 1, 0);
+        }
+        Vector3 destination = targetPosition;
+        Vector3 source = transform.position;
+        Vector3 direction;
+        direction = destination - source;
+        direction.Normalize();
+        transform.position += direction * Time.deltaTime * 2.5f;
+
+        int scaleX = 1;
+        if (targetPosition.x < 0)
+        {
+            scaleX = -1;
+        }
+
+        if (targetPosition.x >= 0)
+        {
+            scaleX = 1;
+        }
+        transform.localScale = new Vector3(-scaleX, 1, 1);
+    }
 }

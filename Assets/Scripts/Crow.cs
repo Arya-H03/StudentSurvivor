@@ -71,26 +71,9 @@ public class Crow : MonoBehaviour
             {
                 distanceToClosestGoldCoin = distanceToGoldCoin;
                 closestGoldCoin = currentGoldCoin;
-            }
-            
-        }
-        
+            }            
+        }       
         return closestGoldCoin;
         
-        //    for (int i = 0; i < goldCoins.Length; i++)
-        //    {
-        //    //while (goldCoins[i] != null)
-        //    //{
-        //    if(goldCoins[i] != null)
-        //    {
-        //        transform.position += goldCoins[i].transform.position * Time.deltaTime * 5;
-
-        //    }
-        //    //}
-
-        //}
-
-
-
     }
 }

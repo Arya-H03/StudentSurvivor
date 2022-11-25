@@ -7,23 +7,21 @@ public class CloneSpawner : BaseWeapon
 {
 
     [SerializeField] GameObject clone;
+    GameObject player;
     //[SerializeField] Image image;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawncloneCoroutine());
-
-        //image = GetComponent<Image>();
+        player = GameObject.FindGameObjectWithTag("Player");
+ 
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (gameObject != null)
-        //{
-        //    image.color = Color.white;
-        //}
+       
     }
 
     IEnumerator SpawncloneCoroutine()
@@ -34,9 +32,9 @@ public class CloneSpawner : BaseWeapon
             {
 
 
-
-                Instantiate(clone, clone.transform.position, Quaternion.identity);
-                yield return new WaitForSeconds(3);
+                yield return new WaitForSeconds(1);
+                Instantiate(clone, player.transform.position, Quaternion.identity);
+                yield return new WaitForSeconds(8);
 
 
 

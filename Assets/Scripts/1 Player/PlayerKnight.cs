@@ -20,12 +20,7 @@ public class PlayerKnight : Player
 
     void Attack()
     {
-        animator.SetTrigger("Attack");
-        //Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackpoint.position, attachRange, enemyLayer);
-        //foreach (Collider2D enemy in hitEnemies)
-        //{
-        //    enemy.GetComponent<Enemy>().Damage(swordDamage);
-        //}
+        animator.SetTrigger("Attack");      
     }
 
     IEnumerator PlayerAttacks()
@@ -35,9 +30,6 @@ public class PlayerKnight : Player
             Attack();
             yield return new WaitForSeconds(2.5f);
         }
-        //Attack();
-        //isAttacking = false;       
-        //isAttacking = true;
     }
 
     public void SetSwordHitBoxActive()

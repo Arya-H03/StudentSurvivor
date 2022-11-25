@@ -890,13 +890,11 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   enemyTypes:
   - {fileID: 1747612206, guid: 51f65e6edc0aa9148a4dc8cbda5f71f6, type: 3}
-  - {fileID: 5573810575291592951, guid: 9fd643e593f13d9458ba61fa51888672, type: 3}
-  - {fileID: 8654820848533354040, guid: e39b1d84ad7cbc145bc476587203085d, type: 3}
-  - {fileID: 8374421841131044229, guid: 3d76a927b6b41c747913e1c927208409, type: 3}
-  - {fileID: 5781512101170217318, guid: 9612218d915921e4e84c0e3411592ba8, type: 3}
   - {fileID: 799732703, guid: 3965a5d9d5b79f844b518a7fabf8f07b, type: 3}
-  - {fileID: 8128220403403447642, guid: 08517826595d26149a816910cc637b6b, type: 3}
-  - {fileID: 529070317685322635, guid: 178a4f96813893b4ea071c51165aa937, type: 3}
+  - {fileID: 2882130713686950457, guid: 08517826595d26149a816910cc637b6b, type: 3}
+  - {fileID: 8374421841131044229, guid: 3d76a927b6b41c747913e1c927208409, type: 3}
+  - {fileID: 3541168952838207138, guid: cbe359f8cb8d7a44e97769254e72be2d, type: 3}
+  - {fileID: 5548786246042429427, guid: 9612218d915921e4e84c0e3411592ba8, type: 3}
   expNumber: {fileID: 0}
   hpNumber: {fileID: 0}
   levelUpMenu: {fileID: 0}
@@ -921,9 +919,11 @@ MonoBehaviour:
   playerFlame: 0
   animator: {fileID: 0}
   playerHP: 0
-  playerMaxHP: 6
+  playerMaxHP: 12
   speed: 4
   playerCamera: {fileID: 0}
+  goldGainedByPlayer: 0
+  EXPgained: 0
   knightSword: {fileID: 1648405458}
 --- !u!1 &9172016477930822398
 GameObject:
@@ -1071,3 +1071,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
+  knightSword: {fileID: 0}

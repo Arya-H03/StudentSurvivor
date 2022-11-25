@@ -679,12 +679,12 @@ public class Player : MonoBehaviour
 
     IEnumerator PlayerDamageBoosted()
     {       
-           BaseWeapon.damage = BaseWeapon.damage + 2f;
-        material.SetFloat("_IsDamageBuff", 1);
+    //       BaseWeapon.damage = BaseWeapon.damage + 2f;
+    //    material.SetFloat("_IsDamageBuff", 1);
            yield return new WaitForSeconds(3);
-        material.SetFloat("_IsDamageBuff", 0);
-        isDamageBoost = false;
-           BaseWeapon.damage = BaseWeapon.damage - 2f;        
+        //material.SetFloat("_IsDamageBuff", 0);
+        //isDamageBoost = false;
+        //   BaseWeapon.damage = BaseWeapon.damage - 2f;        
     }
 
     private void PlayerDamageBoost()
