@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(TitleManager.saveData.isLevel2Unlocked);
+       
         if(TitleManager.saveData.isLevel2Unlocked == true)
         {
             levelImage[0].color = Color.white;  

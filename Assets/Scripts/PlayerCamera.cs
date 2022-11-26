@@ -65,8 +65,8 @@ public class PlayerCamera : MonoBehaviour
                 float playerY = targetKnight.transform.position.y;
                 float cameraZ = transform.position.z;
                 var targetPosition = new Vector3(playerX, playerY, cameraZ);
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.unscaledDeltaTime);
-                //transform.position = targetPosition;
+                //transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.unscaledDeltaTime);
+                transform.position = targetPosition;
             }
         }
 
@@ -94,8 +94,8 @@ public class PlayerCamera : MonoBehaviour
                 float playerY = targetWitch.transform.position.y;
                 float cameraZ = transform.position.z;
                 var targetPosition = new Vector3(playerX, playerY, cameraZ);
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.unscaledDeltaTime);
-                //transform.position = targetPosition;
+                //transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.unscaledDeltaTime);
+                transform.position = targetPosition;
             }
         }
 
