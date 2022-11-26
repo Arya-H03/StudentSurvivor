@@ -36,10 +36,9 @@ public class PlayerRanger : Player
     // Update is called once per frame
     protected override void Update()
     {
-        if(isDead == false)
-        {
+       
             base.Update();
-        }
+        
         
     }
 

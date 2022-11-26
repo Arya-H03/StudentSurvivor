@@ -122,11 +122,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1391211854, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
---- !u!1 &3032711941567173649 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3656490458099931072, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
-  m_PrefabInstance: {fileID: 1776720370696750033}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7319994271727583722 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9024639443312771643, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
@@ -179,5 +174,4 @@ MonoBehaviour:
   enemyMaxHP: 3
   enemyHP: 0
   isTrack: 1
-  damageNumber: {fileID: 0}
-  damagePopUp: {fileID: 3032711941567173649}
+  damagePopUp: {fileID: 428124998287652800, guid: ff7e47dbca07c3e418f992cc13669c80, type: 3}

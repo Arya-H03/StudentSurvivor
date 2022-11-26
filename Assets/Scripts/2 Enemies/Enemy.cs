@@ -29,7 +29,6 @@ public class Enemy : MonoBehaviour
     protected  int sec;    
     public bool isTrack = true;
     protected bool isInvincible;
-    [SerializeField] TMP_Text damageNumber;
     GameObject healthBar;
     [SerializeField] GameObject damagePopUp;
     protected bool isHit = false;
@@ -63,7 +62,7 @@ public class Enemy : MonoBehaviour
             StartCoroutine(InvincibleFrames());
             enemyHP -= damageValue;
             //StartCoroutine(DamagePopUp(damageValue));
-            //SpawnDamageNumber(damageValue);
+            SpawnDamageNumber(damageValue);
 
 
 
@@ -286,12 +285,12 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    //private void SpawnDamageNumber(float damage)
-    //{
-    //    Vector3 spawnPosition = transform.position + new Vector3(0, 1, 0);
-    //    damagePopUp.GetComponent<DamagePopUp>().damage = damage.ToString();
-    //    Instantiate(damagePopUp, spawnPosition, Quaternion.identity);
-    //}
+    private void SpawnDamageNumber(float damage)
+    {
+        Vector3 spawnPosition = transform.position + new Vector3(0, 1, 0);
+        damagePopUp.GetComponent<DamagePopUp>().damage = damage.ToString();
+        Instantiate(damagePopUp, spawnPosition, Quaternion.identity);
+    }
 
     protected virtual void KillEnemy()
     {

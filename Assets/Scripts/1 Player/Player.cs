@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
     public int playerMaxFlame = 5;
     public int playerFlame = 0;
     public static bool isFlameFull = false;
-    public static float swordDamage = 1;
     public Animator animator;
     public  float playerHP;
     public  float playerMaxHP = 3;
@@ -52,7 +51,6 @@ public class Player : MonoBehaviour
     internal int expToLevel = 5;
     internal int currentLevel;
     public PlayerCamera playerCamera;
-    public static bool isDead = false;
     public int goldGainedByPlayer;
     public int EXPgained;
 
@@ -69,7 +67,7 @@ public class Player : MonoBehaviour
             {
                 Destroy(gameObject);
                 SceneManager.LoadScene("AfterDeath");
-                isDead = false;
+                
 
                 
             }
@@ -696,11 +694,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void PlayerDeath()
-    {
-        Destroy(gameObject);
-        SceneManager.LoadScene("AfterDeath");
-        isDead = false;
-    }
+    //public void PlayerDeath()
+    //{
+    //    Destroy(gameObject);
+    //    SceneManager.LoadScene("AfterDeath");
+    //    isDead = false;
+    //}
 }
 

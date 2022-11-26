@@ -98,17 +98,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1391211854, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
---- !u!114 &4559887472891883173 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1749381066522086116, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
-  m_PrefabInstance: {fileID: 2810516307964765249}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6502353929556043386 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9024639443312771643, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
@@ -161,5 +150,4 @@ MonoBehaviour:
   enemyMaxHP: 2
   enemyHP: 0
   isTrack: 1
-  damageNumber: {fileID: 4559887472891883173}
-  damagePopUp: {fileID: 971884325306607975, guid: 124440d36c317e84eb25c24ef7c68bc2, type: 3}
+  damagePopUp: {fileID: 428124998287652800, guid: ff7e47dbca07c3e418f992cc13669c80, type: 3}

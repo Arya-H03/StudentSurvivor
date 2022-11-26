@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: a16b3ef23697d4349b33f11bfc694be2
   - enabled: 1
-    path: Assets/Scenes/CastleLevel.unity
+    path: Assets/Scenes/Level1.unity
     guid: 52aa223605bfa714292800e590d87f95
   - enabled: 1
     path: Assets/Scenes/AfterDeath.unity
     guid: 8392c9559f13a2b4889065b780e8ac6b
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 33f4c1f9b61dc09429da29ae4bd3d5eb
   m_configObjects: {}

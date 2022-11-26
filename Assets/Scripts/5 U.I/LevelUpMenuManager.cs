@@ -102,8 +102,7 @@ public class LevelUpMenuManager : MonoBehaviour
     {
         //KnightWeapons[3].LevelUp(2);
         lvlText[4].text = "Lvl " + KnightWeapons[3].level.ToString();
-        WitchWeapons[1].LevelUp(1);
-       
+        WitchWeapons[1].LevelUp(1);     
         levelUpMenu.SetActive(false);
         images[4].color = Color.white;
         playerCamera.EndBlur();
@@ -309,7 +308,6 @@ public class LevelUpMenuManager : MonoBehaviour
     public void WitchRaiseSkeleton()
     {
         WitchWeapons[3].LevelUp(1);
-        RaisedSkeleton.duration++;
         levelUpMenu.SetActive(false);
         playerCamera.EndBlur();
         Time.timeScale = 1;

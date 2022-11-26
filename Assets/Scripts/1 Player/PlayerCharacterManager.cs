@@ -12,35 +12,51 @@ public class PlayerCharacterManager : MonoBehaviour
     [SerializeField]  Button rangerButton;
     [SerializeField]  Button knightButton;
     [SerializeField]  Button witchButton;
+    [SerializeField] Image[] characterSelectionImage;
     
 
     // Start is called before the first frame update
     void Start()
     {
         knightButton.interactable = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (TitleManager.saveData.isRangerUnlocked == true)
+        {
+            characterSelectionImage[0].color = Color.white;
+        }
+        else characterSelectionImage[0].color = Color.black;
+
+        if (TitleManager.saveData.isWitchUnlocked == true)
+        {
+            characterSelectionImage[1].color = Color.white;
+        }
+        else characterSelectionImage[1].color = Color.black;
     }
 
     public void OnClickChooseRanger()
     {
-        if (TitleManager.saveData.goldCoins >= 200)
+        if (TitleManager.saveData.goldCoins >= 200 && TitleManager.saveData.isRangerUnlocked == false)
         {
+            TitleManager.saveData.isRangerUnlocked = true;
+            TitleManager.saveData.goldCoins = TitleManager.saveData.goldCoins - 200;
+            
+        }
 
+        if(TitleManager.saveData.isRangerUnlocked == true)
+        {
             isRanger = true;
             isKnight = false;
             isWitch = false;
             rangerButton.interactable = false;
             knightButton.interactable = true;
             witchButton.interactable = true;
-            TitleManager.saveData.goldCoins = TitleManager.saveData.goldCoins - 200;
-           
         }
-      
+
     }
 
     public void OnClickChooseKnight()
@@ -56,19 +72,22 @@ public class PlayerCharacterManager : MonoBehaviour
 
     public void OnClickChooseWitch()
     {
-        
 
-        if (TitleManager.saveData.goldCoins >= 200)
+        if (TitleManager.saveData.goldCoins >= 200 && TitleManager.saveData.isWitchUnlocked == false)
+        {   
+            TitleManager.saveData.isWitchUnlocked = true;
+            TitleManager.saveData.goldCoins = TitleManager.saveData.goldCoins - 200;
+            
+        }
+
+        if (TitleManager.saveData.isWitchUnlocked == true)
         {
-
             isWitch = true;
             isRanger = false;
             isKnight = false;
             witchButton.interactable = false;
             knightButton.interactable = true;
             rangerButton.interactable = true;
-            TitleManager.saveData.goldCoins = TitleManager.saveData.goldCoins - 200;
-
         }
     }
 

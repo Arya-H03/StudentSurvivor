@@ -100,11 +100,16 @@ public class Giant : Enemy
     } 
     public void SpawnKnife()
     {
-        double valueX = player.transform.position.x - transform.position.x;
-        double valueY = player.transform.position.y - transform.position.y;
-        double angle = ConvertRadiansToDegrees(Math.Atan2(valueY, valueX));
+        if (player)
+        {
+            double valueX = player.transform.position.x - transform.position.x;
+            double valueY = player.transform.position.y - transform.position.y;
+            double angle = ConvertRadiansToDegrees(Math.Atan2(valueY, valueX));
+            Instantiate(dagger, transform.position, Quaternion.Euler(0, 0, (float)angle + 180));
+        }
+       
 
-        Instantiate(dagger, transform.position, Quaternion.Euler(0, 0, (float)angle + 180));
+        
     }
 
     public static double ConvertRadiansToDegrees(double radians)

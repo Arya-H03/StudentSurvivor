@@ -143,6 +143,7 @@ public class SlaveKnight : MonoBehaviour
             bossHP -= damageValue;
             if (bossHP <= 0)
             {
+                TitleManager.saveData.isLevel2Unlocked = true;
                 ActivateObelisk();
                 for (int i=0; i<50; i++)
                 {

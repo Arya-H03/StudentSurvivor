@@ -14,11 +14,13 @@ public class TitleManager : MonoBehaviour
     public static SaveData saveData;
     [SerializeField] GameObject upgradeMenu;
     [SerializeField] GameObject heroMenu;
+    [SerializeField] GameObject levelMenu;
     [SerializeField] Axe axe;
     [SerializeField] TMP_Text playerGoldUpgrade;
     [SerializeField] TMP_Text playerGoldHero;
     [SerializeField] Button axeButton; 
-    [SerializeField] Button crowButton; 
+    [SerializeField] Button crowButton;
+    public static string CurrentLevel = "Level1";
    
     
     string SavePath => Path.Combine(Application.persistentDataPath, "save.data");
@@ -78,7 +80,7 @@ public class TitleManager : MonoBehaviour
 
     public void onStartButtonClick()
     {
-        SceneManager.LoadScene("CastleLevel");
+        SceneManager.LoadScene(CurrentLevel);
     }
     public void onUpgradeButtonClick()
     {
@@ -88,6 +90,11 @@ public class TitleManager : MonoBehaviour
     public void onHeroButtonClick()
     {
         heroMenu.SetActive(true);
+    }
+
+    public void OnLevelButtonClick()
+    {
+        levelMenu.SetActive(true);
     }
     public void onQuitButtonClick()
     {
@@ -147,8 +154,10 @@ public class TitleManager : MonoBehaviour
     {
         
         TitleManager.saveData.goldCoins = 0;
+        TitleManager.saveData.isRangerUnlocked = false;
+        TitleManager.saveData.isWitchUnlocked = false;
 
-
+        
 
 
     }
@@ -160,6 +169,7 @@ public class TitleManager : MonoBehaviour
     {
         upgradeMenu.SetActive(false);
         heroMenu.SetActive(false);
+        levelMenu.SetActive(false);
     }
     
 
