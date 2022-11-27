@@ -84,6 +84,7 @@ public class Player : MonoBehaviour
             playerHP = (float)(playerHP - damage);
             if (playerHP <= 0)
             {
+                Destroy(gameObject);
                 SceneManager.LoadScene("AfterDeath");
             }
             return true;

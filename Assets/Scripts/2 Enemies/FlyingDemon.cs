@@ -56,7 +56,7 @@ public class FlyingDemon : Enemy
             case FlyingDemonState.Attacking:
                 animator.SetTrigger("Attack");
                 flyingDemon = FlyingDemonState.Idle;
-                waitTimer = 1f;
+                waitTimer = 2f;
                 break;
             case FlyingDemonState.Hit:
                 flyingDemon = FlyingDemonState.Idle;
@@ -70,19 +70,24 @@ public class FlyingDemon : Enemy
         }
     }
 
-    //public void SpawnFireBolt()
-    //{
-    //    if (player)
-    //    {
-    //        double valueX = player.transform.position.x - transform.position.x;
-    //        double valueY = player.transform.position.y - transform.position.y;
-    //        double angle = ConvertRadiansToDegrees(Math.Atan2(valueY, valueX));
-    //        Instantiate(fireBolt, transform.position, Quaternion.Euler(0, 0, (float)angle));
-    //    }
-
-
-
-    //}
+    public void SpawnFireBreath()
+    {
+        if (player && this)
+        {
+            if (transform.localScale.x >= 0)
+            {
+                fireBreath.transform.localScale = new Vector3(1, 1, 1);
+                Instantiate(fireBreath, transform.position + new Vector3(1.5f, 0, -1), Quaternion.identity);
+                
+            }
+            if (transform.localScale.x < 0)
+            {
+                fireBreath.transform.localScale = new Vector3(-1, 1, 1);
+                Instantiate(fireBreath, transform.position + new Vector3(-1.5f, 0, -1), Quaternion.identity);
+                
+            }
+        }
+    }
 
     //public static double ConvertRadiansToDegrees(double radians)
     //{

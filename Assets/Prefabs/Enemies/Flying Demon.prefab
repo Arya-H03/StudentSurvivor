@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 557990619, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 629.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 557990619, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 260.98
+      objectReference: {fileID: 0}
     - target: {fileID: 1391211856, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_Size.x
       value: 1.7525055
@@ -49,11 +57,11 @@ PrefabInstance:
       objectReference: {fileID: -134277248, guid: e444c27653f49564c8745e0ef7bc87e5, type: 3}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_Pivot.x
-      value: -20.300299
+      value: -20.559109
       objectReference: {fileID: 0}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_Pivot.y
-      value: 1.119839
+      value: 1.1579012
       objectReference: {fileID: 0}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_RootOrder
@@ -113,11 +121,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -12.058231
+      value: -13.148277
       objectReference: {fileID: 0}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.95736647
+      value: -1.1646781
       objectReference: {fileID: 0}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -191,4 +199,4 @@ MonoBehaviour:
   enemyHP: 0
   isTrack: 1
   damagePopUp: {fileID: 428124998287652800, guid: ff7e47dbca07c3e418f992cc13669c80, type: 3}
-  fireBreath: {fileID: 0}
+  fireBreath: {fileID: 1971457153848814982, guid: 19466a6f0c3817c479866988c0632fc1, type: 3}

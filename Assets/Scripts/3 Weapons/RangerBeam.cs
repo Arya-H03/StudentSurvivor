@@ -34,7 +34,7 @@ public class RangerBeam : BaseWeapon
 
         if (slaveKnight != null)
         {
-            slaveKnight.DamageBoss(damage);
+            slaveKnight.DamageBoss(damage + 10);
             
 
         }
