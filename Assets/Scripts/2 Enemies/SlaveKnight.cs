@@ -71,7 +71,11 @@ public class SlaveKnight : MonoBehaviour
                 }
                 break;
             case SlaveKnightState.Chasing:
-                float distance = Vector3.Distance(transform.position, player.transform.position);
+                float distance = 0;
+                if (player)
+                {
+                    distance = Vector3.Distance(transform.position, player.transform.position);
+                }
                 GoToPlayer();
                 animator.SetBool("isWalking", true);
                 if (shoot1<1)

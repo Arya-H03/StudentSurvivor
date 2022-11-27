@@ -392,7 +392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: QJR THE BETRAYER
+  m_text: QJR  THE  BETRAYER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f4cae52b51e47b45941533ac4530bf3, type: 2}
   m_sharedMaterial: {fileID: 3588848967047380058, guid: 9f4cae52b51e47b45941533ac4530bf3, type: 2}
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -839,3 +839,4 @@ MonoBehaviour:
   isTrack: 1
   bossMelee: {fileID: 7259600429912268562}
   fireHand: {fileID: 726337590255569688, guid: 345ecddef48b0c74d8f5d859b88eae31, type: 3}
+  fireSkull: {fileID: 2041115299228020303, guid: 2dafe5d8094bb304bb32942f539db13b, type: 3}

@@ -16,8 +16,10 @@ public class FireDemon : MonoBehaviour
     bool isInvincible;
     [SerializeField] BossMelee bossMelee;
     [SerializeField] GameObject fireHand;
+    [SerializeField] GameObject fireSkull;
     private bool isHit = false;
-   
+    private int shoot1 = 1;
+
     enum FireDemonState
     {
         Idle = 0,
@@ -39,6 +41,7 @@ public class FireDemon : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(BossCameraCoroutine());
         StartCoroutine(FireHand());
+        StartCoroutine(FireSkullSpawn());
     
     }
 
@@ -59,13 +62,24 @@ public class FireDemon : MonoBehaviour
                 }
                 break;
             case FireDemonState.Chasing:
-                float distance = Vector3.Distance(transform.position, player.transform.position);
+                float distance = 0;
+                if (player)
+                {
+                    distance = Vector3.Distance(transform.position, player.transform.position);
+                }
                 GoToPlayer();
                 animator.SetBool("isWalking", true);
                 if (distance <= 4f)
                 {
                     fireDemonState = FireDemonState.Attacking;
                 }
+
+                if (shoot1 < 1)
+                {
+                    FireSkull();
+                    shoot1 = 1;
+                }
+
                 break;
             case FireDemonState.Attacking:
                 animator.SetBool("isWalking", false);
@@ -252,94 +266,35 @@ public class FireDemon : MonoBehaviour
 
     }
 
-    //IEnumerator SwordWall()
-    //{
-    //    while (true)
-    //    {
 
-    //        yield return new WaitForSeconds(5);
-    //        shoot1 = 0;
+    IEnumerator FireSkullSpawn()
+    {
+        while (true)
+        {
 
-    //    }
+            yield return new WaitForSeconds(4);
+            shoot1 = 0;
 
-    //}
+        }
 
-    //IEnumerator SpearSpawn()
-    //{
-    //    while (true)
-    //    {
-
-    //        yield return new WaitForSeconds(3);
-    //        shoot2 = 0;
-
-    //    }
-
-    //}
+    }
 
 
-    //public void SpawnSwordWall()
-    //{
+    public void FireSkull()
+    {
+       
+        if (transform.localScale.x >= 0)
+        {
+            fireSkull.transform.localScale = new Vector3(-1, 1, 1);
+            Instantiate(fireSkull, transform.position, Quaternion.identity);
 
-    //    float d = 0.4f;
-    //    float c = 0.4f;
-    //    float aHalf = (numberOfSword - 1) * 0.5f;
-    //    if (numberOfSword % 2 == 1)
-    //    {
-    //        Instantiate(swordWall, transform.position + new Vector3(0, 0.4f, 0), Quaternion.identity);
+        }
+        if (transform.localScale.x < 0)
+        {
+            fireSkull.transform.localScale = new Vector3(1, 1, 1);
+            Instantiate(fireSkull, transform.position, Quaternion.identity);
 
-    //        ;
-    //        for (int i = 0; i < aHalf; i++)
-    //        {
-    //            d = d + 1f;
-    //            Instantiate(swordWall, transform.position + new Vector3(0, d, 0), Quaternion.identity);
+        }
+    }
 
-    //        }
-
-    //        for (int i = 0; i < aHalf; i++)
-    //        {
-    //            c = c - 1;
-    //            Instantiate(swordWall, transform.position + new Vector3(0, c, 0), Quaternion.identity);
-
-
-    //        }
-    //    }
-
-
-    //    if (numberOfSword % 2 == 0)
-    //    {
-
-
-    //        ;
-    //        for (int i = 0; i < aHalf; i++)
-    //        {
-
-    //            Instantiate(swordWall, transform.position + new Vector3(0, d, 0), Quaternion.identity);
-    //            d = d + 1f;
-
-    //        }
-
-    //        for (int i = 0; i < aHalf; i++)
-    //        {
-    //            c = c - 1f;
-    //            Instantiate(swordWall, transform.position + new Vector3(0, c, 0), Quaternion.identity);
-
-
-    //        }
-    //    }
-
-    //}
-
-    //public void SpawnSpear()
-    //{
-    //    double valueX = player.transform.position.x - transform.position.x;
-    //    double valueY = player.transform.position.y - transform.position.y;
-    //    double angle = ConvertRadiansToDegrees(Math.Atan2(valueY, valueX));
-
-    //    Instantiate(spear, transform.position, Quaternion.Euler(0, 0, (float)angle + 270));
-    //}
-
-    //public static double ConvertRadiansToDegrees(double radians)
-    //{
-    //    return Mathf.Rad2Deg * radians;
-    //}
 }

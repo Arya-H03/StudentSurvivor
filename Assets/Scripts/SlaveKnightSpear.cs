@@ -13,7 +13,7 @@ public class SlaveKnightSpear : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        StartCoroutine(DestroyDagger());
+        StartCoroutine(DestroyFireSkull());
 
 
     }
@@ -53,7 +53,7 @@ public class SlaveKnightSpear : MonoBehaviour
 
     }
 
-    IEnumerator DestroyDagger()
+    IEnumerator DestroyFireSkull()
     {
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);

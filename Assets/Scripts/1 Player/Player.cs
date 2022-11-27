@@ -139,7 +139,8 @@ public class Player : MonoBehaviour
             scoreText.text = score.ToString();
 
             isInvincible = false;
-
+        if(Time.timeScale == 1)
+        {
             float inputX = Input.GetAxisRaw("Horizontal");
             float inputY = Input.GetAxisRaw("Vertical");
             bool isRunning = false;
@@ -169,8 +170,10 @@ public class Player : MonoBehaviour
             }
 
             transform.localScale = new Vector3(scaleX, 1, 1);
-        
-        
+
+        }
+
+
 
     }
 
