@@ -257,6 +257,8 @@ public class Player : MonoBehaviour
             isDamageBoost = true;
             PlayerDamageBoost();
         }
+
+       
     }
     IEnumerator MagnetPotionCoroutine()
     {       

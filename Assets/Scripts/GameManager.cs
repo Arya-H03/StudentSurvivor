@@ -8,8 +8,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject cultist;
-    //[SerializeField] GameObject runner;
     [SerializeField] GameObject skeleton;
+    [SerializeField] GameObject fireWorm;
+    [SerializeField] GameObject flyingDemon;
+    [SerializeField] GameObject hellBeast;
+    [SerializeField] GameObject hellHound;
+    [SerializeField] GameObject fireDemon;
     [SerializeField] GameObject crow;
     [SerializeField] GameObject bandit;   
     [SerializeField] GameObject slime;
@@ -18,7 +22,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject slaveKnight;
     [SerializeField] AudioSource enemyDeathSound;
     [SerializeField] AudioSource levelUpSound;
-    //[SerializeField] GameObject darkWizard;
     [SerializeField] GameObject playerKnight;
     [SerializeField] GameObject playerRanger;
     [SerializeField] GameObject playerWitch;
@@ -117,9 +120,15 @@ public class GameManager : MonoBehaviour
         
 
 
-        if(minutes == 4 && isBossActive == false)
+        if(minutes == 4 && isBossActive == false && TitleManager.CurrentLevel == "Level1")
         {
             SpawnBoss(slaveKnight, 1);
+            
+            isBossActive = true;
+        }
+        if(minutes == 4 && isBossActive == false && TitleManager.CurrentLevel == "Level2")
+        {
+            SpawnBoss(fireDemon, 1);
             
             isBossActive = true;
         }
@@ -131,85 +140,153 @@ public class GameManager : MonoBehaviour
     private IEnumerator SpawnEnemyCoroutine()
     {
 
-        while (minutes <= 4)
+        while (minutes <= 4 && TitleManager.CurrentLevel == "Level1")
         {
             yield return new WaitForSeconds(2f);
-            //SpawnEnemies(cultist, 3 * spawnCounter, true);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(skeleton, 5 * spawnCounter, true);
-            //yield return new WaitForSeconds(2f);
-            //SpawnEnemies(skeleton, 10, false);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(cultist, 5 * spawnCounter, true);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(skeleton, 7 * spawnCounter, true);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(slime, 10 * spawnCounter, false);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(cultist, 12 * spawnCounter, true);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(giant, 3 * spawnCounter, true);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(skeleton, 15 * spawnCounter, true);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(slime, 15 * spawnCounter, true);
-            //yield return new WaitForSeconds(3f);
-            ////35
-            //SpawnEnemies(giant, 5 * spawnCounter, true);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(bandit, 15, false);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(skeleton, 20 * spawnCounter, false);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(cultist, 20 * spawnCounter, true);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(bandit, 15 * spawnCounter, true);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(slime, 20 * spawnCounter, true);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(cultist, 20 , false);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(slime, 20, false);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(giant, 12 * spawnCounter, true);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(skeleton, 15 * spawnCounter, true);
-            //yield return new WaitForSeconds(5f);
-            ////77
-            //SpawnEnemies(nightborne, 10 * spawnCounter, true);
-            //yield return new WaitForSeconds(4f);
-            //SpawnEnemies(skeleton, 20, false);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(cultist, 20, false);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(slime, 20 * spawnCounter, true);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(nightborne, 12 * spawnCounter, true);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(bandit, 18 * spawnCounter, true);
-            //yield return new WaitForSeconds(6f);
-            //SpawnEnemies(giant, 20 * spawnCounter, true);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(skeleton, 20 * spawnCounter, true);
-            //yield return new WaitForSeconds(2f);
-            //SpawnEnemies(bandit, 20, false);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(nightborne, 20 * spawnCounter, true);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(skeleton, 25 * spawnCounter, true);
-            ////110
-            //spawnCounter++;
-
-
-
-
+            SpawnEnemies(cultist, 3 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(skeleton, 5 * spawnCounter, true);
+            yield return new WaitForSeconds(2f);
+            SpawnEnemies(skeleton, 10, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 5 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 7 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(slime, 10 * spawnCounter, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 12 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(giant, 3 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 15 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(slime, 15 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            //35
+            SpawnEnemies(giant, 5 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(bandit, 15, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 20 * spawnCounter, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(bandit, 15 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(slime, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(cultist, 20, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(slime, 20, false);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(giant, 12 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(skeleton, 15 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            //77
+            SpawnEnemies(nightborne, 10 * spawnCounter, true);
+            yield return new WaitForSeconds(4f);
+            SpawnEnemies(skeleton, 20, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 20, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(slime, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(nightborne, 12 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(bandit, 18 * spawnCounter, true);
+            yield return new WaitForSeconds(6f);
+            SpawnEnemies(giant, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(2f);
+            SpawnEnemies(bandit, 20, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(nightborne, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 25 * spawnCounter, true);
+            //110
+            spawnCounter++;
 
             isBossActive = false;
         }
-        
 
-        
-       
+        while (minutes <= 4 && TitleManager.CurrentLevel == "Level2")
+        {
+            yield return new WaitForSeconds(2f);
+            SpawnEnemies(cultist, 3 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(skeleton, 5 * spawnCounter, true);
+            yield return new WaitForSeconds(2f);
+            SpawnEnemies(skeleton, 10, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 5 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 7 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(fireWorm, 10 * spawnCounter, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 12 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(flyingDemon, 3 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 15 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(fireWorm, 15 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            //35
+            SpawnEnemies(flyingDemon, 5 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(hellBeast, 15, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 20 * spawnCounter, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(hellBeast, 15 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(fireWorm, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(cultist, 20, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(fireWorm, 20, false);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(flyingDemon, 12 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(skeleton, 15 * spawnCounter, true);
+            yield return new WaitForSeconds(5f);
+            //77
+            SpawnEnemies(hellHound, 10 * spawnCounter, true);
+            yield return new WaitForSeconds(4f);
+            SpawnEnemies(skeleton, 20, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 20, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(fireWorm, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(hellHound, 12 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(hellBeast, 18 * spawnCounter, true);
+            yield return new WaitForSeconds(6f);
+            SpawnEnemies(flyingDemon, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(2f);
+            SpawnEnemies(hellBeast, 20, false);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(hellHound, 20 * spawnCounter, true);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 25 * spawnCounter, true);
+            //110
+            spawnCounter++;
+
+            isBossActive = false;
+        }
+
+
+
+
 
 
 

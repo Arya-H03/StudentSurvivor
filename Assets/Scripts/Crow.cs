@@ -32,29 +32,29 @@ public class Crow : MonoBehaviour
 
             if (PlayerCharacterManager.isKnight == true && playerKnight!=null)
             {
-                targetPosition = playerKnight.transform.position + new Vector3(0,1,0);
+                targetPosition = playerKnight.transform.position + new Vector3(0,3,0);
             }
             if (PlayerCharacterManager.isRanger == true && playerRanger != null)
             {
-                targetPosition = playerRanger.transform.position + new Vector3(0, 1, 0);
+                targetPosition = playerRanger.transform.position + new Vector3(0,3, 0);
             }
             if (PlayerCharacterManager.isWitch == true && playerWitch != null)
             {
-                targetPosition = playerWitch.transform.position + new Vector3(0, 1, 0);
+                targetPosition = playerWitch.transform.position + new Vector3(0, 3, 0);
             }
         }    
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, 2.5f * Time.deltaTime);
-        int scaleX = 1;
+        float scaleX = 1;
         if (targetPosition.x < 0)
         {
-            scaleX = -1;
+            scaleX = +1;
         }
 
         if (targetPosition.x >= 0)
         {
-            scaleX = 1;
+            scaleX = - 1;
         }
-        transform.localScale = new Vector3(-scaleX, 1, 1);
+        transform.localScale = new Vector3(scaleX, 1, 1);
 
     }
 
