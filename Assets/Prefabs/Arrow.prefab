@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ccac6f4a2dcfd7448a6740bba64bc80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
+  damage: 2
   arrowHp: 1
-  damage: 1
   isPoisonArrow: 0

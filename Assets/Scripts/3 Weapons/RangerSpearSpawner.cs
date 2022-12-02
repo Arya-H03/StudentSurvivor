@@ -37,4 +37,9 @@ public class RangerSpearSpawner : BaseWeapon
 
 
     }
+
+    public override void LevelUp()
+    {
+        base.LevelUp();
+    }
 }

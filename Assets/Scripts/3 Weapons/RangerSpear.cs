@@ -53,4 +53,10 @@ public class RangerSpear : BaseWeapon
         }
 
     }
+
+    public override void LevelUp()
+    {
+        AddDamage(1);
+        level++;
+    }
 }

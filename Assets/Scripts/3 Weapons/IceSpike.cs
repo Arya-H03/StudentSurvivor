@@ -27,13 +27,6 @@ public class IceSpike : BaseWeapon
 
     }
 
-
-
-    void RotateByDegrees()
-    {
-        Vector3 rotationToAdd = new Vector3(0, 0, 0.3f);
-        //transform.Rotate(rotationToAdd);
-    }
     // Update is called once per frame
     void Update()
     {

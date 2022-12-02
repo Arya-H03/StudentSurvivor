@@ -8,7 +8,7 @@ public class SwordWall : BaseWeapon
     int a = 0;
     float direction = 0;
     [SerializeField] float speed = 8f;
-    int level = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -71,12 +71,12 @@ public class SwordWall : BaseWeapon
         SlaveKnight slaveKnight = collision.gameObject.GetComponent<SlaveKnight>();
         if (enemy != null)
         {
-            enemy.Damage(3 + level);
+            enemy.Damage(5 + damage);
         }
 
         if (slaveKnight != null)
         {
-            slaveKnight.DamageBoss(3 + level);
+            slaveKnight.DamageBoss(5 + damage);
         }
 
     }

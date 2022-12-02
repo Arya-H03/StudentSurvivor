@@ -145,4 +145,10 @@ public class RangerArrow : BaseWeapon
         movmentAngle = spawnAngle;
     }
 
+    public override void LevelUp()
+    {
+        AddDamage(1);
+        level++;
+    }
+
 }

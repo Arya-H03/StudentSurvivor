@@ -108,14 +108,14 @@ public class PlayerRanger : Player
         
     }
 
-    public void SpawnSpreadArrow()
-    {
-        if(isSpreadArrow == true)
-        {
-            float angle = Random.Range(0, 360);
-            Instantiate(spreadArrow, transform.position,Quaternion.Euler(0,0, angle));
-        }
-    }
+    //public void SpawnSpreadArrow()
+    //{
+    //    if(isSpreadArrow == true)
+    //    {
+    //        float angle = Random.Range(0, 360);
+    //        Instantiate(spreadArrow, transform.position,Quaternion.Euler(0,0, angle));
+    //    }
+    //}
 
     public void SpawnRainOfArrow()
     {

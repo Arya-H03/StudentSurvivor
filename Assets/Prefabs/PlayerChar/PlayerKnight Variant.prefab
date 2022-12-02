@@ -99,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.01563707, y: 0.1106838}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9375, y: 0.90625}
+  m_Size: {x: 0.90622586, y: 0.9122329}
   m_EdgeRadius: 0
 --- !u!114 &1648405458
 MonoBehaviour:
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
+  damage: 1
   isSwordActive: 0
   isHitBoxActive: 0
 --- !u!1 &1613006403770083407
@@ -172,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  damage: 1
   scythe: {fileID: 3130672959716432480, guid: 10deeec8d48fca242afbabb007043a3a, type: 3}
   pool: {fileID: 0}
 --- !u!1 &1613006404083684329
@@ -220,6 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  damage: 1
   clone: {fileID: 3261590827556422441, guid: 27a2e674c55a7a4429b5f9521caf04fe, type: 3}
 --- !u!1 &1613006404915126219
 GameObject:
@@ -266,6 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  damage: 1
   swordWall: {fileID: 1534255062081389966, guid: 70d83c0f9fe963d48998575ae83bd286, type: 3}
   player: {fileID: 5139991269409943252}
   waitTime: 10
@@ -387,7 +391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3515427577414364752
 Transform:
   m_ObjectHideFlags: 0
@@ -416,6 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  damage: 1
   dagger: {fileID: 8291616330551596459, guid: 8b650fb6adbc14f4e8d4542157b97284, type: 3}
 --- !u!1 &3515427577832537354
 GameObject:
@@ -715,6 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  damage: 1
   speed: 0
 --- !u!58 &5846232551462260447
 CircleCollider2D:
@@ -751,7 +757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6230087241311343399
 Transform:
   m_ObjectHideFlags: 0
@@ -1071,4 +1077,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  knightSword: {fileID: 0}
+  damage: 1
+  cloneSword: {fileID: 0}

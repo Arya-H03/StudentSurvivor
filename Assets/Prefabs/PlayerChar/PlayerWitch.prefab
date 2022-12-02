@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  damage: 1
   standardEnergyBall: {fileID: 6265873782991376490, guid: eb607135af548db47829c29795c4fe4e, type: 3}
   player: {fileID: 2942081797997307195}
   waitTime: 2
@@ -93,6 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  damage: 1
   trackingEnergyBall: {fileID: 6871788397268659371, guid: c281dd39f72dd624e810248fe669225a, type: 3}
 --- !u!1 &1492198475752442784
 GameObject:
@@ -240,6 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  damage: 1
   meteor: {fileID: 1240558137612353359, guid: 7dff1be38ce78474b99a7d35add059b3, type: 3}
   player: {fileID: 2942081797997307195}
   playerCamera: {fileID: 0}
@@ -319,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  damage: 1
   iceSpike1: {fileID: 529116902349273766, guid: f4e26c9a99069eb4f8d38fc7923fbc89, type: 3}
   iceSpike2: {fileID: 9181442917110839465, guid: b4308e229f687254abbce1f62e3776a8, type: 3}
   iceSpike3: {fileID: 3070718925356477310, guid: e8ad766532686444ab60e6872751237d, type: 3}
@@ -507,7 +511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1866756482651290597
 Transform:
   m_ObjectHideFlags: 0
@@ -536,6 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  damage: 1
   player: {fileID: 8217278269177374091}
   raisedSkeleton: {fileID: 5985584948457130110, guid: cec3a1f776ab64949b346256f6620d17, type: 3}
   spawnRate: 10
@@ -584,6 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  damage: 1
   standardEnergyBall: {fileID: 122004077018805933, guid: 9c64836ffdd73d342a4d51f987eb0f36, type: 3}
   player: {fileID: 2942081797997307195}
   waitTime: 4
@@ -606,7 +612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8217278269177374092
 Transform:
   m_ObjectHideFlags: 0

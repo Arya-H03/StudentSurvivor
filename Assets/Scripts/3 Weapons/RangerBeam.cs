@@ -40,4 +40,10 @@ public class RangerBeam : BaseWeapon
         }
 
     }
+
+    public override void LevelUp()
+    {
+        AddDamage(1);
+        level++;
+    }
 }
