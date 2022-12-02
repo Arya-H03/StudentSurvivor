@@ -89,4 +89,9 @@ public class SwordWallSpawner : BaseWeapon
         }
 
     }
+
+    public override void LevelUp()
+    {
+        base.LevelUp();
+    }
 }

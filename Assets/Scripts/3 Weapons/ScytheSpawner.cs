@@ -44,4 +44,9 @@ public class ScytheSpawner : BaseWeapon
         }
                  
     }
+
+    public override void LevelUp()
+    {
+        base.LevelUp();
+    }
 }

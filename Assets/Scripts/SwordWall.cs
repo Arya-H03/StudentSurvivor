@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordWall : MonoBehaviour
+public class SwordWall : BaseWeapon
 {
     GameObject player;
     int a = 0;
@@ -84,5 +84,11 @@ public class SwordWall : MonoBehaviour
     public void MatchLevel(int spawnerLevel)
     {
         level = spawnerLevel;
+    }
+
+    public override void LevelUp()
+    {
+        level++;
+        AddDamage(1);
     }
 }

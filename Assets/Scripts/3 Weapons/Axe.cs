@@ -60,4 +60,12 @@ public class Axe : BaseWeapon
             slaveKnight.DamageBoss(damage);
         }
     }
+
+    public override void LevelUp()
+    {
+        base.LevelUp();
+        AddDamage(1);
+        speed = speed + 10;
+
+    }
 }

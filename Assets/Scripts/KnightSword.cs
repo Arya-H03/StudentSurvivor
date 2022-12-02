@@ -52,5 +52,9 @@ public class KnightSword : BaseWeapon
 
     }
 
-    
+    public override void LevelUp()
+    {
+        level++;
+        AddDamage(1);
+    }
 }

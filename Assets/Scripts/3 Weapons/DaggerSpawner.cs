@@ -47,4 +47,9 @@ public class DaggerSpawner : BaseWeapon
         }
         
     }
+
+    public override void LevelUp()
+    {
+        base.LevelUp();
+    }
 }

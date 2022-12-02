@@ -50,4 +50,10 @@ public class Scythe : BaseWeapon
         }
 
     }
+
+    public override void LevelUp()
+    {
+        level++;
+        AddDamage(1);       
+    }
 }

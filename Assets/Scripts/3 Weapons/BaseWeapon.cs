@@ -7,13 +7,12 @@ public class BaseWeapon : MonoBehaviour
     public int level = 1;
     public float damage = 1;
 
-    public void LevelUp(float addDamage)
+    public virtual void LevelUp()
     {
         if (level++ == 0)
         {
             gameObject.SetActive(true);
-            AddDamage(addDamage);
-
+            
         }
 
         

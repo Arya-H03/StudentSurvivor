@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class LevelUpMenuManager : MonoBehaviour
 {
+    [SerializeField] BaseWeapon[] KnightWeaponSpawners;
     [SerializeField] BaseWeapon[] KnightWeapons;
     [SerializeField] BaseWeapon[] RangerWeapons;
     [SerializeField] BaseWeapon[] WitchWeapons;
@@ -50,7 +51,7 @@ public class LevelUpMenuManager : MonoBehaviour
    
     public void Axe()
     {
-        KnightWeapons[1].LevelUp(1);
+        KnightWeapons[1].LevelUp();
 
         lvlText[1].text = "Lvl " + KnightWeapons[0].level.ToString();
         
@@ -65,7 +66,7 @@ public class LevelUpMenuManager : MonoBehaviour
     }public void SwordAttack()
     {
 
-        KnightWeapons[0].LevelUp(1);
+        KnightWeapons[0].LevelUp();
         lvlText[0].text = "Lvl " + level.ToString();
         
         levelUpMenu.SetActive(false);
@@ -76,7 +77,8 @@ public class LevelUpMenuManager : MonoBehaviour
     }
     public void Scythe()
     {
-        KnightWeapons[2].LevelUp(1);
+        KnightWeapons[2].LevelUp();
+        KnightWeaponSpawners[0].LevelUp();
         lvlText[2].text = "Lvl " + KnightWeapons[1].level.ToString();
         
         levelUpMenu.SetActive(false);
@@ -88,7 +90,8 @@ public class LevelUpMenuManager : MonoBehaviour
 
     public void Clone()
     {
-        KnightWeapons[3].LevelUp(1);
+        KnightWeapons[3].LevelUp();
+        KnightWeaponSpawners[1].LevelUp();
         lvlText[3].text = "Lvl " + KnightWeapons[2].level.ToString();
       
         levelUpMenu.SetActive(false);
@@ -98,43 +101,43 @@ public class LevelUpMenuManager : MonoBehaviour
 
     }
 
-    public void FlyingSkull()
-    {
-        //KnightWeapons[3].LevelUp(2);
-        lvlText[4].text = "Lvl " + KnightWeapons[3].level.ToString();
-        WitchWeapons[1].LevelUp(1);     
-        levelUpMenu.SetActive(false);
-        images[4].color = Color.white;
-        playerCamera.EndBlur();
-        Time.timeScale = 1;
+    //public void FlyingSkull()
+    //{
+    //    //KnightWeapons[3].LevelUp(2);
+    //    lvlText[4].text = "Lvl " + KnightWeapons[3].level.ToString();
+    //    WitchWeapons[1].LevelUp(1);     
+    //    levelUpMenu.SetActive(false);
+    //    images[4].color = Color.white;
+    //    playerCamera.EndBlur();
+    //    Time.timeScale = 1;
 
-    }
+    //}
 
-    public void FireBall()
-    {
-        //KnightWeapons[4].LevelUp(1);
-        WitchWeapons[5].LevelUp(1);
-        lvlText[5].text = "Lvl " + KnightWeapons[4].level.ToString();
+    //public void FireBall()
+    //{
+    //    //KnightWeapons[4].LevelUp(1);
+    //    WitchWeapons[5].LevelUp(1);
+    //    lvlText[5].text = "Lvl " + KnightWeapons[4].level.ToString();
        
-        levelUpMenu.SetActive(false);
-        images[5].color = Color.white;
-        playerCamera.EndBlur();
-        Time.timeScale = 1;
+    //    levelUpMenu.SetActive(false);
+    //    images[5].color = Color.white;
+    //    playerCamera.EndBlur();
+    //    Time.timeScale = 1;
 
-    }
-    public void MeteorShower()
-    {
-        //KnightWeapons[5].LevelUp(2);
-        WitchWeapons[4].LevelUp(2);
-        lvlText[8].text = "Lvl " + KnightWeapons[5].level.ToString();
+    //}
+    //public void MeteorShower()
+    //{
+    //    //KnightWeapons[5].LevelUp(2);
+    //    WitchWeapons[4].LevelUp(2);
+    //    lvlText[8].text = "Lvl " + KnightWeapons[5].level.ToString();
        
-        levelUpMenu.SetActive(false);
-        playerCamera.EndBlur();
-        images[6].color = Color.white;
+    //    levelUpMenu.SetActive(false);
+    //    playerCamera.EndBlur();
+    //    images[6].color = Color.white;
         
-        Time.timeScale = 1;
+    //    Time.timeScale = 1;
 
-    }
+    //}
 
     public void SpeedBoost()
     {
@@ -191,9 +194,11 @@ public class LevelUpMenuManager : MonoBehaviour
     }
     public void Dagger()
     {
-        KnightWeapons[5].LevelUp(1);
+        KnightWeapons[5].LevelUp();
+        KnightWeaponSpawners[3].LevelUp();
+
         //lvlText[9].text = "Lvl " + KnightWeapons[6].level.ToString();
-        
+
         levelUpMenu.SetActive(false);
         //images[7].color = Color.white;
         playerCamera.EndBlur();
@@ -201,17 +206,17 @@ public class LevelUpMenuManager : MonoBehaviour
 
     }
 
-    public void IceSpike()
-    {
-        KnightWeapons[7].LevelUp(1);
-        WitchWeapons[2].LevelUp(1);
-        lvlText[10].text = "Lvl " + KnightWeapons[7].level.ToString();
+    //public void IceSpike()
+    //{
+    //    KnightWeapons[7].LevelUp(1);
+    //    WitchWeapons[2].LevelUp(1);
+    //    lvlText[10].text = "Lvl " + KnightWeapons[7].level.ToString();
 
-        levelUpMenu.SetActive(false);
-        images[8].color = Color.white;
-        playerCamera.EndBlur();
-        Time.timeScale = 1;
-    }
+    //    levelUpMenu.SetActive(false);
+    //    images[8].color = Color.white;
+    //    playerCamera.EndBlur();
+    //    Time.timeScale = 1;
+    //}
 
     public void RangerArrowDamage()
     {
@@ -242,51 +247,51 @@ public class LevelUpMenuManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void RangerAxe()
-    {
-        RangerWeapons[0].LevelUp(1);
+    //public void RangerAxe()
+    //{
+    //    RangerWeapons[0].LevelUp(1);
 
-        levelUpMenu.SetActive(false);
-        playerCamera.EndBlur();
-        Time.timeScale = 1;
-    }
+    //    levelUpMenu.SetActive(false);
+    //    playerCamera.EndBlur();
+    //    Time.timeScale = 1;
+    //}
 
-    public void RangerSpear()
-    {
-        RangerWeapons[1].LevelUp(1);
+    //public void RangerSpear()
+    //{
+    //    RangerWeapons[1].LevelUp(1);
 
-        levelUpMenu.SetActive(false);
-        playerCamera.EndBlur();
-        Time.timeScale = 1;
-    }
+    //    levelUpMenu.SetActive(false);
+    //    playerCamera.EndBlur();
+    //    Time.timeScale = 1;
+    //}
 
-    public void RangerDagger()
-    {
-        RangerWeapons[2].LevelUp(1);
+    //public void RangerDagger()
+    //{
+    //    RangerWeapons[2].LevelUp(1);
 
-        levelUpMenu.SetActive(false);
-        playerCamera.EndBlur();
-        Time.timeScale = 1;
-    }
+    //    levelUpMenu.SetActive(false);
+    //    playerCamera.EndBlur();
+    //    Time.timeScale = 1;
+    //}
 
-    public void RainOfArrows()
-    {     
-        playerRanger.ActivateRainOfArrow();
-        RangerWeapons[3].LevelUp(1);
+    //public void RainOfArrows()
+    //{     
+    //    playerRanger.ActivateRainOfArrow();
+    //    RangerWeapons[3].LevelUp(1);
 
-        levelUpMenu.SetActive(false);
-        playerCamera.EndBlur();
-        Time.timeScale = 1;
-    }
-    public void RangerBeams()
-    {
-        playerRanger.ActivateRangerBeam();
-        RangerWeapons[4].LevelUp(1);
+    //    levelUpMenu.SetActive(false);
+    //    playerCamera.EndBlur();
+    //    Time.timeScale = 1;
+    //}
+    //public void RangerBeams()
+    //{
+    //    playerRanger.ActivateRangerBeam();
+    //    RangerWeapons[4].LevelUp(1);
 
-        levelUpMenu.SetActive(false);
-        playerCamera.EndBlur();
-        Time.timeScale = 1;
-    }
+    //    levelUpMenu.SetActive(false);
+    //    playerCamera.EndBlur();
+    //    Time.timeScale = 1;
+    //}
 
     public void RangerArrowNumberBuff()
     {
@@ -298,20 +303,20 @@ public class LevelUpMenuManager : MonoBehaviour
 
     }
 
-    public void WitchVoidBolt()
-    {
-        WitchWeapons[0].LevelUp(1);
-        levelUpMenu.SetActive(false);
-        playerCamera.EndBlur();
-        Time.timeScale = 1;
-    }
-    public void WitchRaiseSkeleton()
-    {
-        WitchWeapons[3].LevelUp(1);
-        levelUpMenu.SetActive(false);
-        playerCamera.EndBlur();
-        Time.timeScale = 1;
-    }
+    //public void WitchVoidBolt()
+    //{
+    //    WitchWeapons[0].LevelUp(1);
+    //    levelUpMenu.SetActive(false);
+    //    playerCamera.EndBlur();
+    //    Time.timeScale = 1;
+    //}
+    //public void WitchRaiseSkeleton()
+    //{
+    //    WitchWeapons[3].LevelUp(1);
+    //    levelUpMenu.SetActive(false);
+    //    playerCamera.EndBlur();
+    //    Time.timeScale = 1;
+    //}
 
     public void SpreadArrow()
     {
@@ -323,7 +328,8 @@ public class LevelUpMenuManager : MonoBehaviour
 
     public void KnightShieldWall()
     {
-        KnightWeapons[4].LevelUp(1);
+        KnightWeapons[2].LevelUp();
+        KnightWeaponSpawners[3].LevelUp();
         levelUpMenu.SetActive(false);
         playerCamera.EndBlur();
         Time.timeScale = 1;
@@ -369,87 +375,87 @@ public class LevelUpMenuManager : MonoBehaviour
             }
         }
 
-        if (isRanger == true)
-        {
-            switch (random1)
-            {
-                case 0:
-                    RangerArrowDamage();
-                    break;
-                case 1:
-                    RangerAxe();
-                    break;
-                case 2:
-                    RangerSpear();
-                    break;
-                case 3:
-                    RangerDagger();
-                    break;
-                case 4:
-                    AddMaxHP();
-                    break;
-                case 5:
-                    SpeedBoost();
-                    break;
-                case 6:
-                    RainOfArrows();
-                    break;
-                case 7:
-                    RangerBeams();
-                    break;
-                case 8:
-                    RangerArrowNumberBuff();
-                    break;
-                case 9:
-                    RangerPierce();
-                    break;
-                case 10:
-                    ActivatePoisonArrow();
-                    break;
-                case 11:
-                    SpreadArrow();
-                    break;
-                default:
-                    break;
+        //if (isRanger == true)
+        //{
+        //    switch (random1)
+        //    {
+        //        case 0:
+        //            RangerArrowDamage();
+        //            break;
+        //        case 1:
+        //            RangerAxe();
+        //            break;
+        //        case 2:
+        //            RangerSpear();
+        //            break;
+        //        case 3:
+        //            RangerDagger();
+        //            break;
+        //        case 4:
+        //            AddMaxHP();
+        //            break;
+        //        case 5:
+        //            SpeedBoost();
+        //            break;
+        //        case 6:
+        //            RainOfArrows();
+        //            break;
+        //        case 7:
+        //            RangerBeams();
+        //            break;
+        //        case 8:
+        //            RangerArrowNumberBuff();
+        //            break;
+        //        case 9:
+        //            RangerPierce();
+        //            break;
+        //        case 10:
+        //            ActivatePoisonArrow();
+        //            break;
+        //        case 11:
+        //            SpreadArrow();
+        //            break;
+        //        default:
+        //            break;
 
 
-            }
-        }
+            //}
+        //}
 
-        if(isWitch == true)
-        {
-            switch (random1)
-            {
-                case 0:
-                    WitchVoidBolt();
-                    break;
-                case 1:
-                    FlyingSkull(); ;
-                    break;
-                case 2:
-                    IceSpike();
-                    break;
-                case 3:
-                    WitchRaiseSkeleton();
-                    break;
-                case 4:
-                    MeteorShower();
-                    break;
-                case 5:
-                    FireBall();
-                    break;
-                case 6:
-                    AddMaxHP();
-                    break;
-                case 7:
-                    SpeedBoost();
-                    break;            
-                default:
-                    break;
+        //if(isWitch == true)
+        //{
+        //    switch (random1)
+        //    {
+        //        case 0:
+        //            WitchVoidBolt();
+        //            break;
+        //        case 1:
+        //            FlyingSkull(); ;
+        //            break;
+        //        case 2:
+        //            IceSpike();
+        //            break;
+        //        case 3:
+        //            WitchRaiseSkeleton();
+        //            break;
+        //        case 4:
+        //            MeteorShower();
+        //            break;
+        //        case 5:
+        //            FireBall();
+        //            break;
+        //        case 6:
+        //            AddMaxHP();
+        //            break;
+        //        case 7:
+        //            SpeedBoost();
+        //            break;            
+        //        default:
+        //            break;
 
 
-            }
-        }
+        //    }
+        //}
     }
 
     public void OnClickKnightAbility2()
@@ -490,86 +496,86 @@ public class LevelUpMenuManager : MonoBehaviour
             }
         }
 
-        if (isRanger == true)
-        {
-            switch (random2)
-            {
-                case 0:
-                    RangerArrowDamage();
-                    break;
-                case 1:
-                    RangerAxe();
-                    break;
-                case 2:
-                    RangerSpear();
-                    break;
-                case 3:
-                    RangerDagger();
-                    break;
-                case 4:
-                    AddMaxHP();
-                    break;
-                case 5:
-                    SpeedBoost();
-                    break;
-                case 6:
-                    RainOfArrows();
-                    break;
-                case 7:
-                    RangerBeams();
-                    break;
-                case 8:
-                    RangerArrowNumberBuff();
-                    break;
-                case 9:
-                    RangerPierce();
-                    break;
-                case 10:
-                    ActivatePoisonArrow();
-                    break;
-                case 11:
-                    SpreadArrow();
-                    break;
-                default:
-                    break;
-            }
+        //if (isRanger == true)
+        //{
+        //    switch (random2)
+        //    {
+        //        case 0:
+        //            RangerArrowDamage();
+        //            break;
+        //        case 1:
+        //            RangerAxe();
+        //            break;
+        //        case 2:
+        //            RangerSpear();
+        //            break;
+        //        case 3:
+        //            RangerDagger();
+        //            break;
+        //        case 4:
+        //            AddMaxHP();
+        //            break;
+        //        case 5:
+        //            SpeedBoost();
+        //            break;
+        //        case 6:
+        //            RainOfArrows();
+        //            break;
+        //        case 7:
+        //            RangerBeams();
+        //            break;
+        //        case 8:
+        //            RangerArrowNumberBuff();
+        //            break;
+        //        case 9:
+        //            RangerPierce();
+        //            break;
+        //        case 10:
+        //            ActivatePoisonArrow();
+        //            break;
+        //        case 11:
+        //            SpreadArrow();
+        //            break;
+        //        default:
+        //            break;
+        //    }
         
-        }
+        //}
 
-        if (isWitch == true)
-        {
-            switch (random2)
-            {
-                case 0:
-                    WitchVoidBolt();
-                    break;
-                case 1:
-                    FlyingSkull(); ;
-                    break;
-                case 2:
-                    IceSpike();
-                    break;
-                case 3:
-                    WitchRaiseSkeleton();
-                    break;
-                case 4:
-                    MeteorShower();
-                    break;
-                case 5:
-                    FireBall();
-                    break;
-                case 6:
-                    AddMaxHP();
-                    break;
-                case 7:
-                    SpeedBoost();
-                    break;
-                default:
-                    break;
+        //if (isWitch == true)
+        //{
+        //    switch (random2)
+        //    {
+        //        case 0:
+        //            WitchVoidBolt();
+        //            break;
+        //        case 1:
+        //            FlyingSkull(); ;
+        //            break;
+        //        case 2:
+        //            IceSpike();
+        //            break;
+        //        case 3:
+        //            WitchRaiseSkeleton();
+        //            break;
+        //        case 4:
+        //            MeteorShower();
+        //            break;
+        //        case 5:
+        //            FireBall();
+        //            break;
+        //        case 6:
+        //            AddMaxHP();
+        //            break;
+        //        case 7:
+        //            SpeedBoost();
+        //            break;
+        //        default:
+        //            break;
 
 
-            }
-        }
+        //    }
+        //}
     }
 
     public void OnClickKnightAbility3()
@@ -610,85 +616,85 @@ public class LevelUpMenuManager : MonoBehaviour
             }
         }
 
-        if (isRanger == true)
-        {
-            switch (random3)
-            {
-                case 0:
-                    RangerArrowDamage();
-                    break;
-                case 1:
-                    RangerAxe();
-                    break;
-                case 2:
-                    RangerSpear();
-                    break;
-                case 3:
-                    RangerDagger();
-                    break;
-                case 4:
-                    AddMaxHP();
-                    break;
-                case 5:
-                    SpeedBoost();
-                    break;
-                case 6:
-                    RainOfArrows();
-                    break;
-                case 7:
-                    RangerBeams();
-                    break;
-                case 8:
-                    RangerArrowNumberBuff();
-                    break;
-                case 9:
-                    RangerPierce();
-                    break;
-                case 10:
-                    ActivatePoisonArrow();
-                    break;
-                case 11:
-                    SpreadArrow();
-                    break;
-                default:
-                    break;
-            }
-        }
+        //if (isRanger == true)
+        //{
+        //    switch (random3)
+        //    {
+        //        case 0:
+        //            RangerArrowDamage();
+        //            break;
+        //        case 1:
+        //            RangerAxe();
+        //            break;
+        //        case 2:
+        //            RangerSpear();
+        //            break;
+        //        case 3:
+        //            RangerDagger();
+        //            break;
+        //        case 4:
+        //            AddMaxHP();
+        //            break;
+        //        case 5:
+        //            SpeedBoost();
+        //            break;
+        //        case 6:
+        //            RainOfArrows();
+        //            break;
+        //        case 7:
+        //            RangerBeams();
+        //            break;
+        //        case 8:
+        //            RangerArrowNumberBuff();
+        //            break;
+        //        case 9:
+        //            RangerPierce();
+        //            break;
+        //        case 10:
+        //            ActivatePoisonArrow();
+        //            break;
+        //        case 11:
+        //            SpreadArrow();
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //    }
 
-        if (isWitch == true)
-        {
-            switch (random3)
-            {
-                case 0:
-                    WitchVoidBolt();
-                    break;
-                case 1:
-                    FlyingSkull(); ;
-                    break;
-                case 2:
-                    IceSpike();
-                    break;
-                case 3:
-                    WitchRaiseSkeleton();
-                    break;
-                case 4:
-                    MeteorShower();
-                    break;
-                case 5:
-                    FireBall();
-                    break;
-                case 6:
-                    AddMaxHP();
-                    break;
-                case 7:
-                    SpeedBoost();
-                    break;
-                default:
-                    break;
+        //    if (isWitch == true)
+        //    {
+        //        switch (random3)
+        //        {
+        //            case 0:
+        //                WitchVoidBolt();
+        //                break;
+        //            case 1:
+        //                FlyingSkull(); ;
+        //                break;
+        //            case 2:
+        //                IceSpike();
+        //                break;
+        //            case 3:
+        //                WitchRaiseSkeleton();
+        //                break;
+        //            case 4:
+        //                MeteorShower();
+        //                break;
+        //            case 5:
+        //                FireBall();
+        //                break;
+        //            case 6:
+        //                AddMaxHP();
+        //                break;
+        //            case 7:
+        //                SpeedBoost();
+        //                break;
+        //            default:
+        //                break;
 
 
-            }
-        }
+        //        }
+        //    }
     }
 
 }

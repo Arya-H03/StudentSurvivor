@@ -45,4 +45,9 @@ public class CloneSpawner : BaseWeapon
         }
     }
 
+    public override void LevelUp()
+    {
+        base.LevelUp();
+    }
+
 }

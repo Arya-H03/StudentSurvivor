@@ -55,4 +55,10 @@ public class Dagger : BaseWeapon
         }
 
     }
+
+    public override void LevelUp()
+    {
+        level++;
+        AddDamage(1);
+    }
 }
