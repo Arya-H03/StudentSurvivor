@@ -146,4 +146,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
+  damage: 5
   isBeamActive: 0

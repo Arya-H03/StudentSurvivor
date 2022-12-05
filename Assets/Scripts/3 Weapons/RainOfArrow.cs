@@ -27,7 +27,7 @@ public class RainOfArrow : BaseWeapon
         SlaveKnight slaveKnight = collision.gameObject.GetComponent<SlaveKnight>();
         if (enemy != null)
         {
-            enemy.Damage(damage + 10);
+            enemy.Damage(damage);
 
 
         }

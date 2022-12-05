@@ -131,7 +131,7 @@ public class PlayerRanger : Player
                 animator.SetBool("isShooting", true);
                 yield return new WaitForSeconds(1);
                 animator.SetBool("isShooting", false);
-                yield return new WaitForSeconds(0.75f);
+                yield return new WaitForSeconds(0.5f);
 
             }
           

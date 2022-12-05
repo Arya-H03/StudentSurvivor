@@ -27,14 +27,14 @@ public class RangerBeam : BaseWeapon
         SlaveKnight slaveKnight = collision.gameObject.GetComponent<SlaveKnight>();
         if (enemy != null)
         {
-            enemy.Damage(damage + 10);
+            enemy.Damage(damage);
            
 
         }
 
         if (slaveKnight != null)
         {
-            slaveKnight.DamageBoss(damage + 10);
+            slaveKnight.DamageBoss(damage);
             
 
         }
