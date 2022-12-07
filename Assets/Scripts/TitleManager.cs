@@ -15,11 +15,14 @@ public class TitleManager : MonoBehaviour
     [SerializeField] GameObject upgradeMenu;
     [SerializeField] GameObject heroMenu;
     [SerializeField] GameObject levelMenu;
+    [SerializeField] GameObject settingMenu;
     [SerializeField] Axe axe;
     [SerializeField] TMP_Text playerGoldUpgrade;
     [SerializeField] TMP_Text playerGoldHero;
     [SerializeField] Button axeButton; 
     [SerializeField] Button crowButton;
+    [SerializeField] Button postProcessingOnButton;
+    [SerializeField] Button postProcessingOffButton;
     public static string CurrentLevel = "Level1";
    
     
@@ -35,6 +38,22 @@ public class TitleManager : MonoBehaviour
         }
 
         
+
+    }
+
+    private void Start()
+    {
+        if(TitleManager.saveData.ispostProcessing == true)
+        {
+            postProcessingOnButton.interactable = false;
+            postProcessingOffButton.interactable = true;
+        }
+
+        if (TitleManager.saveData.ispostProcessing == false)
+        {
+            postProcessingOnButton.interactable = true;
+            postProcessingOffButton.interactable = false;
+        }
 
     }
      
@@ -101,6 +120,33 @@ public class TitleManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void onSettingButtonClick()
+    {
+        settingMenu.SetActive(true);    
+    }
+
+    public void onPostProcessingOnButtonClick()
+    {
+        TitleManager.saveData.ispostProcessing = true;
+        if(TitleManager.saveData.ispostProcessing == true)
+        {
+            postProcessingOnButton.interactable = false;
+            postProcessingOffButton.interactable = true;
+        }
+        
+    }
+
+     public void onPostProcessingOffButtonClick()
+     {
+        TitleManager.saveData.ispostProcessing = false;
+        if (TitleManager.saveData.ispostProcessing == false)
+        {
+            postProcessingOffButton.interactable = false;
+            postProcessingOnButton.interactable = true;
+        }
+    }
+
+   
     public void Axe()
     {
         
@@ -170,16 +216,12 @@ public class TitleManager : MonoBehaviour
         upgradeMenu.SetActive(false);
         heroMenu.SetActive(false);
         levelMenu.SetActive(false);
+        settingMenu.SetActive(false);
     }
     
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
+  
     // Update is called once per frame
     void Update()
     {

@@ -38,6 +38,15 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(TitleManager.saveData.ispostProcessing == false)
+        {
+            volume.enabled = false;
+        }
+
+        if (TitleManager.saveData.ispostProcessing == true)
+        {
+            volume.enabled = true;
+        }
         if (PlayerCharacterManager.isKnight == true)
         {
             float intensity = (1 - playerKnight.GetHPRatio()) * 0.75f;

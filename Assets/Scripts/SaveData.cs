@@ -14,5 +14,6 @@ public class SaveData
     public bool isRangerUnlocked = false;
     public bool isWitchUnlocked = false;
     public bool isLevel2Unlocked = false;
+    public bool ispostProcessing = true;
     
 }
