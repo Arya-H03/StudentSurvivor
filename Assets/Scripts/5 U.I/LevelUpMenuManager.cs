@@ -12,6 +12,7 @@ public class LevelUpMenuManager : MonoBehaviour
     [SerializeField] BaseWeapon[] RangerWeaponSpawner;
     [SerializeField] BaseWeapon[] RangerWeapons;
     [SerializeField] BaseWeapon[] WitchWeapons;
+    [SerializeField] BaseWeapon[] WitchWeaponSpawner;
     [SerializeField] Image[] images;
     [SerializeField] TMP_Text[] lvlText;
     [SerializeField] GameObject levelUpMenu;
@@ -102,43 +103,44 @@ public class LevelUpMenuManager : MonoBehaviour
 
     }
 
-    //public void FlyingSkull()
-    //{
-    //    //KnightWeapons[3].LevelUp(2);
-    //    lvlText[4].text = "Lvl " + KnightWeapons[3].level.ToString();
-    //    WitchWeapons[1].LevelUp(1);     
-    //    levelUpMenu.SetActive(false);
-    //    images[4].color = Color.white;
-    //    playerCamera.EndBlur();
-    //    Time.timeScale = 1;
+    public void FlyingSkull()
+    {
+        //KnightWeapons[3].LevelUp(2);
+        lvlText[4].text = "Lvl " + KnightWeapons[3].level.ToString();
+        WitchWeaponSpawner[1].LevelUp();
+        WitchWeapons[1].LevelUp();
+        levelUpMenu.SetActive(false);
+        images[4].color = Color.white;
+        playerCamera.EndBlur();
+        Time.timeScale = 1;
 
-    //}
+    }
 
-    //public void FireBall()
-    //{
-    //    //KnightWeapons[4].LevelUp(1);
-    //    WitchWeapons[5].LevelUp(1);
-    //    lvlText[5].text = "Lvl " + KnightWeapons[4].level.ToString();
-       
-    //    levelUpMenu.SetActive(false);
-    //    images[5].color = Color.white;
-    //    playerCamera.EndBlur();
-    //    Time.timeScale = 1;
+    public void FireBall()
+    {
+        WitchWeaponSpawner[5].LevelUp();
+        WitchWeapons[5].LevelUp();
+        lvlText[5].text = "Lvl " + KnightWeapons[4].level.ToString();
 
-    //}
-    //public void MeteorShower()
-    //{
-    //    //KnightWeapons[5].LevelUp(2);
-    //    WitchWeapons[4].LevelUp(2);
-    //    lvlText[8].text = "Lvl " + KnightWeapons[5].level.ToString();
-       
-    //    levelUpMenu.SetActive(false);
-    //    playerCamera.EndBlur();
-    //    images[6].color = Color.white;
-        
-    //    Time.timeScale = 1;
+        levelUpMenu.SetActive(false);
+        images[5].color = Color.white;
+        playerCamera.EndBlur();
+        Time.timeScale = 1;
 
-    //}
+    }
+    public void MeteorShower()
+    {
+        WitchWeaponSpawner[4].LevelUp();
+        WitchWeapons[4].LevelUp();
+        lvlText[8].text = "Lvl " + KnightWeapons[5].level.ToString();
+
+        levelUpMenu.SetActive(false);
+        playerCamera.EndBlur();
+        images[6].color = Color.white;
+
+        Time.timeScale = 1;
+
+    }
 
     public void SpeedBoost()
     {
@@ -207,17 +209,17 @@ public class LevelUpMenuManager : MonoBehaviour
 
     }
 
-    //public void IceSpike()
-    //{
-    //    KnightWeapons[7].LevelUp(1);
-    //    WitchWeapons[2].LevelUp(1);
-    //    lvlText[10].text = "Lvl " + KnightWeapons[7].level.ToString();
+    public void IceSpike()
+    {
+        WitchWeaponSpawner[2].LevelUp();
+        WitchWeapons[2].LevelUp();
+        
 
-    //    levelUpMenu.SetActive(false);
-    //    images[8].color = Color.white;
-    //    playerCamera.EndBlur();
-    //    Time.timeScale = 1;
-    //}
+        levelUpMenu.SetActive(false);
+        images[8].color = Color.white;
+        playerCamera.EndBlur();
+        Time.timeScale = 1;
+    }
 
     public void RangerArrowDamage()
     {
@@ -307,20 +309,22 @@ public class LevelUpMenuManager : MonoBehaviour
 
     }
 
-    //public void WitchVoidBolt()
-    //{
-    //    WitchWeapons[0].LevelUp(1);
-    //    levelUpMenu.SetActive(false);
-    //    playerCamera.EndBlur();
-    //    Time.timeScale = 1;
-    //}
-    //public void WitchRaiseSkeleton()
-    //{
-    //    WitchWeapons[3].LevelUp(1);
-    //    levelUpMenu.SetActive(false);
-    //    playerCamera.EndBlur();
-    //    Time.timeScale = 1;
-    //}
+    public void WitchVoidBolt()
+    {
+        WitchWeaponSpawner[0].LevelUp();
+        WitchWeapons[0].LevelUp();
+        levelUpMenu.SetActive(false);
+        playerCamera.EndBlur();
+        Time.timeScale = 1;
+    }
+    public void WitchRaiseSkeleton()
+    {
+        WitchWeaponSpawner[3].LevelUp();
+        WitchWeapons[3].LevelUp();
+        levelUpMenu.SetActive(false);
+        playerCamera.EndBlur();
+        Time.timeScale = 1;
+    }
 
     public void SpreadArrow()
     {
@@ -424,43 +428,43 @@ public class LevelUpMenuManager : MonoBehaviour
 
 
             }
-            //}
-
-            //if(isWitch == true)
-            //{
-            //    switch (random1)
-            //    {
-            //        case 0:
-            //            WitchVoidBolt();
-            //            break;
-            //        case 1:
-            //            FlyingSkull(); ;
-            //            break;
-            //        case 2:
-            //            IceSpike();
-            //            break;
-            //        case 3:
-            //            WitchRaiseSkeleton();
-            //            break;
-            //        case 4:
-            //            MeteorShower();
-            //            break;
-            //        case 5:
-            //            FireBall();
-            //            break;
-            //        case 6:
-            //            AddMaxHP();
-            //            break;
-            //        case 7:
-            //            SpeedBoost();
-            //            break;            
-            //        default:
-            //            break;
-
-
-            //    }
-            //}
         }
+
+        if (isWitch == true)
+        {
+            switch (random1)
+            {
+                case 0:
+                    WitchVoidBolt();
+                    break;
+                case 1:
+                    FlyingSkull(); ;
+                    break;
+                case 2:
+                    IceSpike();
+                    break;
+                case 3:
+                    WitchRaiseSkeleton();
+                    break;
+                case 4:
+                    MeteorShower();
+                    break;
+                case 5:
+                    FireBall();
+                    break;
+                case 6:
+                    AddMaxHP();
+                    break;
+                case 7:
+                    SpeedBoost();
+                    break;
+                default:
+                    break;
+
+
+            }
+        }
+    
     }
 
     public void OnClickKnightAbility2()
@@ -547,40 +551,40 @@ public class LevelUpMenuManager : MonoBehaviour
 
         }
 
-        //if (isWitch == true)
-        //{
-        //    switch (random2)
-        //    {
-        //        case 0:
-        //            WitchVoidBolt();
-        //            break;
-        //        case 1:
-        //            FlyingSkull(); ;
-        //            break;
-        //        case 2:
-        //            IceSpike();
-        //            break;
-        //        case 3:
-        //            WitchRaiseSkeleton();
-        //            break;
-        //        case 4:
-        //            MeteorShower();
-        //            break;
-        //        case 5:
-        //            FireBall();
-        //            break;
-        //        case 6:
-        //            AddMaxHP();
-        //            break;
-        //        case 7:
-        //            SpeedBoost();
-        //            break;
-        //        default:
-        //            break;
+        if (isWitch == true)
+        {
+            switch (random2)
+            {
+                case 0:
+                    WitchVoidBolt();
+                    break;
+                case 1:
+                    FlyingSkull(); ;
+                    break;
+                case 2:
+                    IceSpike();
+                    break;
+                case 3:
+                    WitchRaiseSkeleton();
+                    break;
+                case 4:
+                    MeteorShower();
+                    break;
+                case 5:
+                    FireBall();
+                    break;
+                case 6:
+                    AddMaxHP();
+                    break;
+                case 7:
+                    SpeedBoost();
+                    break;
+                default:
+                    break;
 
 
-        //    }
-        //}
+            }
+        }
     }
 
     public void OnClickKnightAbility3()
@@ -666,40 +670,40 @@ public class LevelUpMenuManager : MonoBehaviour
             }
         }
 
-        //if (isWitch == true)
-        //{
-        //    switch (random3)
-        //    {
-        //        case 0:
-        //            WitchVoidBolt();
-        //            break;
-        //        case 1:
-        //            FlyingSkull(); ;
-        //            break;
-        //        case 2:
-        //            IceSpike();
-        //            break;
-        //        case 3:
-        //            WitchRaiseSkeleton();
-        //            break;
-        //        case 4:
-        //            MeteorShower();
-        //            break;
-        //        case 5:
-        //            FireBall();
-        //            break;
-        //        case 6:
-        //            AddMaxHP();
-        //            break;
-        //        case 7:
-        //            SpeedBoost();
-        //            break;
-        //        default:
-        //            break;
+        if (isWitch == true)
+        {
+            switch (random3)
+            {
+                case 0:
+                    WitchVoidBolt();
+                    break;
+                case 1:
+                    FlyingSkull(); ;
+                    break;
+                case 2:
+                    IceSpike();
+                    break;
+                case 3:
+                    WitchRaiseSkeleton();
+                    break;
+                case 4:
+                    MeteorShower();
+                    break;
+                case 5:
+                    FireBall();
+                    break;
+                case 6:
+                    AddMaxHP();
+                    break;
+                case 7:
+                    SpeedBoost();
+                    break;
+                default:
+                    break;
 
 
-        //    }
-        //}
+            }
+        }
     }
 
 }

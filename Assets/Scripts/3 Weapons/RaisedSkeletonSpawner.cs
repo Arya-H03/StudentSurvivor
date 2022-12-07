@@ -6,7 +6,7 @@ public class RaisedSkeletonSpawner : BaseWeapon
 {
     [SerializeField] GameObject player;
     [SerializeField] GameObject raisedSkeleton;
-    [SerializeField] float spawnRate = 10f;
+    [SerializeField] float spawnRate = 8f;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +33,12 @@ public class RaisedSkeletonSpawner : BaseWeapon
         }
         
         
+    }
+
+    public override void LevelUp()
+    {
+        base.LevelUp();
+        spawnRate = spawnRate - 0.5f;
+
     }
 }

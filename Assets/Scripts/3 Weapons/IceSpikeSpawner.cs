@@ -44,4 +44,9 @@ public class IceSpikeSpawner : BaseWeapon
 
 
     }
+
+    public override void LevelUp()
+    {
+        base.LevelUp();
+    }
 }

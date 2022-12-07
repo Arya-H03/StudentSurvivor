@@ -66,14 +66,20 @@ public class StandardEnergyBall : BaseWeapon
         SlaveKnight slaveKnight = collision.gameObject.GetComponent<SlaveKnight>();
         if (enemy != null)
         {
-            enemy.Damage(5);
+            enemy.Damage(damage);
         }
 
         if (slaveKnight != null)
         {
-            slaveKnight.DamageBoss(5);
+            slaveKnight.DamageBoss(damage);
         }
 
 
+    }
+
+    public override void LevelUp()
+    {
+        level++;
+        AddDamage(1);
     }
 }

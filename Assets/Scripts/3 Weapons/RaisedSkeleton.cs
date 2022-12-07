@@ -52,18 +52,18 @@ public class RaisedSkeleton : BaseWeapon
                     distance = Vector3.Distance(transform.position, FindEnemy().transform.position);
                 }
 
-                if (distance <= 1f)
-                {
-                    mobState = MobState.Attacking;
-                }
+                //if (distance <= 1f)
+                //{
+                //    mobState = MobState.Attacking;
+                //}
                 break;
-            case MobState.Attacking:
+            //case MobState.Attacking:
                
-                animator.SetBool("isWalking", false);
-                animator.SetTrigger("Attack");
-                mobState = MobState.Idle;
-                waitTimer = 1f;
-                break;
+            //    animator.SetBool("isWalking", false);
+            //    animator.SetTrigger("Attack");
+            //    mobState = MobState.Idle;
+            //    waitTimer = 1f;
+            //    break;
             default:
                 break;
         }
@@ -73,15 +73,24 @@ public class RaisedSkeleton : BaseWeapon
         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
         if (enemy)
         {
-
+            enemy.Damage(2);
             hp = hp - 1;
+            if(hp <= 0)
+            {
+                Destroy(gameObject);
+            }
 
         }
 
         SlaveKnight slaveKnight = collision.gameObject.GetComponent<SlaveKnight>();
         if (slaveKnight)
         {
-            slaveKnight.DamageBoss(5);
+            slaveKnight.DamageBoss(2);
+            hp = hp - 1;
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+            }
 
 
         }
@@ -154,6 +163,12 @@ public class RaisedSkeleton : BaseWeapon
             scaleX = 1;
         }
         transform.localScale = new Vector3(-scaleX, 1, 1);
+    }
+
+    public override void LevelUp()
+    {
+        level++;
+        AddDamage(1);
     }
 
 }

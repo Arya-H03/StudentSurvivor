@@ -39,4 +39,9 @@ public class TrackingEBSpawner : BaseWeapon
 
 
     }
+
+    public override void LevelUp()
+    {
+        base.LevelUp();
+    }
 }

@@ -40,4 +40,9 @@ public class StandardEBSpawner : BaseWeapon
 
 
     }
+
+    public override void LevelUp()
+    {
+        base.LevelUp();
+    }
 }

@@ -67,7 +67,7 @@ public class Meteor : BaseWeapon
         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
         if (enemy)
         {
-            enemy.Damage(25f);
+            enemy.Damage(damage + 25);
         }
     }
 
@@ -101,5 +101,11 @@ public class Meteor : BaseWeapon
     {
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
+    }
+
+    public override void LevelUp()
+    {
+        level++;
+        AddDamage(1);
     }
 }

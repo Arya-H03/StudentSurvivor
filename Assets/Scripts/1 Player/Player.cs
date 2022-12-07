@@ -16,13 +16,11 @@ public class Player : MonoBehaviour
     [SerializeField] GameManager gameManager;
     [SerializeField] TMP_Text levelText;
     [SerializeField] TMP_Text scoreText;
-    //[SerializeField] BaseWeapon[] weapons;
     [SerializeField] Enemy[] enemyTypes;   
     [SerializeField] TMP_Text expNumber;
     [SerializeField] TMP_Text hpNumber;
     [SerializeField] GameObject levelUpMenu;
     [SerializeField] TMP_Text goldAmount;
-    [SerializeField] GameObject[] abilities;
     [SerializeField] Image ability1;
     [SerializeField] Image ability2;
     [SerializeField] Image ability3;
@@ -32,9 +30,6 @@ public class Player : MonoBehaviour
     [SerializeField] Sprite [] abilityIcons;
     Material material;
     SpriteRenderer spriteRenderer;
-    //public Transform attackpoint;
-    //public float attachRange = 0.5f;
-    //public LayerMask enemyLayer;
     public int playerMaxFlame = 5;
     public int playerFlame = 0;
     public static bool isFlameFull = false;
@@ -124,11 +119,6 @@ public class Player : MonoBehaviour
                 playerFlame = playerMaxFlame;
             }
             int randomInedx = UnityEngine.Random.Range(1, 4);
-
-            //if(isAttacking == true)
-            //{
-            //    StartCoroutine(PlayerAttacks());            
-            //}
 
             StartCoroutine(MagnetPotionCoroutine());
             StartCoroutine(GoldPotionCoroutine());
@@ -279,14 +269,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    //private void OnDrawGizmosSelected()
-    //{
-    //    if(attackpoint != null)
-    //    {
-    //        Gizmos.DrawWireSphere(attackpoint.position, attachRange);
-    //    }        
-    //}
-
     private void RandomizeWeapon()
     {
         if(PlayerCharacterManager.isKnight == true)
@@ -306,31 +288,31 @@ public class Player : MonoBehaviour
 
         if (PlayerCharacterManager.isRanger == true)
         {
-            LevelUpMenuManager.random1 = UnityEngine.Random.Range(0, abilities.Count()+6);
-            LevelUpMenuManager.random2 = UnityEngine.Random.Range(0, abilities.Count()+6);
+            LevelUpMenuManager.random1 = UnityEngine.Random.Range(0, 12);
+            LevelUpMenuManager.random2 = UnityEngine.Random.Range(0, 12);
             while (LevelUpMenuManager.random1 == LevelUpMenuManager.random2)
             {
-                LevelUpMenuManager.random2 = UnityEngine.Random.Range(0, abilities.Count()+6);
+                LevelUpMenuManager.random2 = UnityEngine.Random.Range(0, 12);
             }
-            LevelUpMenuManager.random3 = UnityEngine.Random.Range(0, abilities.Count()+6);
+            LevelUpMenuManager.random3 = UnityEngine.Random.Range(0, 12);
             while (LevelUpMenuManager.random3 == LevelUpMenuManager.random1 || LevelUpMenuManager.random3 == LevelUpMenuManager.random2)
             {
-                LevelUpMenuManager.random3 = UnityEngine.Random.Range(0, abilities.Count()+6);
+                LevelUpMenuManager.random3 = UnityEngine.Random.Range(0, 12);
             }
         }
 
         if (PlayerCharacterManager.isWitch == true)
         {
-            LevelUpMenuManager.random1 = UnityEngine.Random.Range(0, abilities.Count()+2);
-            LevelUpMenuManager.random2 = UnityEngine.Random.Range(0, abilities.Count()+2);
+            LevelUpMenuManager.random1 = UnityEngine.Random.Range(0, 8);
+            LevelUpMenuManager.random2 = UnityEngine.Random.Range(0, 8);
             while (LevelUpMenuManager.random1 == LevelUpMenuManager.random2)
             {
-                LevelUpMenuManager.random2 = UnityEngine.Random.Range(0, abilities.Count()+2);
+                LevelUpMenuManager.random2 = UnityEngine.Random.Range(0, 8);
             }
-            LevelUpMenuManager.random3 = UnityEngine.Random.Range(0, abilities.Count()+2);
+            LevelUpMenuManager.random3 = UnityEngine.Random.Range(0, 8);
             while (LevelUpMenuManager.random3 == LevelUpMenuManager.random1 || LevelUpMenuManager.random3 == LevelUpMenuManager.random2)
             {
-                LevelUpMenuManager.random3 = UnityEngine.Random.Range(0, abilities.Count()+2);
+                LevelUpMenuManager.random3 = UnityEngine.Random.Range(0, 8);
             }
         }
 

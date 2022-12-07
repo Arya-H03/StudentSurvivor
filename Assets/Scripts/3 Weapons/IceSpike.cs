@@ -120,4 +120,10 @@ public class IceSpike : BaseWeapon
 
 
     }
+
+    public override void LevelUp()
+    {
+        level++;
+        AddDamage(1);
+    }
 }

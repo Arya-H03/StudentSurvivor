@@ -70,4 +70,9 @@ public class MeteorSpawner : BaseWeapon
 
 
     }
+
+    public override void LevelUp()
+    {
+        base.LevelUp();
+    }
 }

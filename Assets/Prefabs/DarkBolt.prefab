@@ -136,4 +136,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  speed: 6
+  damage: 2
+  speed: 4
