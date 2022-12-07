@@ -100,12 +100,16 @@ public class Enemy : MonoBehaviour
                     Vector3 goldcoin = new Vector3(transform.position.x + 0.4f, transform.position.y + 0.4f, transform.position.z);
                     Instantiate(goldCoin, goldcoin, Quaternion.identity);
                 }
-                if (randomIndex >= 21 && randomIndex <= 30)
-                {
-                    Vector3 flameP = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.5f, transform.position.z);
-                    Instantiate(flame, flameP, Quaternion.identity);
-                }
 
+                if(PlayerCharacterManager.isWitch == true)
+                {
+                    if (randomIndex >= 21 && randomIndex <= 30)
+                    {
+                        Vector3 flameP = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.5f, transform.position.z);
+                        Instantiate(flame, flameP, Quaternion.identity);
+                    }
+
+                }
 
                 //if (TitleManager.saveData.isGoldPotionActive == true)
                 //{
