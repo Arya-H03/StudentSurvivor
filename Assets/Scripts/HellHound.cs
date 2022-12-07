@@ -56,13 +56,13 @@ public class HellHound : Enemy
         }
     }
 
-    //protected override void KillEnemy()
-    //{
-    //    base.KillEnemy();
-    //    if (enemyHP <= 0)
-    //    {
+    protected override void KillEnemy()
+    {
+        base.KillEnemy();
+        if (enemyHP <= 0)
+        {
 
-    //        AfterDeath.cultistKilled++;
-    //    }
-    //}
+            AfterDeath.hellHoundKilled++;
+        }
+    }
 }

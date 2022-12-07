@@ -90,13 +90,13 @@ public class HellBeast : Enemy
     {
         return Mathf.Rad2Deg * radians;
     }
-    //protected override void KillEnemy()
-    //{
-    //    base.KillEnemy();
-    //    if (enemyHP <= 0)
-    //    {
+    protected override void KillEnemy()
+    {
+        base.KillEnemy();
+        if (enemyHP <= 0)
+        {
 
-    //        AfterDeath.skeletonKilled++;
-    //    }
-    //}
+            AfterDeath.hellBeastKilled++;
+        }
+    }
 }
