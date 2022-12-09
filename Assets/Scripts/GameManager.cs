@@ -124,14 +124,16 @@ public class GameManager : MonoBehaviour
         
 
 
-        if(minutes == 4 && isBossActive == false && TitleManager.CurrentLevel == "Level1")
+        if(minutes == 4&& isBossActive == false && TitleManager.CurrentLevel == "Level1")
         {
+            RemoveEnemies();
             SpawnBoss(slaveKnight, 1);
             
             isBossActive = true;
         }
         if(minutes == 4 && isBossActive == false && TitleManager.CurrentLevel == "Level2")
         {
+            RemoveEnemies();
             SpawnBoss(fireDemon, 1);
             
             isBossActive = true;
@@ -148,70 +150,70 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
             SpawnEnemies(cultist, 3 * spawnCounter, true, enemyObjectPoolLevel1[0]);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(skeleton, 5 * spawnCounter, true, enemyObjectPoolLevel1[1]);
-            //yield return new WaitForSeconds(2f);
-            //SpawnEnemies(skeleton, 10, false, enemyObjectPoolLevel1[1]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(cultist, 5 * spawnCounter, true, enemyObjectPoolLevel1[0]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(skeleton, 7 * spawnCounter, true, enemyObjectPoolLevel1[1]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(slime, 10 * spawnCounter, false, enemyObjectPoolLevel1[2]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(cultist, 12 * spawnCounter, true, enemyObjectPoolLevel1[0]);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(giant, 3 * spawnCounter, true, enemyObjectPoolLevel1[3]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(skeleton, 15 * spawnCounter, true, enemyObjectPoolLevel1[1]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(slime, 15 * spawnCounter, true, enemyObjectPoolLevel1[2]);
-            //yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(skeleton, 5 * spawnCounter, true, enemyObjectPoolLevel1[1]);
+            yield return new WaitForSeconds(2f);
+            SpawnEnemies(skeleton, 10, false, enemyObjectPoolLevel1[1]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 5 * spawnCounter, true, enemyObjectPoolLevel1[0]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 7 * spawnCounter, true, enemyObjectPoolLevel1[1]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(slime, 10 * spawnCounter, false, enemyObjectPoolLevel1[2]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 12 * spawnCounter, true, enemyObjectPoolLevel1[0]);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(giant, 3 * spawnCounter, true, enemyObjectPoolLevel1[3]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 15 * spawnCounter, true, enemyObjectPoolLevel1[1]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(slime, 15 * spawnCounter, true, enemyObjectPoolLevel1[2]);
+            yield return new WaitForSeconds(3f);
             //35
-            //SpawnEnemies(giant, 5 * spawnCounter, true, enemyObjectPoolLevel1[3]);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(bandit, 15, false, enemyObjectPoolLevel1[4]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(skeleton, 20 * spawnCounter, false, enemyObjectPoolLevel1[1]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(cultist, 20 * spawnCounter, true, enemyObjectPoolLevel1[0]);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(bandit, 15 * spawnCounter, true, enemyObjectPoolLevel1[4]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(slime, 20 * spawnCounter, true, enemyObjectPoolLevel1[2]);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(cultist, 20, false, enemyObjectPoolLevel1[0]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(slime, 20, false, enemyObjectPoolLevel1[2]);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(giant, 12 * spawnCounter, true, enemyObjectPoolLevel1[3]);
-            //yield return new WaitForSeconds(5f);
-            //SpawnEnemies(skeleton, 15 * spawnCounter, true, enemyObjectPoolLevel1[1]);
-            //yield return new WaitForSeconds(5f);
+            SpawnEnemies(giant, 5 * spawnCounter, true, enemyObjectPoolLevel1[3]);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(bandit, 15, false, enemyObjectPoolLevel1[4]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 20 * spawnCounter, false, enemyObjectPoolLevel1[1]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 20 * spawnCounter, true, enemyObjectPoolLevel1[0]);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(bandit, 15 * spawnCounter, true, enemyObjectPoolLevel1[4]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(slime, 20 * spawnCounter, true, enemyObjectPoolLevel1[2]);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(cultist, 20, false, enemyObjectPoolLevel1[0]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(slime, 20, false, enemyObjectPoolLevel1[2]);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(giant, 12 * spawnCounter, true, enemyObjectPoolLevel1[3]);
+            yield return new WaitForSeconds(5f);
+            SpawnEnemies(skeleton, 15 * spawnCounter, true, enemyObjectPoolLevel1[1]);
+            yield return new WaitForSeconds(5f);
             //77
-            //SpawnEnemies(nightborne, 10 * spawnCounter, true, enemyObjectPoolLevel1[5]);
-            //yield return new WaitForSeconds(4f);
-            //SpawnEnemies(skeleton, 20, false, enemyObjectPoolLevel1[1]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(cultist, 20, false, enemyObjectPoolLevel1[0]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(slime, 20 * spawnCounter, true, enemyObjectPoolLevel1[2]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(nightborne, 12 * spawnCounter, true, enemyObjectPoolLevel1[5]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(bandit, 18 * spawnCounter, true, enemyObjectPoolLevel1[4]);
-            //yield return new WaitForSeconds(6f);
-            //SpawnEnemies(giant, 20 * spawnCounter, true, enemyObjectPoolLevel1[3]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(skeleton, 20 * spawnCounter, true, enemyObjectPoolLevel1[1]);
-            //yield return new WaitForSeconds(2f);
-            //SpawnEnemies(bandit, 20, false, enemyObjectPoolLevel1[4]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(nightborne, 20 * spawnCounter, true, enemyObjectPoolLevel1[5]);
-            //yield return new WaitForSeconds(3f);
-            //SpawnEnemies(skeleton, 25 * spawnCounter, true, enemyObjectPoolLevel1[1]);
+            SpawnEnemies(nightborne, 10 * spawnCounter, true, enemyObjectPoolLevel1[5]);
+            yield return new WaitForSeconds(4f);
+            SpawnEnemies(skeleton, 20, false, enemyObjectPoolLevel1[1]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(cultist, 20, false, enemyObjectPoolLevel1[0]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(slime, 20 * spawnCounter, true, enemyObjectPoolLevel1[2]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(nightborne, 12 * spawnCounter, true, enemyObjectPoolLevel1[5]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(bandit, 18 * spawnCounter, true, enemyObjectPoolLevel1[4]);
+            yield return new WaitForSeconds(6f);
+            SpawnEnemies(giant, 20 * spawnCounter, true, enemyObjectPoolLevel1[3]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 20 * spawnCounter, true, enemyObjectPoolLevel1[1]);
+            yield return new WaitForSeconds(2f);
+            SpawnEnemies(bandit, 20, false, enemyObjectPoolLevel1[4]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(nightborne, 20 * spawnCounter, true, enemyObjectPoolLevel1[5]);
+            yield return new WaitForSeconds(3f);
+            SpawnEnemies(skeleton, 25 * spawnCounter, true, enemyObjectPoolLevel1[1]);
             //110
-            //spawnCounter++;
+            spawnCounter++;
 
             isBossActive = false;
         }
@@ -362,6 +364,15 @@ public class GameManager : MonoBehaviour
         }
 
 
+    }
+
+    private void RemoveEnemies()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].SetActive(false);
+        }
     }
 
     void SpawnBoss(GameObject enemyPrefab, int numberOfEnemies)

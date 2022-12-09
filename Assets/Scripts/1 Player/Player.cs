@@ -406,7 +406,7 @@ public class Player : MonoBehaviour
                     ability2Dis.text = "Poison arrow";
                     break;
                 case 11:
-                    ability1Dis.text = "Spread Shot";
+                    ability2Dis.text = "Spread Shot";
                     break;
                 default:
                     break;
@@ -450,7 +450,7 @@ public class Player : MonoBehaviour
                     ability3Dis.text = "Poison arrow";
                     break;
                 case 11:
-                    ability1Dis.text = "Spread Shot";
+                    ability3Dis.text = "Spread Shot";
                     break;
                 default:
                     break;

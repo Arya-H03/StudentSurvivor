@@ -193,11 +193,11 @@ public class FireDemon : MonoBehaviour
             Camera.main.GetComponent<PlayerCamera>().targetKnight = transform;
             Camera.main.orthographicSize = 4;
 
-            yield return new WaitForSecondsRealtime(4f);
+            yield return new WaitForSecondsRealtime(3f);
 
             Camera.main.GetComponent<PlayerCamera>().targetKnight = player.transform;
             Camera.main.orthographicSize = 5;
-            yield return new WaitForSecondsRealtime(2f);
+            yield return new WaitForSecondsRealtime(1f);
 
             Time.timeScale = 1;
         }
@@ -208,11 +208,11 @@ public class FireDemon : MonoBehaviour
             Camera.main.GetComponent<PlayerCamera>().targetRanger = transform;
             Camera.main.orthographicSize = 4;
 
-            yield return new WaitForSecondsRealtime(4f);
+            yield return new WaitForSecondsRealtime(3f);
 
             Camera.main.GetComponent<PlayerCamera>().targetRanger = player.transform;
             Camera.main.orthographicSize = 5;
-            yield return new WaitForSecondsRealtime(2f);
+            yield return new WaitForSecondsRealtime(1f);
 
             Time.timeScale = 1;
         }
@@ -223,11 +223,11 @@ public class FireDemon : MonoBehaviour
             Camera.main.GetComponent<PlayerCamera>().targetWitch = transform;
             Camera.main.orthographicSize = 4;
 
-            yield return new WaitForSecondsRealtime(4f);
+            yield return new WaitForSecondsRealtime(3f);
 
             Camera.main.GetComponent<PlayerCamera>().targetWitch = player.transform;
             Camera.main.orthographicSize = 5;
-            yield return new WaitForSecondsRealtime(2f);
+            yield return new WaitForSecondsRealtime(1f);
 
             Time.timeScale = 1;
         }
