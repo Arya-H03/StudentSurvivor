@@ -974,7 +974,7 @@ PrefabInstance:
       objectReference: {fileID: 3588848967047380058, guid: 9f4cae52b51e47b45941533ac4530bf3, type: 2}
     - target: {fileID: 7688576950012993488, guid: 04f45669599aa7d43a920b8931862144, type: 3}
       propertyPath: m_text
-      value: Upgrade
+      value: Upgrades
       objectReference: {fileID: 0}
     - target: {fileID: 7688576950012993488, guid: 04f45669599aa7d43a920b8931862144, type: 3}
       propertyPath: m_fontSize
@@ -5027,7 +5027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1405882107
 RectTransform:
   m_ObjectHideFlags: 0
