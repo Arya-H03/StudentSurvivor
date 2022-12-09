@@ -259,13 +259,6 @@ MonoBehaviour:
   hpNumber: {fileID: 0}
   levelUpMenu: {fileID: 0}
   goldAmount: {fileID: 0}
-  abilities:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   ability1: {fileID: 0}
   ability2: {fileID: 0}
   ability3: {fileID: 0}
@@ -285,6 +278,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 266157e346f69d24cb268f2bedfebb79, type: 3}
   - {fileID: 21300000, guid: 2ce31d9bfea81a44282f667067639673, type: 3}
   - {fileID: 21300000, guid: 5d5fb91a599921e4fbe0e9408f9f1451, type: 3}
+  playerWeapons:
+  - {fileID: 8923346965501167214}
+  - {fileID: 4757053995132540594, guid: dcf9741b21348b14a8fc318757529820, type: 3}
+  - {fileID: 388075961916827658, guid: 954ee42eda5b6b24e9725b2787aebbe0, type: 3}
+  - {fileID: 3152431187889760127, guid: dbbf45db51f7a4b448da88dfbd139123, type: 3}
+  - {fileID: 1611498636953033668, guid: 6e5ba25d9b5d1f24ea54fd514e9dbf0e, type: 3}
+  - {fileID: 1850335204, guid: aafdc8722af115540abce2ad5e83d2b4, type: 3}
   playerMaxFlame: 5
   playerFlame: 0
   animator: {fileID: 0}

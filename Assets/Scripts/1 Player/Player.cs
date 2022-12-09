@@ -673,13 +673,13 @@ public class Player : MonoBehaviour
             weaponDamages[i] = playerWeapons[i].damage;
             playerWeapons[i].damage = playerWeapons[i].damage * 2;
         }
-        material.SetFloat("_IsBuffed", 1);
+        material.SetFloat("_isBuffed", 1);
         yield return new WaitForSeconds(3);
                 for (int i = 0; i < playerWeapons.Count(); i++)
         {
             playerWeapons[i].damage = weaponDamages[i];
         }
-        material.SetFloat("_IsBuffed", 0);
+        material.SetFloat("_isBuffed", 0);
         playerIsBuffed = false;
 
     }

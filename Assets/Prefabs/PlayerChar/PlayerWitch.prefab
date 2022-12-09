@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fa810c81242c542986eb160da801fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 2942081797997307195}
   foreground: {fileID: 1492198477580653294}
 --- !u!1 &1492198477580653292
 GameObject:
@@ -480,7 +480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1866756482651290597
 Transform:
   m_ObjectHideFlags: 0
@@ -743,6 +743,13 @@ MonoBehaviour:
   - {fileID: -1890046787, guid: 3d51508d42a02454f9203e32ea06e1c3, type: 3}
   - {fileID: 21300000, guid: 70aceae9a64d59f479c2031cedaf7e09, type: 3}
   - {fileID: 21300000, guid: 0014157f69600bf42a1bfd426f3fbd97, type: 3}
+  playerWeapons:
+  - {fileID: 6680387686621631144, guid: eb607135af548db47829c29795c4fe4e, type: 3}
+  - {fileID: 298775992232638680, guid: c281dd39f72dd624e810248fe669225a, type: 3}
+  - {fileID: 6709513969741714250, guid: 2cdef9d3cac125747b3b8ecef27fef85, type: 3}
+  - {fileID: 3710897416356669561, guid: cec3a1f776ab64949b346256f6620d17, type: 3}
+  - {fileID: 4937365981310811499, guid: 7dff1be38ce78474b99a7d35add059b3, type: 3}
+  - {fileID: 1588758918581632959, guid: 9c64836ffdd73d342a4d51f987eb0f36, type: 3}
   playerMaxFlame: 5
   playerFlame: 0
   animator: {fileID: 0}

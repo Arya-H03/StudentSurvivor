@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6230087241311343399}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1648405460
 SpriteRenderer:
@@ -93,7 +93,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648405457}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -307,7 +307,7 @@ RectTransform:
   m_Children:
   - {fileID: 3515427577832537355}
   m_Father: {fileID: 6230087241311343399}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -391,7 +391,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3515427577414364752
 Transform:
   m_ObjectHideFlags: 0
@@ -405,7 +405,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6230087241311343399}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3515427577414364753
 MonoBehaviour:
@@ -514,37 +514,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   foreground: {fileID: 3515427578905502789}
---- !u!1 &3515427578098135734
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3515427578098135735}
-  m_Layer: 0
-  m_Name: AttackPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3515427578098135735
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3515427578098135734}
-  m_LocalRotation: {x: -0, y: 0.009838242, z: -0, w: 0.9999516}
-  m_LocalPosition: {x: -0.707, y: -0.133, z: -1.113}
-  m_LocalScale: {x: 0.9425639, y: 0.93756837, z: 0.93756837}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6230087241311343399}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 1.127, z: 0}
 --- !u!1 &3515427578905502791
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,7 +622,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6230087241311343399}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &5846232551462260440
 SpriteRenderer:
@@ -773,7 +742,6 @@ Transform:
   - {fileID: 1613006403770083400}
   - {fileID: 1613006404915126212}
   - {fileID: 1613006404083684330}
-  - {fileID: 3515427578098135735}
   - {fileID: 3515427577211550984}
   - {fileID: 3515427577414364752}
   - {fileID: 5846232551462260442}
@@ -905,7 +873,6 @@ MonoBehaviour:
   hpNumber: {fileID: 0}
   levelUpMenu: {fileID: 0}
   goldAmount: {fileID: 0}
-  abilities: []
   ability1: {fileID: 0}
   ability2: {fileID: 0}
   ability3: {fileID: 0}
@@ -921,6 +888,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e68c7502c77e6eb43acccfeaba49798c, type: 3}
   - {fileID: 21300000, guid: 0014157f69600bf42a1bfd426f3fbd97, type: 3}
   - {fileID: 1206161687, guid: 3d51508d42a02454f9203e32ea06e1c3, type: 3}
+  playerWeapons:
+  - {fileID: 1648405458}
+  - {fileID: 5846232551462260441}
+  - {fileID: 224931524343167012, guid: 10deeec8d48fca242afbabb007043a3a, type: 3}
+  - {fileID: 7087866774408622778, guid: 27a2e674c55a7a4429b5f9521caf04fe, type: 3}
+  - {fileID: -8944328791766906411, guid: 70d83c0f9fe963d48998575ae83bd286, type: 3}
+  - {fileID: 251609119965368015, guid: 8b650fb6adbc14f4e8d4542157b97284, type: 3}
   playerMaxFlame: 5
   playerFlame: 0
   animator: {fileID: 0}

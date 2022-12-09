@@ -39,5 +39,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _Flash: 0
-    m_Colors: []
+    - _isBuffed: 0
+    m_Colors:
+    - _Color1: {r: 1, g: 0.4447487, b: 0, a: 0}
+    - _Color2: {r: 0.7264151, g: 0.03769135, b: 0.03769135, a: 0}
   m_BuildTextureStacks: []
