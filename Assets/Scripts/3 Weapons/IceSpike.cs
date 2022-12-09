@@ -112,6 +112,7 @@ public class IceSpike : BaseWeapon
         boxCollider.enabled = true;
         spriteRenderer.enabled = true;
         yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
 
 
         boxCollider.enabled = false;

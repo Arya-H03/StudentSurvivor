@@ -34,6 +34,7 @@ public class Dagger : BaseWeapon
         if (enemy != null)
         {
             enemy.Damage(damage);
+            
             enemy.StartCoroutine(enemy.Slow());
             DaggerHp--;
             if (DaggerHp <= 0)

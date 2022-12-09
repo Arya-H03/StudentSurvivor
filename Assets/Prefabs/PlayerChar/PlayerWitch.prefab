@@ -754,8 +754,9 @@ MonoBehaviour:
   playerFlame: 0
   animator: {fileID: 0}
   playerHP: 0
-  playerMaxHP: 6
+  playerMaxHP: 100
   speed: 4
+  currentLevel: 0
   playerCamera: {fileID: 0}
   goldGainedByPlayer: 0
   EXPgained: 0

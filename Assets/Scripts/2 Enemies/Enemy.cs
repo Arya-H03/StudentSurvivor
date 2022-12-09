@@ -158,7 +158,7 @@ public class Enemy : MonoBehaviour
         if (gameObject.activeInHierarchy)
         {
             //isInvincible = true;
-            material.SetFloat("_Flash", 0.75f);
+            material.SetFloat("_Flash", 0.5f);
             yield return new WaitForSeconds(0.5f);
             material.SetFloat("_Flash", 0);
 
@@ -258,38 +258,45 @@ public class Enemy : MonoBehaviour
 
     public IEnumerator Freeze()
     {
-
-        material.SetFloat("_UnderEffect", 1);
-        material.SetFloat("_FrozenOrPoisoned", 1);
-        float speed1 = speed; 
-        speed = (float)(speed * 0);
-        yield return new WaitForSeconds(3f);
-        material.SetFloat("_UnderEffect", 0);
-        speed = speed1;
+        if (gameObject.activeInHierarchy)
+        {
+            material.SetFloat("_UnderEffect", 1);
+            material.SetFloat("_FrozenOrPoisoned", 1);
+            float speed1 = speed;
+            speed = (float)(speed * 0);
+            yield return new WaitForSeconds(3f);
+            material.SetFloat("_UnderEffect", 0);
+            speed = speed1;
+        }
     }
 
     public IEnumerator Slow()
     {
-       
-        spriteRenderer.color = Color.grey;
-        float speed1 = speed;
-        speed = (float)(speed * 0.75);
-        yield return new WaitForSeconds(3f);
-        spriteRenderer.color = Color.white;
-        speed = speed1;
+        if (gameObject.activeInHierarchy)
+        {
+            spriteRenderer.color = Color.grey;
+            float speed1 = speed;
+            speed = (float)(speed * 0.75);
+            yield return new WaitForSeconds(3f);
+            spriteRenderer.color = Color.white;
+            speed = speed1;
+        }
     }
 
     public IEnumerator Poison(int numberOfPoisonTicks, float poisonDotDamage)
     {
-        material.SetFloat("_UnderEffect", 1);
-        material.SetFloat("_FrozenOrPoisoned", 0);
-        yield return new WaitForSeconds(0.5f);
-        for (int i = 0; i < numberOfPoisonTicks; i++)
+        if (gameObject.activeInHierarchy)
         {
-            Damage(poisonDotDamage);
-            yield return new WaitForSeconds(1f);
+            material.SetFloat("_UnderEffect", 1);
+            material.SetFloat("_FrozenOrPoisoned", 0);
+            yield return new WaitForSeconds(0.5f);
+            for (int i = 0; i < numberOfPoisonTicks; i++)
+            {
+                Damage(poisonDotDamage);
+                yield return new WaitForSeconds(1f);
+            }
+            material.SetFloat("_UnderEffect", 0);
         }
-        material.SetFloat("_UnderEffect", 0);
     }
 
     //IEnumerator DamagePopUp(float damage)
