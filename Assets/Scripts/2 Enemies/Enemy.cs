@@ -33,9 +33,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject damagePopUp;
     protected bool isHit = false;
     Material material;
+    protected int playerLevel;
+    [SerializeField] SimpleObjectPool enemyPool;
 
 
-
+    private void OnEnable()
+    {
+        StartCoroutine(KillEnemyAfterTime());
+    }
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -46,6 +51,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         healthBar = transform.GetChild(0).gameObject;
         material = spriteRenderer.material; 
+        
     }
 
 
@@ -54,13 +60,16 @@ public class Enemy : MonoBehaviour
     {     
         sec = (int)Time.timeSinceLevelLoad;       
         GoToPlayer();
+
+
         
     }
 
     public void Damage(float damageValue)
     {       
-        if (!isInvincible)
+        if (!isInvincible && gameObject.activeInHierarchy)
         {
+
             StartCoroutine(InvincibleFrames());
             enemyHP -= damageValue;
             //StartCoroutine(DamagePopUp(damageValue));
@@ -143,12 +152,16 @@ public class Enemy : MonoBehaviour
 
     public IEnumerator InvincibleFrames()
     {
-        //isInvincible = true;
-        material.SetFloat("_Flash", 0.75f);
-        yield return new WaitForSeconds(0.5f);
-        material.SetFloat("_Flash", 0);
+        if (gameObject.activeInHierarchy)
+        {
+            //isInvincible = true;
+            material.SetFloat("_Flash", 0.75f);
+            yield return new WaitForSeconds(0.5f);
+            material.SetFloat("_Flash", 0);
 
-        //isInvincible = false;
+            //isInvincible = false;
+        }
+
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -174,8 +187,8 @@ public class Enemy : MonoBehaviour
         if (player)
         {
             if (player.OnDamage())
-            {                
-                Damage(enemyHP);                                
+            {
+                enemyPool.ReturnObject(gameObject);                                
             }           
         }
 
@@ -287,10 +300,10 @@ public class Enemy : MonoBehaviour
     //    }
     //}
 
-    IEnumerator Destroy()
+    IEnumerator KillEnemyAfterTime()
     {
-        yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
+        yield return new WaitForSeconds(45);
+        enemyPool.ReturnObject(gameObject);
     }
 
     private void SpawnDamageNumber(float damage)
@@ -302,7 +315,8 @@ public class Enemy : MonoBehaviour
 
     protected virtual void KillEnemy()
     {
-        Destroy(gameObject);
+        enemyPool.ReturnObject(gameObject);
     }
 
+   
 }

@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject playerKnight;
     [SerializeField] GameObject playerRanger;
     [SerializeField] GameObject playerWitch;
+    //0 cultist 1 skeleton 2 slime 3 giant 4 bandit 5 nightborne
+    [SerializeField] SimpleObjectPool[] enemyObjectPoolLevel1;
+    //0 cultist 1 skeleton 2  3  4  5   fireworm  runne8 hellbeast  flyingdemon
+    [SerializeField] SimpleObjectPool[] enemyObjectPoolLevel2;
 
     public  int goldGained;
     public  int EXPGained;
@@ -143,69 +147,69 @@ public class GameManager : MonoBehaviour
         while (minutes <= 4 && TitleManager.CurrentLevel == "Level1")
         {
             yield return new WaitForSeconds(2f);
-            SpawnEnemies(cultist, 3 * spawnCounter, true);
+            SpawnEnemies(cultist, 3 * spawnCounter, true, enemyObjectPoolLevel1[0]);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(skeleton, 5 * spawnCounter, true);
+            SpawnEnemies(skeleton, 5 * spawnCounter, true, enemyObjectPoolLevel1[1]);
             yield return new WaitForSeconds(2f);
-            SpawnEnemies(skeleton, 10, false);
+            SpawnEnemies(skeleton, 10, false, enemyObjectPoolLevel1[1]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(cultist, 5 * spawnCounter, true);
+            SpawnEnemies(cultist, 5 * spawnCounter, true, enemyObjectPoolLevel1[0]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(skeleton, 7 * spawnCounter, true);
+            SpawnEnemies(skeleton, 7 * spawnCounter, true, enemyObjectPoolLevel1[1]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(slime, 10 * spawnCounter, false);
+            SpawnEnemies(slime, 10 * spawnCounter, false, enemyObjectPoolLevel1[2]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(cultist, 12 * spawnCounter, true);
+            SpawnEnemies(cultist, 12 * spawnCounter, true, enemyObjectPoolLevel1[0]);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(giant, 3 * spawnCounter, true);
+            SpawnEnemies(giant, 3 * spawnCounter, true, enemyObjectPoolLevel1[3]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(skeleton, 15 * spawnCounter, true);
+            SpawnEnemies(skeleton, 15 * spawnCounter, true, enemyObjectPoolLevel1[1]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(slime, 15 * spawnCounter, true);
+            SpawnEnemies(slime, 15 * spawnCounter, true, enemyObjectPoolLevel1[2]);
             yield return new WaitForSeconds(3f);
             //35
-            SpawnEnemies(giant, 5 * spawnCounter, true);
+            SpawnEnemies(giant, 5 * spawnCounter, true, enemyObjectPoolLevel1[3]);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(bandit, 15, false);
+            SpawnEnemies(bandit, 15, false, enemyObjectPoolLevel1[4]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(skeleton, 20 * spawnCounter, false);
+            SpawnEnemies(skeleton, 20 * spawnCounter, false, enemyObjectPoolLevel1[1]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(cultist, 20 * spawnCounter, true);
+            SpawnEnemies(cultist, 20 * spawnCounter, true, enemyObjectPoolLevel1[0]);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(bandit, 15 * spawnCounter, true);
+            SpawnEnemies(bandit, 15 * spawnCounter, true, enemyObjectPoolLevel1[4]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(slime, 20 * spawnCounter, true);
+            SpawnEnemies(slime, 20 * spawnCounter, true, enemyObjectPoolLevel1[2]);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(cultist, 20, false);
+            SpawnEnemies(cultist, 20, false, enemyObjectPoolLevel1[0]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(slime, 20, false);
+            SpawnEnemies(slime, 20, false, enemyObjectPoolLevel1[2]);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(giant, 12 * spawnCounter, true);
+            SpawnEnemies(giant, 12 * spawnCounter, true, enemyObjectPoolLevel1[3]);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(skeleton, 15 * spawnCounter, true);
+            SpawnEnemies(skeleton, 15 * spawnCounter, true, enemyObjectPoolLevel1[1]);
             yield return new WaitForSeconds(5f);
             //77
-            SpawnEnemies(nightborne, 10 * spawnCounter, true);
+            SpawnEnemies(nightborne, 10 * spawnCounter, true, enemyObjectPoolLevel1[5]);
             yield return new WaitForSeconds(4f);
-            SpawnEnemies(skeleton, 20, false);
+            SpawnEnemies(skeleton, 20, false, enemyObjectPoolLevel1[1]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(cultist, 20, false);
+            SpawnEnemies(cultist, 20, false, enemyObjectPoolLevel1[0]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(slime, 20 * spawnCounter, true);
+            SpawnEnemies(slime, 20 * spawnCounter, true, enemyObjectPoolLevel1[2]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(nightborne, 12 * spawnCounter, true);
+            SpawnEnemies(nightborne, 12 * spawnCounter, true, enemyObjectPoolLevel1[5]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(bandit, 18 * spawnCounter, true);
+            SpawnEnemies(bandit, 18 * spawnCounter, true, enemyObjectPoolLevel1[4]);
             yield return new WaitForSeconds(6f);
-            SpawnEnemies(giant, 20 * spawnCounter, true);
+            SpawnEnemies(giant, 20 * spawnCounter, true, enemyObjectPoolLevel1[3]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(skeleton, 20 * spawnCounter, true);
+            SpawnEnemies(skeleton, 20 * spawnCounter, true, enemyObjectPoolLevel1[1]);
             yield return new WaitForSeconds(2f);
-            SpawnEnemies(bandit, 20, false);
+            SpawnEnemies(bandit, 20, false, enemyObjectPoolLevel1[4]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(nightborne, 20 * spawnCounter, true);
+            SpawnEnemies(nightborne, 20 * spawnCounter, true, enemyObjectPoolLevel1[5]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(skeleton, 25 * spawnCounter, true);
+            SpawnEnemies(skeleton, 25 * spawnCounter, true, enemyObjectPoolLevel1[1]);
             //110
             spawnCounter++;
 
@@ -215,70 +219,70 @@ public class GameManager : MonoBehaviour
         while (minutes <= 4 && TitleManager.CurrentLevel == "Level2")
         {
             yield return new WaitForSeconds(2f);
-            SpawnEnemies(cultist, 3 * spawnCounter, true);
+            SpawnEnemies(cultist, 3 * spawnCounter, true, enemyObjectPoolLevel2[0]);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(skeleton, 5 * spawnCounter, true);
+            SpawnEnemies(skeleton, 5 * spawnCounter, true, enemyObjectPoolLevel2[1]);
             yield return new WaitForSeconds(2f);
-            SpawnEnemies(skeleton, 10, false);
+            SpawnEnemies(skeleton, 10, false, enemyObjectPoolLevel2[1]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(cultist, 5 * spawnCounter, true);
+            SpawnEnemies(cultist, 5 * spawnCounter, true, enemyObjectPoolLevel2[0]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(skeleton, 7 * spawnCounter, true);
+            SpawnEnemies(skeleton, 7 * spawnCounter, true, enemyObjectPoolLevel2[1]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(fireWorm, 10 * spawnCounter, false);
+            SpawnEnemies(fireWorm, 10 * spawnCounter, false, enemyObjectPoolLevel2[2]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(cultist, 12 * spawnCounter, true);
+            SpawnEnemies(cultist, 12 * spawnCounter, true, enemyObjectPoolLevel2[0]);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(flyingDemon, 3 * spawnCounter, true);
+            SpawnEnemies(flyingDemon, 3 * spawnCounter, true, enemyObjectPoolLevel2[5]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(skeleton, 15 * spawnCounter, true);
+            SpawnEnemies(skeleton, 15 * spawnCounter, true, enemyObjectPoolLevel2[1]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(fireWorm, 15 * spawnCounter, true);
+            SpawnEnemies(fireWorm, 15 * spawnCounter, true, enemyObjectPoolLevel2[2]);
             yield return new WaitForSeconds(3f);
             //35
-            SpawnEnemies(flyingDemon, 5 * spawnCounter, true);
+            SpawnEnemies(flyingDemon, 5 * spawnCounter, true, enemyObjectPoolLevel2[5]);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(hellBeast, 15, false);
+            SpawnEnemies(hellBeast, 15, false, enemyObjectPoolLevel2[4]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(skeleton, 20 * spawnCounter, false);
+            SpawnEnemies(skeleton, 20 * spawnCounter, false, enemyObjectPoolLevel2[1]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(cultist, 20 * spawnCounter, true);
+            SpawnEnemies(cultist, 20 * spawnCounter, true, enemyObjectPoolLevel2[0]);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(hellBeast, 15 * spawnCounter, true);
+            SpawnEnemies(hellBeast, 15 * spawnCounter, true, enemyObjectPoolLevel2[4]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(fireWorm, 20 * spawnCounter, true);
+            SpawnEnemies(fireWorm, 20 * spawnCounter, true, enemyObjectPoolLevel2[2]);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(cultist, 20, false);
+            SpawnEnemies(cultist, 20, false, enemyObjectPoolLevel2[0]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(fireWorm, 20, false);
+            SpawnEnemies(fireWorm, 20, false, enemyObjectPoolLevel2[2]);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(flyingDemon, 12 * spawnCounter, true);
+            SpawnEnemies(flyingDemon, 12 * spawnCounter, true, enemyObjectPoolLevel2[5]);
             yield return new WaitForSeconds(5f);
-            SpawnEnemies(skeleton, 15 * spawnCounter, true);
+            SpawnEnemies(skeleton, 15 * spawnCounter, true, enemyObjectPoolLevel2[1]);
             yield return new WaitForSeconds(5f);
             //77
-            SpawnEnemies(hellHound, 10 * spawnCounter, true);
+            SpawnEnemies(hellHound, 10 * spawnCounter, true, enemyObjectPoolLevel2[3]);
             yield return new WaitForSeconds(4f);
-            SpawnEnemies(skeleton, 20, false);
+            SpawnEnemies(skeleton, 20, false, enemyObjectPoolLevel2[1]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(cultist, 20, false);
+            SpawnEnemies(cultist, 20, false, enemyObjectPoolLevel2[0]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(fireWorm, 20 * spawnCounter, true);
+            SpawnEnemies(fireWorm, 20 * spawnCounter, true, enemyObjectPoolLevel2[2]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(hellHound, 12 * spawnCounter, true);
+            SpawnEnemies(hellHound, 12 * spawnCounter, true, enemyObjectPoolLevel2[3]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(hellBeast, 18 * spawnCounter, true);
+            SpawnEnemies(hellBeast, 18 * spawnCounter, true, enemyObjectPoolLevel2[4]);
             yield return new WaitForSeconds(6f);
-            SpawnEnemies(flyingDemon, 20 * spawnCounter, true);
+            SpawnEnemies(flyingDemon, 20 * spawnCounter, true, enemyObjectPoolLevel2[5]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(skeleton, 20 * spawnCounter, true);
+            SpawnEnemies(skeleton, 20 * spawnCounter, true, enemyObjectPoolLevel2[1]);
             yield return new WaitForSeconds(2f);
-            SpawnEnemies(hellBeast, 20, false);
+            SpawnEnemies(hellBeast, 20, false, enemyObjectPoolLevel2[4]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(hellHound, 20 * spawnCounter, true);
+            SpawnEnemies(hellHound, 20 * spawnCounter, true, enemyObjectPoolLevel2[3]);
             yield return new WaitForSeconds(3f);
-            SpawnEnemies(skeleton, 25 * spawnCounter, true);
-            //110
+            SpawnEnemies(skeleton, 25 * spawnCounter, true, enemyObjectPoolLevel2[1]);
+           //1
             spawnCounter++;
 
             isBossActive = false;
@@ -293,7 +297,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void SpawnEnemies(GameObject enemyPrefab, int numberOfEnemies, bool isTrack)
+    void SpawnEnemies(GameObject enemyPrefab, int numberOfEnemies, bool isTrack,SimpleObjectPool enemyObjectPool)
     {
         for (int i = 0; i < numberOfEnemies; i++)
         {
@@ -312,9 +316,10 @@ public class GameManager : MonoBehaviour
                 if (playerKnight != null)
                 {
                     spawnPosition += playerKnight.transform.position;
-
-                    GameObject enemyObject = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+                    GameObject enemyObject = enemyObjectPool.GetObject();
+                    enemyObject.transform.position = spawnPosition;
                     Enemy enemy = enemyObject.GetComponent<Enemy>();
+                    enemyObject.SetActive(true);
 
                     enemy.isTrack = isTrack;
                 }
@@ -325,9 +330,10 @@ public class GameManager : MonoBehaviour
                 if (playerRanger != null)
                 {
                     spawnPosition += playerRanger.transform.position;
-
-                    GameObject enemyObject = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+                    GameObject enemyObject = enemyObjectPool.GetObject();
+                    enemyObject.transform.position = spawnPosition;
                     Enemy enemy = enemyObject.GetComponent<Enemy>();
+                    enemyObject.SetActive(true);
 
                     enemy.isTrack = isTrack;
                 }
@@ -338,9 +344,10 @@ public class GameManager : MonoBehaviour
                 if (playerWitch != null)
                 {
                     spawnPosition += playerWitch.transform.position;
-
-                    GameObject enemyObject = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+                    GameObject enemyObject = enemyObjectPool.GetObject();
+                    enemyObject.transform.position = spawnPosition;
                     Enemy enemy = enemyObject.GetComponent<Enemy>();
+                    enemyObject.SetActive(true);
 
                     enemy.isTrack = isTrack;
                 }

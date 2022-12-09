@@ -34,7 +34,7 @@ PrefabInstance:
     - target: {fileID: 2120115428, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: enemy
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1702248700430431777}
     - target: {fileID: 2392363651912507095, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -105,11 +105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6.935031
+      value: 1.6085159
       objectReference: {fileID: 0}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.2312989
+      value: -3.1898904
       objectReference: {fileID: 0}
     - target: {fileID: 7379596113146942738, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -183,3 +183,4 @@ MonoBehaviour:
   enemyHP: 0
   isTrack: 1
   damagePopUp: {fileID: 428124998287652800, guid: ff7e47dbca07c3e418f992cc13669c80, type: 3}
+  enemyPool: {fileID: 0}

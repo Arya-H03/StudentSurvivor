@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cultist
       objectReference: {fileID: 0}
+    - target: {fileID: 9024639443312771643, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1391211854, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 35a8faf86aa1fc042ab6e6d225a73cd5, type: 3}
@@ -151,3 +155,4 @@ MonoBehaviour:
   enemyHP: 0
   isTrack: 1
   damagePopUp: {fileID: 428124998287652800, guid: ff7e47dbca07c3e418f992cc13669c80, type: 3}
+  enemyPool: {fileID: 6637781113624711477, guid: fa212f4a3e8450243af00f56661f230b, type: 3}

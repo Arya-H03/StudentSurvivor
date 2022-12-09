@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
     internal int score;
     internal int currentExp;
     internal int expToLevel = 5;
-    internal int currentLevel;
+    public int currentLevel;
     public PlayerCamera playerCamera;
     public int goldGainedByPlayer;
     public int EXPgained;

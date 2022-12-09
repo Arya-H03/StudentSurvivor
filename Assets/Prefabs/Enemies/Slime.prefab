@@ -154,5 +154,5 @@ MonoBehaviour:
   enemyMaxHP: 4
   enemyHP: 0
   isTrack: 1
-  damageNumber: {fileID: 0}
   damagePopUp: {fileID: 428124998287652800, guid: ff7e47dbca07c3e418f992cc13669c80, type: 3}
+  enemyPool: {fileID: 2225987593133188432, guid: ca297aba96243054ca7793387e6cb224, type: 3}
