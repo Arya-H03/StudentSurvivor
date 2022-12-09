@@ -201,7 +201,14 @@ public class Enemy : MonoBehaviour
 
     public void AddHP(float hp)
     {
-        enemyMaxHP = enemyMaxHP + hp;
+        if (gameObject.activeInHierarchy == false)
+
+        {
+            Debug.Log("Yo");
+            enemyMaxHP = enemyMaxHP + hp;
+        }
+        
+        
     }    
     public  void GoToPlayer()
     {

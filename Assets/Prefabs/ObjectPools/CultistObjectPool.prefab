@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefab: {fileID: 6502353929556043386, guid: 51f65e6edc0aa9148a4dc8cbda5f71f6, type: 3}
-  poolSisze: 500
+  poolSisze: 400
   expandable: 0

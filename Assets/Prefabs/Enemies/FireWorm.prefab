@@ -171,3 +171,4 @@ MonoBehaviour:
   enemyHP: 0
   isTrack: 1
   damagePopUp: {fileID: 428124998287652800, guid: ff7e47dbca07c3e418f992cc13669c80, type: 3}
+  enemyPool: {fileID: 7882792491133566146, guid: c323b7be87b1a6543a1e5666645895df, type: 3}
