@@ -189,7 +189,7 @@ public class TitleManager : MonoBehaviour
         TitleManager.saveData.isAxeUpgradeActive = false;
         crowButton.interactable = true;
         axeButton.interactable = true;
-        TitleManager.saveData.goldCoins = 500;
+        TitleManager.saveData.goldCoins = 1000;
        
         
 
@@ -202,6 +202,9 @@ public class TitleManager : MonoBehaviour
         TitleManager.saveData.goldCoins = 0;
         TitleManager.saveData.isRangerUnlocked = false;
         TitleManager.saveData.isWitchUnlocked = false;
+        TitleManager.saveData.isCrowActive = false;
+        TitleManager.saveData.isAxeUpgradeActive = false;
+        TitleManager.saveData.isLevel2Unlocked = false;
 
         
 

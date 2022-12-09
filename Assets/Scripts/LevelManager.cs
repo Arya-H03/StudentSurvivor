@@ -26,6 +26,11 @@ public class LevelManager : MonoBehaviour
         {
             levelImage[0].color = Color.white;  
         }
+
+        if (TitleManager.saveData.isLevel2Unlocked == false)
+        {
+            levelImage[0].color = Color.black;
+        }
     }
     public void OnLevel2Click()
     {

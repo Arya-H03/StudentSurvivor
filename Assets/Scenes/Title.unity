@@ -342,16 +342,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bow and Arrow
+  m_text: 'Ranger Hero
 
 
-    Ranged hero
+    Bow and Arrow
 
 
-    Fast
+    Mobile
 
 
-    Lower Health
+    Low Health
 
 '
   m_isRightToLeft: 0
@@ -1495,7 +1495,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 255, y: 138}
+  m_AnchoredPosition: {x: 255, y: 192}
   m_SizeDelta: {x: 939.3757, y: 783.5103}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &523249878
@@ -1518,7 +1518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -691811326, guid: 1e7321935a07924428e43a8326fb67b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 43a7d98bd4222b64e933596512dc09ad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1662,7 +1662,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlock a permenant upgrade!!!
+  m_text: Unlock a permenant upgrades!!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9f4cae52b51e47b45941533ac4530bf3, type: 2}
   m_sharedMaterial: {fileID: 3588848967047380058, guid: 9f4cae52b51e47b45941533ac4530bf3, type: 2}
@@ -3018,7 +3018,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -226}
+  m_AnchoredPosition: {x: 7, y: -203.2}
   m_SizeDelta: {x: 200, y: 52.5628}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1008359361
@@ -3041,10 +3041,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Default hero
-
-
-    Start with a Sword
+  m_text: 'Knight Hero
 
 
     Master of blades
@@ -3053,8 +3050,7 @@ MonoBehaviour:
     Slow
 
 
-    More
-    Health
+    Lot of health
 
 '
   m_isRightToLeft: 0
@@ -4653,13 +4649,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Spells
+  m_text: 'Caster hero
 
 
-    Caster hero
+    Spells and Magic
 
 
-    Glass cannon
+    Glass Cannon
 
 
     Slow
@@ -7254,11 +7250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3823180512915298259, guid: 9df0e97162d7cfe498b4578ad90c81a6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -241.74033
+      value: -349
       objectReference: {fileID: 0}
     - target: {fileID: 3823180512915298259, guid: 9df0e97162d7cfe498b4578ad90c81a6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -294.0597
+      value: -284
       objectReference: {fileID: 0}
     - target: {fileID: 3823180512915298259, guid: 9df0e97162d7cfe498b4578ad90c81a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
