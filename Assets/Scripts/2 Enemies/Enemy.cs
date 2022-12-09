@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
     GameObject healthBar;
     [SerializeField] GameObject damagePopUp;
     protected bool isHit = false;
+    Material material;
 
 
 
@@ -44,6 +45,7 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();       
         player = GameObject.FindGameObjectWithTag("Player");
         healthBar = transform.GetChild(0).gameObject;
+        material = spriteRenderer.material; 
     }
 
 
@@ -120,11 +122,11 @@ public class Enemy : MonoBehaviour
                 //    }
                 //}
 
-                //if (randomIndex >= 40 && randomIndex <= 43)
-                //{
-                //    Vector3 damageBoostPotPo = new Vector3(transform.position.x + 0.6f, transform.position.y + 0.6f, transform.position.z);
-                //    Instantiate(damageBoostPot, damageBoostPotPo, Quaternion.identity);
-                //}
+                if (randomIndex >= 40 && randomIndex <= 43)
+                {
+                    Vector3 damageBoostPotPo = new Vector3(transform.position.x + 0.6f, transform.position.y + 0.6f, transform.position.z);
+                    Instantiate(damageBoostPot, damageBoostPotPo, Quaternion.identity);
+                }
 
                 this.enabled = false;
                 spriteRenderer.enabled = false;
@@ -142,9 +144,10 @@ public class Enemy : MonoBehaviour
     public IEnumerator InvincibleFrames()
     {
         //isInvincible = true;
-        spriteRenderer.color = Color.red;
-        yield return new WaitForSeconds(0.2f);
-        spriteRenderer.color = Color.white;
+        material.SetFloat("_Flash", 0.75f);
+        yield return new WaitForSeconds(0.5f);
+        material.SetFloat("_Flash", 0);
+
         //isInvincible = false;
     }
 
@@ -234,18 +237,19 @@ public class Enemy : MonoBehaviour
 
     public IEnumerator Freeze()
     {
-        yield return new WaitForSeconds(0.6f);
-        spriteRenderer.color = Color.cyan;
+
+        material.SetFloat("_UnderEffect", 1);
+        material.SetFloat("_FrozenOrPoisoned", 1);
         float speed1 = speed; 
         speed = (float)(speed * 0);
         yield return new WaitForSeconds(3f);
-        spriteRenderer.color = Color.white;
+        material.SetFloat("_UnderEffect", 0);
         speed = speed1;
     }
 
     public IEnumerator Slow()
     {
-        yield return new WaitForSeconds(0.6f);
+       
         spriteRenderer.color = Color.grey;
         float speed1 = speed;
         speed = (float)(speed * 0.75);
@@ -256,15 +260,15 @@ public class Enemy : MonoBehaviour
 
     public IEnumerator Poison(int numberOfPoisonTicks, float poisonDotDamage)
     {
-        
-        yield return new WaitForSeconds(1f);
-        spriteRenderer.color = Color.green;
+        material.SetFloat("_UnderEffect", 1);
+        material.SetFloat("_FrozenOrPoisoned", 0);
+        yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < numberOfPoisonTicks; i++)
         {
             Damage(poisonDotDamage);
             yield return new WaitForSeconds(1f);
         }
-        spriteRenderer.color = Color.white;
+        material.SetFloat("_UnderEffect", 0);
     }
 
     //IEnumerator DamagePopUp(float damage)

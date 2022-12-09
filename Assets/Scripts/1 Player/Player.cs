@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
     [SerializeField] TMP_Text ability2Dis;
     [SerializeField] TMP_Text ability3Dis;
     [SerializeField] Sprite [] abilityIcons;
+    [SerializeField] BaseWeapon[] playerWeapons;
+    
     Material material;
     SpriteRenderer spriteRenderer;
     public int playerMaxFlame = 5;
@@ -39,7 +41,7 @@ public class Player : MonoBehaviour
     public float speed = 1;
     public static bool isMagnetPotion;
     public static bool isGoldPotion;
-    protected bool isDamageBoost;
+    protected bool playerIsBuffed;
     bool isInvincible;
     internal int score;
     internal int currentExp;
@@ -244,7 +246,7 @@ public class Player : MonoBehaviour
         
         if (damageBoostPot)
         {
-            isDamageBoost = true;
+            playerIsBuffed = true;
             PlayerDamageBoost();
         }
 
@@ -664,18 +666,27 @@ public class Player : MonoBehaviour
     }
 
     IEnumerator PlayerDamageBoosted()
-    {       
-    //       BaseWeapon.damage = BaseWeapon.damage + 2f;
-    //    material.SetFloat("_IsDamageBuff", 1);
-           yield return new WaitForSeconds(3);
-        //material.SetFloat("_IsDamageBuff", 0);
-        //isDamageBoost = false;
-        //   BaseWeapon.damage = BaseWeapon.damage - 2f;        
+    {
+       float[] weaponDamages = new float[playerWeapons.Count()];
+       for(int i = 0; i < playerWeapons.Count(); i++)
+        {
+            weaponDamages[i] = playerWeapons[i].damage;
+            playerWeapons[i].damage = playerWeapons[i].damage * 2;
+        }
+        material.SetFloat("_IsBuffed", 1);
+        yield return new WaitForSeconds(3);
+                for (int i = 0; i < playerWeapons.Count(); i++)
+        {
+            playerWeapons[i].damage = weaponDamages[i];
+        }
+        material.SetFloat("_IsBuffed", 0);
+        playerIsBuffed = false;
+
     }
 
     private void PlayerDamageBoost()
     {
-        if (isDamageBoost == true)
+        if (playerIsBuffed == true)
         {
             StartCoroutine(PlayerDamageBoosted());
 
