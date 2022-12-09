@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Scythe : BaseWeapon
 {
-    
-    // Start is called before the first frame update
 
+    // Start is called before the first frame update
+    [SerializeField] SimpleObjectPool Pool;
     void Start()
     {
         StartCoroutine(ScytheCoroutine());
@@ -17,7 +17,7 @@ public class Scythe : BaseWeapon
     IEnumerator ScytheCoroutine()
     {
         yield return new WaitForSeconds(5f);
-        gameObject.SetActive(false);
+        Pool.ReturnObject(gameObject);
     }
 
     void RotateByDegrees()

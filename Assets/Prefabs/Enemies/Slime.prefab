@@ -152,6 +152,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   isDead: 0
   enemyMaxHP: 4
+  enemyBaseHp: 4
   enemyHP: 0
   isTrack: 1
   damagePopUp: {fileID: 428124998287652800, guid: ff7e47dbca07c3e418f992cc13669c80, type: 3}

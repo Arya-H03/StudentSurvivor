@@ -190,11 +190,6 @@ public class Player : MonoBehaviour
             playerMaxHP++;
             playerHP = playerMaxHP;
 
-            for (int i = 0; i < enemyTypes.Length; i++)
-            {
-                enemyTypes[i].AddHP(1f);
-            }
-
         }
     }
     internal void AddHP(float hp)

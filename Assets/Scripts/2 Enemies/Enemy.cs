@@ -21,8 +21,9 @@ public class Enemy : MonoBehaviour
     public DamageBoostPot damageBoostPot;
     public float speed = 2f;
     public Animator animator;
-    public  bool isDead = false;
-    public float enemyMaxHP = 2f;
+    public  bool isDead = false;   
+    public float enemyMaxHP;
+    public float enemyBaseHp = 2f;
     public float enemyHP;
     SpriteRenderer spriteRenderer;
     BoxCollider2D boxCollider2D;
@@ -35,6 +36,7 @@ public class Enemy : MonoBehaviour
     Material material;
     protected int playerLevel;
     [SerializeField] SimpleObjectPool enemyPool;
+    
 
 
     private void OnEnable()
@@ -51,7 +53,8 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         healthBar = transform.GetChild(0).gameObject;
         material = spriteRenderer.material; 
-        
+       
+
     }
 
 
@@ -199,16 +202,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void AddHP(float hp)
+    public void AddHP()
     {
-        if (gameObject.activeInHierarchy == false)
+        
+        Player player= GameObject.FindObjectOfType<Player>();
+        enemyMaxHP = enemyBaseHp + player.currentLevel;
 
-        {
-            Debug.Log("Yo");
-            enemyMaxHP = enemyMaxHP + hp;
-        }
-        
-        
+
+
     }    
     public  void GoToPlayer()
     {

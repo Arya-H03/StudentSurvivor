@@ -137,3 +137,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 1
   damage: 1
+  Pool: {fileID: 2580119885069667344, guid: 27ca0c3d70663fa419335b4c6be211fd, type: 3}

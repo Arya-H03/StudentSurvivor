@@ -20,15 +20,7 @@ public class PlayerCamera : MonoBehaviour
     ChromaticAberration chromaticAberration;
     void Start()
     {
-        //if(PlayerCharacterManager.isKnight == true)
-        //{
-        //    playerKnight = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerKnight>();
-        //}
-
-        //if (PlayerCharacterManager.isRanger == true)
-        //{
-        //    playerRanger = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerRanger>();
-        //}
+       
 
         volume = GetComponent<Volume>();
         volume.profile.TryGet(out vignette);
