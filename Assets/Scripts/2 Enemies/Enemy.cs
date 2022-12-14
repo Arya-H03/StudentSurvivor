@@ -83,62 +83,7 @@ public class Enemy : MonoBehaviour
 
             if (enemyHP <= 0)
             {
-                Instantiate(bloodSplash, transform.position, Quaternion.identity);
-                GameManager.isEnemyDeadSound = true;
-                Instantiate(crystal, transform.position, Quaternion.identity);
-                int randomIndex = UnityEngine.Random.Range(0, 100);
-
-                if (randomIndex >= 0 && randomIndex <= 5 )
-                {
-
-                    Vector3 smallHpPot = new Vector3(transform.position.x + 0.1f, transform.position.y + 0.1f, transform.position.z);
-                    Instantiate(smallhealthPot, smallHpPot, Quaternion.identity);
-                }
-
-               
-                if (randomIndex >= 6 && randomIndex <= 8)
-                {
-                    Vector3 largeHpPot = new Vector3(transform.position.x + 0.2f, transform.position.y + 0.2f, transform.position.z);
-                    Instantiate(largehealthPot, largeHpPot, Quaternion.identity);
-                }
-
-               
-                if (randomIndex >= 9 && randomIndex <= 13)
-                {
-                    Vector3 magnetPot = new Vector3(transform.position.x + 0.3f, transform.position.y + 0.3f, transform.position.z);
-                    Instantiate(magnet, magnetPot, Quaternion.identity);
-                }
-                //16 20
-                if (randomIndex >= 14 && randomIndex <= 23)
-                {
-                    Vector3 goldcoin = new Vector3(transform.position.x + 0.4f, transform.position.y + 0.4f, transform.position.z);
-                    Instantiate(goldCoin, goldcoin, Quaternion.identity);
-                }
-
-                if(PlayerCharacterManager.isWitch == true)
-                {
-                    if (randomIndex >= 21 && randomIndex <= 30)
-                    {
-                        Vector3 flameP = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.5f, transform.position.z);
-                        Instantiate(flame, flameP, Quaternion.identity);
-                    }
-
-                }
-
-                //if (TitleManager.saveData.isGoldPotionActive == true)
-                //{
-                //    if (randomIndex >= 31 && randomIndex <= 39)
-                //    {
-                //        Vector3 goldCoinPotion = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.5f, transform.position.z);
-                //        Instantiate(goldPotion, goldCoinPotion, Quaternion.identity);
-                //    }
-                //}
-
-                if (randomIndex >= 40 && randomIndex <= 43)
-                {
-                    Vector3 damageBoostPotPo = new Vector3(transform.position.x + 0.6f, transform.position.y + 0.6f, transform.position.z);
-                    Instantiate(damageBoostPot, damageBoostPotPo, Quaternion.identity);
-                }
+                DropLoot();
 
                 this.enabled = false;
                 spriteRenderer.enabled = false;
@@ -191,7 +136,8 @@ public class Enemy : MonoBehaviour
         {
             if (player.OnDamage())
             {
-                enemyPool.ReturnObject(gameObject);                                
+                enemyPool.ReturnObject(gameObject);
+                DropLoot();
             }           
         }
 
@@ -331,6 +277,57 @@ public class Enemy : MonoBehaviour
     protected virtual void KillEnemy()
     {
         enemyPool.ReturnObject(gameObject);
+    }
+
+    private void DropLoot()
+    {
+        Instantiate(bloodSplash, transform.position, Quaternion.identity);
+        GameManager.isEnemyDeadSound = true;
+        Instantiate(crystal, transform.position, Quaternion.identity);
+        int randomIndex = UnityEngine.Random.Range(0, 100);
+
+        if (randomIndex >= 0 && randomIndex <= 5)
+        {
+
+            Vector3 smallHpPot = new Vector3(transform.position.x + 0.1f, transform.position.y + 0.1f, transform.position.z);
+            Instantiate(smallhealthPot, smallHpPot, Quaternion.identity);
+        }
+
+
+        if (randomIndex >= 6 && randomIndex <= 8)
+        {
+            Vector3 largeHpPot = new Vector3(transform.position.x + 0.2f, transform.position.y + 0.2f, transform.position.z);
+            Instantiate(largehealthPot, largeHpPot, Quaternion.identity);
+        }
+
+
+        if (randomIndex >= 9 && randomIndex <= 13)
+        {
+            Vector3 magnetPot = new Vector3(transform.position.x + 0.3f, transform.position.y + 0.3f, transform.position.z);
+            Instantiate(magnet, magnetPot, Quaternion.identity);
+        }
+        //16 20
+        if (randomIndex >= 14 && randomIndex <= 23)
+        {
+            Vector3 goldcoin = new Vector3(transform.position.x + 0.4f, transform.position.y + 0.4f, transform.position.z);
+            Instantiate(goldCoin, goldcoin, Quaternion.identity);
+        }
+
+        if (PlayerCharacterManager.isWitch == true)
+        {
+            if (randomIndex >= 21 && randomIndex <= 30)
+            {
+                Vector3 flameP = new Vector3(transform.position.x + 0.5f, transform.position.y + 0.5f, transform.position.z);
+                Instantiate(flame, flameP, Quaternion.identity);
+            }
+
+        }
+
+        if (randomIndex >= 40 && randomIndex <= 43)
+        {
+            Vector3 damageBoostPotPo = new Vector3(transform.position.x + 0.6f, transform.position.y + 0.6f, transform.position.z);
+            Instantiate(damageBoostPot, damageBoostPotPo, Quaternion.identity);
+        }
     }
 
    
