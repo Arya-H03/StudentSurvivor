@@ -11,9 +11,9 @@ public class SaveData
     public int deathCount;
     public bool isAxeUpgradeActive = false;
     public bool isCrowActive = false;
-    public bool isRangerUnlocked = false;
-    public bool isWitchUnlocked = false;
-    public bool isLevel2Unlocked = false;
+    public bool isRangerUnlocked = true;
+    public bool isWitchUnlocked = true;
+    public bool isLevel2Unlocked = true;
     public bool ispostProcessing = true;
     
 }

@@ -201,15 +201,11 @@ public class TitleManager : MonoBehaviour
     {
         
         TitleManager.saveData.goldCoins = 0;
-        TitleManager.saveData.isRangerUnlocked = false;
-        TitleManager.saveData.isWitchUnlocked = false;
+        //TitleManager.saveData.isRangerUnlocked = false;
+        //TitleManager.saveData.isWitchUnlocked = false;
         TitleManager.saveData.isCrowActive = false;
         TitleManager.saveData.isAxeUpgradeActive = false;
-        TitleManager.saveData.isLevel2Unlocked = false;
-        TitleManager.saveData.isLevel2Unlocked = false;
-
-
-
+        //TitleManager.saveData.isLevel2Unlocked = false;
 
     }
 

@@ -25,6 +25,7 @@ public class PlayerCharacterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (TitleManager.saveData.isRangerUnlocked == true)
         {
             characterSelectionImage[0].color = Color.white;
